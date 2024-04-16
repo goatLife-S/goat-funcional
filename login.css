@@ -1,0 +1,77 @@
+@font-face {
+    font-family: Helvetica, sans-serif;
+    src: url(Helvetica.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+.container {
+    width: 480px;
+    height: 400px;
+    padding: 0;
+    background-color: #F2EAD3;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    box-shadow: 8px 8px 0px #DFD7BF;
+    border-radius: 8px;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 110px;
+}
+
+.container .titulo {
+    height: 75px;
+    display: flex;
+
+}
+
+.titulo {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    margin-left: 38px;
+}
+
+.inputs {
+    font-family: Helvetica, sans-serif;
+    border-radius: 8px;
+    height: 40px;
+    width: 250px;
+    border: 3px solid;
+    padding-left: 10px;
+}
+
+.botao{
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    border-radius: 8px;
+    height: 40px;
+    width: 115px;
+    background-color: #228B22;
+    color: white;
+    font-weight: 900;
+    border-style: none;
+    box-shadow: 6px 6px 0px #115D33;
+}
+#conta{
+    color: #228B22;
+    text-decoration: none;
+}
+
+.container .container2 h3{
+    font-size: 30px
+}
+
+
