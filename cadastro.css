@@ -8,17 +8,24 @@ body {
     padding: 0;
     font-family: Helvetica, sans-serif;
 }
+.containerInteiro{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-image: url(/assets/cadastro.png);
+    background-size: cover;
+}
 
 .container {
-    width: 480px;
-    height: 400px;
+    width: 600px;
+    height: 500px;
     padding: 0;
     background-color: #F2EAD3;
     display: flex;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100px;
+    margin-top: 65px;
     box-shadow: 8px 8px 0px #DFD7BF;
     border-radius: 8px;
 }
@@ -48,17 +55,26 @@ body {
     font-family: Helvetica, sans-serif;
     border-radius: 8px;
     height: 40px;
-    width: 250px;
+    width: 335px;
     border: 3px solid;
     padding-left: 10px;
 }
+.inputs2{
+    font-family: Helvetica, sans-serif;
+    border-radius: 8px;
+    height: 40px;
+    width: 156px;
+    border: 3px solid;
+    padding-left: 10px;
+}
+
 
 .botao{
     font-family: Helvetica, sans-serif;
     font-size: 20px;
     border-radius: 8px;
     height: 40px;
-    width: 115px;
+    width: 130px;
     background-color: #228B22;
     color: white;
     font-weight: 900;
