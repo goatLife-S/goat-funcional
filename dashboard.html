@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="containerInteiro">
+
+        <div class="divLista">
+            <ul class="lista">
+                <li class="icones"><img src="assets/Menu.png"></li>
+                <li class="icones"><img src="assets/Person.png"></li>
+                <li class="icones"><img src="assets/Increase Profits.png"></li>
+                <li class="icones"><img src="assets/Logout.png"></li>
+            </ul>
+        </div>
+        <div class="container2">
+            <div class="containerDashboard">
+                <div class="tituloCapril">
+                    <h2>Capril 1</h2>
+                </div>
+                <br>
+                <div class="grafico">
+                    <canvas id="myChart" height="50%" width="90%"></canvas>
+                </div>
+                <span>Umidade e temperatura em função do tempo (h)</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
