@@ -3,12 +3,12 @@
     src: url(/assets/fonts/Helvetica.ttf);
 }
 
-body{
+body {
     margin: 0;
     font-family: Helvetica, sans-serif;
 }
 
-.containerInteiro{
+.containerInteiro {
     display: flex;
     margin: auto;
     width: 100%;
@@ -18,7 +18,7 @@ body{
     background-size: cover
 }
 
-.containerInteiro .divLista{
+.containerInteiro .divLista {
     background-color: #3F2305;
     padding: 0;
     height: 100%;
@@ -30,7 +30,7 @@ body{
 }
 
 
-.containerInteiro .divLista .lista{
+.containerInteiro .divLista .lista {
     list-style: none;
     padding: 0;
     margin-right: 3px;
@@ -39,11 +39,11 @@ body{
     gap: 5px;
 }
 
-.containerInteiro .divLista .lista .icones{
+.containerInteiro .divLista .lista .icones {
     height: 100px;
 }
 
-.containerInteiro .containerDashboard{
+.containerInteiro .containerDashboard {
     display: flex;
     height: 450px;
     width: 900px;
@@ -63,7 +63,85 @@ body{
     align-items: center;
 }
 
-.containerInteiro .containerDashboard .tituloCapril{
+.containerInteiro .container2 .alerta {
+    display: flex;
+    top: 1rem;
+    right: 10rem;
+    width: 180px;
+    height: 140px;
+    background-color: #FFFFFF;
+    position: absolute;
+    border-radius: 8px;
+    box-shadow: 1px 1px 4px black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerInteiro .container2 .alertaCentro p{
+ margin: 3px;
+ font-size: 15px;
+}
+ 
+.containerInteiro .container2 .alertaCentro {
+        width: 300px;
+        height: 70px;
+        display: flex;
+        position: absolute;
+        bottom: 3rem;
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: 1px 1px 4px black;
+        background-image: url(./assets/Error.png);
+        background-repeat: no-repeat;
+        background-size: 50px;
+        background-position: 16px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .containerInteiro .container2 .alertaCentro .alertaTexto {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-left: 25px;
+    }
+
+
+.containerInteiro .container2 .alerta .alertTemp {
+    height: 42px;
+    width: 130px;
+    background-color: #4CBB17;
+    border-radius: 8px;
+    box-shadow: 7px 7px 1px #115D33;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-right: 2px;
+    font-size: 23px;    
+}
+
+.containerInteiro .container2 .alerta .alertUmi {
+    height: 42px;
+    width: 130px;
+    background-color: #218C99;
+    border-radius: 8px;
+    margin-top: 17px;
+    box-shadow: 7px 7px 1px #135D66;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 23px;
+    margin-right: 2px;
+    margin-bottom: 7px;
+}
+
+
+
+.containerInteiro .containerDashboard .tituloCapril {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -71,25 +149,23 @@ body{
     margin-top: 30px;
     width: 80%;
     height: 12%;
-    background-color: #DFD7BF; 
-    box-shadow: 1px 1px 4px black;
+    background-color: #DFD7BF;
     color: #3F2305;
 }
 
-.containerInteiro .containerDashboard .tituloCapril h2{
+.containerInteiro .containerDashboard .tituloCapril h2 {
     margin: 13px;
 }
 
-.containerInteiro .container2 .containerDashboard .grafico{
+.containerInteiro .container2 .containerDashboard .grafico {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 50%;
 }
 
-.containerInteiro .container2 .containerDashboard span{
+.containerInteiro .container2 .containerDashboard span {
     width: 90%;
     margin-top: 10px;
+    margin-left: 85px;
 }
-
-

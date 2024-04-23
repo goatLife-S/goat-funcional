@@ -14,20 +14,34 @@
 
         <div class="divLista">
             <ul class="lista">
-                <li class="icones"><img src="assets/Menu.png"></li>
-                <li class="icones"><img src="assets/Person.png"></li>
-                <li class="icones"><img src="assets/Increase Profits.png"></li>
-                <li class="icones"><img src="assets/Logout.png"></li>
+                <li class="icones"><img width="30px" src="assets/Menu.png"></li>
+                <li class="icones"><img width="30px" src="assets/Person.png"></li>
+                <li class="icones"><img width="30px" src="assets/Increase Profits.png"></li>
+                <li class="icones"><img width="30px" src="assets/Logout.png"></li>
             </ul>
         </div>
         <div class="container2">
+            <div class="alertaCentro">
+                <div class="alertaTexto">
+                    <p>Temperatura ideal.</p>
+                    <p>Umidade ideal.</p>
+                </div>
+            </div>
+            <div class="alerta">
+                <div class="alertTemp">
+                    <p>31 °C</p>
+                </div>
+                <div class="alertUmi">
+                    <p>30%</p>
+                </div>
+            </div>
             <div class="containerDashboard">
                 <div class="tituloCapril">
                     <h2>Capril 1</h2>
                 </div>
                 <br>
                 <div class="grafico">
-                    <canvas id="myChart" height="50%" width="90%"></canvas>
+                    <canvas id="myChart" height="90vh" width="300vw"></canvas>
                 </div>
                 <span>Umidade e temperatura em função do tempo (h)</span>
             </div>
@@ -47,7 +61,7 @@
             datasets: [{
                 label: '# of Votes',
                 data: [12, 19, 3, 5, 2, 3],
-                borderWidth: 1
+                borderWidth: 3
             }]
         },
         options: {
