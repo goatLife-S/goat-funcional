@@ -12,7 +12,7 @@ body {
     height: 100%;
     width: 100%;
     position: absolute;
-    background-image: url(assets/cadastro.png);
+    background-image: url(../assets/cadastro.png);
     background-size: cover;
 }
 
