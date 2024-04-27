@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="simulador.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="principal">
+        <div class="texto">
+            
+            <p class="titulo">Como funciona</p> 
+            
+            <p class="default">
+                A Calculadora Financeira será essencial para que você consiga visualizar os dados de todos os benefícios que obterá com o nosso Sistema intalado em seu capril.
+                    
+                    Consulte aqui os valores:
+            </p>
+        </div>
+        <div class="container">
+
+            <p class="titulo white">Tente você mesmo</p> 
+
+    Insira a quantidade de caprinos dentro do seu Capril <input type="text" id="input_qtd_caprinos">  <br>
+    Preco médio de cada caprino dentro do capril <input type="text" name="" id="input_preco_caprino"> <br>
+    Peso médio do caprino ao abate <input type="text" name="" id="input_peso"> <br>
+    Preco média da venda da carne por Kg <input type="text" id="input_preco_medio">
+
+
+    <br>
+
+    <button onclick="calcular()" class="btnCalc">Simule aqui</button>
+</div>
+    <div id="div_mensagem"></div>
+</div>
+</body>
+
+</html>
+<script>
+    function calcular(){
+        var qtd_caprinos = Number(input_qtd_caprinos.value); // qtd de caprinos em um Capril
+        var preco_medio_caprinos = Number(input_preco_caprino.value) // preco medio do rebanho no capril
+        var valor_caprino_capril = (qtd_caprinos * preco_medio_caprinos).toFixed(2); //valor total do rabanho do capril
+        var taxa_mortalidade = 0.20; // taxa de mortalidade em um capril pelo mal gereniciamento do capril
+        var taxa_mortalidade_reduzida = 0.20 - 0.18; // taxa de mortalidade reduzida com o nosso sensor de temperatura e umidade
+        var perdas_mortalidade_atual = (taxa_mortalidade * qtd_caprinos).toFixed(0); // perda mortalidade atual do cliente
+        var perdas_mortalizade_reduzida = (taxa_mortalidade_reduzida * qtd_caprinos).toFixed(0); // perda mortalidade reduzida depois da instalação dos sensores 
+        var perdas_valor_atual = (taxa_mortalidade * valor_caprino_capril).toFixed(2); // perda no valor total do rebanho do capril
+        var perdas_valor_reduzido = (taxa_mortalidade_reduzida * valor_caprino_capril).toFixed(2); // perda reduzida no valor total do capril
+        var peso_medio = Number(input_peso.value); // peso medio a cada abate do caprino mensal
+        var preco_vendido_kg = Number(input_preco_medio.value).toFixed(2); // preço medio da venda da carne do caprino que o cliente deseja vender
+        var peso_total_carne =  (qtd_caprinos * peso_medio).toFixed(0); // peso total de carne produzido no mês
+        var valor_total_carne = (peso_total_carne * preco_vendido_kg).toFixed(2); // valor total da receita gerada pela venda da carne de caprinos no mês
+        var lucro_carne = valor_total_carne + valor_total_carne * 0.15 //Lucro da venda da carne através da boa qualidade do animal
+
+        div_mensagem.innerHTML = `Com base na quantidade de caprinos no seu capril e na taxa de mortalidade atual de 20%, estimamos que as perdas mensais devido à taxa de mortalidade sejam de ${perdas_mortalidade_atual} caprinos. Após a implementação dos sensores de temperatura e umidade, esperamos reduzir essa taxa para 2%, resultando em perdas mensais estimadas de ${perdas_mortalizade_reduzida} caprinos. <br>
+        Além disso, calculamos as perdas mensal em termos de valor total do rebanho. Com o valor total do seu rebanho estimado em R$${valor_caprino_capril}, as perdas mensais atuais devido à mortalidade representam aproximadamente R$${perdas_valor_atual}. Após a implementação dos sensores, esperamos reduzir essas perdas para R$${perdas_valor_reduzido}.<br>
+        Também consideramos um potencial ganho com a venda de carne de caprinos. Com um peso total de carne produzido por mês de ${peso_total_carne} kg e um preço médio de venda de R$ ${preco_vendido_kg} por kg, o ganho atual pela venda da carne será de R$${valor_total_carne}, o lucro estimado com a venda de carne é de R$${lucro_carne}.`
+
+
+
+    }
+</script>

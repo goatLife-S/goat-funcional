@@ -65,21 +65,21 @@ li{
 
 
 .banner{
-    background-image: url("./ImagensPlanoDeFundo/Tela1.png");
+    background-image: url("../ImagensPlanoDeFundo/Tela1.png");
     height: 800px;
 }
 .banner1{
-    background-image: url("./ImagensPlanoDeFundo/SobreNos.png");
+    background-image: url("../ImagensPlanoDeFundo/SobreNos.png");
     height: 800px;
     color: rgb(0, 0, 0);
 }
 .banner2{
-    background-image: url("./ImagensPlanoDeFundo/ModeloDeNegocio.png");
+    background-image: url("../ImagensPlanoDeFundo/ModeloDeNegocio.png");
     height: 800px;
     color: rgb(0, 0, 0);
 }
 .Chefe{
-    background-image: url("./ImagensPlanoDeFundo/TeladeContato.png");
+    background-image: url("../ImagensPlanoDeFundo/TeladeContato.png");
     height: 800px;
     color: rgb(0, 0, 0);
     padding: 1px;
@@ -241,6 +241,7 @@ margin-left: 700px;
 }
 .Gerente{
     display: flex;
+    justify-content: center;
     align-items: center;
     padding: 1px;
     margin-left: 150px;

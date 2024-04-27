@@ -20,15 +20,39 @@
                 <br>
                 <input type="password" id="ipt_senha" placeholder="Senha" class="inputs">
                 <br>
-                <span>Ainda não é cliente GOAT+?<span><a href="cadastro.html" id="conta"> Crie uma conta.</a></span></span>
+                <span>Ainda não é cliente GOAT+?<span><a href="../cadastro/cadastro.html" id="conta"> Crie uma conta.</a></span></span>
                 <br>
-                <button class="botao">Entrar</button>
+                <button class="botao" onclick="entrar()">Entrar</button>
                 <div class="sombra">
                 </div>
             </div>
         </div>
     </div>
 
+    <div id="div_mensagem"></div>
+
 </body>
 
 </html>
+
+<script>
+    function entrar() {
+        var login = ipt_email.value;
+        var senha = ipt_senha.value
+
+        if(login == 'joaokevin100@gmail.com' && senha == "joaokevinn12") {
+            div_mensagem.innerHTML = `Login Correto!`
+            setTimeout(function() {
+                    // Redireciona para a página do dashboard
+                    window.location.href = "../dashboard/dashboard.html";
+                }, 2000);
+        }else {
+            alert(`Login incorreto!`)
+        }
+
+
+
+
+
+    }
+</script>
