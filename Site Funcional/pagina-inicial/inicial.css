@@ -11,16 +11,18 @@ body {
 }
 
 .navbar{
-    justify-content: center;
-    align-items: center;
-    width: 600px;
+    justify-content: end;
     color: #e0e3b6;
     display: flex;
     text-align: center;
-    width: 5500px;
+    width: 5300px;
     padding: 40px;
     text-decoration: none;
     background-color: #e0e3b6;
+}
+
+.navbar .logo{
+    display: flex;
 }
 ul{
    
@@ -221,15 +223,17 @@ li{
 
 .TituloModelo{
     justify-content: center;
+    display: flex;
+    align-items: center;
     color: #FFF;
 -webkit-text-stroke-width: 1;
 -webkit-text-stroke-color: #FFF;
 font-family: "Helvetica Light";
 font-size: 61px;
-font-style: normal;
+
 font-weight: 400;
-line-height: normal;
-margin-left: 700px;
+
+margin-left: 30px;
 }
 
 .QuemSou{
