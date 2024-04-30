@@ -20,39 +20,48 @@
                 <br>
                 <input type="password" id="ipt_senha" placeholder="Senha" class="inputs">
                 <br>
-                <span>Ainda não é cliente GOAT+?<span><a href="../cadastro/cadastro.html" id="conta"> Crie uma conta.</a></span></span>
+                <div id="div_mensagem"></div>
+                <span>Ainda não é cliente GOAT+?<span><a href="../cadastro/cadastro.html" id="conta"> Crie uma
+                            conta.</a></span></span>
                 <br>
                 <button class="botao" onclick="entrar()">Entrar</button>
                 <div class="sombra">
+
                 </div>
             </div>
         </div>
     </div>
-
-    <div id="div_mensagem"></div>
 
 </body>
 
 </html>
 
 <script>
-    function entrar() {
-        var login = ipt_email.value;
-        var senha = ipt_senha.value
+var tentativas = 3;
 
-        if(login == 'j' && senha == "j") {
-            div_mensagem.innerHTML = `Login Correto!`
-            setTimeout(function() {
-                    // Redireciona para a página do dashboard
-                    window.location.href = "../dashboard/dashboard.html";
-                }, 2000);
-        }else {
-            alert(`Login incorreto!`)
+function entrar() {
+    var login = ipt_email.value;
+    var senha = ipt_senha.value;
+    
+    for (var i = 0; i < tentativas; i++) {
+        if (login === "cindy@gmail.com" && senha === "8931002") {
+            div_mensagem.innerHTML = `Login Correto!`;
+            tentativas = 3; // Reinicia o número de tentativas
+            setTimeout(function () {
+                // Redireciona para a página do dashboard
+                window.location.href = "../dashboard/dashboard.html";
+            }, 2000);
+            return;
+        } else {
+            tentativas--;
+            if (tentativas === 0) {
+                div_mensagem.innerHTML = `Usuário Bloqueado!`; 
+            } else {
+                div_mensagem.innerHTML = `Tentativas restantes: ${tentativas}`;
+                alert(`Login incorreto!`);
+            }
+            return; // Retorna após cada tentativa, para que o loop não continue executando
         }
-
-
-
-
-
     }
+}
 </script>
