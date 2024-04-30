@@ -64,24 +64,24 @@ li{
 
 
 .banner{
-    background-image: url("./ImagensPlanoDeFundo/Tela1.png");
+    background-image: url("../ImagensPlanoDeFundo/Tela1.png");
     background-repeat: no-repeat;
     height: 800px;
 }
 .banner1{
-    background-image: url("./ImagensPlanoDeFundo/SobreNos.png");
+    background-image: url("../ImagensPlanoDeFundo/SobreNos.png");
     background-repeat: no-repeat;
     height: 800px;
     color: rgb(0, 0, 0);
 }
 .banner2{
-    background-image: url("./ImagensPlanoDeFundo/ModeloDeNegocio.png");
+    background-image: url("../ImagensPlanoDeFundo/ModeloDeNegocio.png");
     background-repeat: no-repeat;
     height: 800px;
     color: rgb(0, 0, 0);
 }
 .Chefe{
-    background-image: url("./ImagensPlanoDeFundo/TeladeContato.png");
+    background-image: url("../ImagensPlanoDeFundo/TeladeContato.png");
     background-repeat: no-repeat;
     height: 800px;
     color: rgb(0, 0, 0);
