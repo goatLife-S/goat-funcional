@@ -153,27 +153,6 @@ body {
     margin: 3px;
     font-size: 15px;
 }
-<<<<<<< HEAD
- 
-.containerInteiro .container2 .alertaCentro {
-        width: 300px;
-        height: 70px;
-        display: flex;
-        position: absolute;
-        bottom: 3rem;
-        border-radius: 8px;
-        background-color: white;
-        box-shadow: 1px 1px 4px black;
-        background-image: url(../assets/Error.png);
-        background-repeat: no-repeat;
-        background-size: 50px;
-        background-position: 16px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-=======
->>>>>>> 350fbd5878746f58a70c5194957df3ddd394ddae
 
 .containerInteiro .container2 .alertaCentro {
     width: 300px;
