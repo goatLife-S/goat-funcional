@@ -54,6 +54,7 @@ body {
     background-color: #F2EAD3;
     gap: 1px;
     box-shadow: 1px 1px 4px black;
+    margin-top: 20px;
 }
 
 .containerInteiro .container2 {
@@ -63,10 +64,80 @@ body {
     align-items: center;
 }
 
+.containerInteiro .container2 .kpi {
+    display: flex;
+    top: 1rem;
+    width: 249px;
+    height: 60px;
+    background-color: #FFFFFF;
+    position: absolute;
+    border-radius: 8px;
+    flex-direction: row;
+    justify-content: stretch;
+    color: white;
+}
+
+.containerInteiro .container2 .kpi .baixo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 50px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: #135D66;
+    font-size: 15px;
+    text-align: center;
+}
+
+.containerInteiro .container2 .kpi .quase-baixo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 50px;
+    background-color: #218C99;
+    font-size: 15px;
+    text-align: center;
+}
+
+.containerInteiro .container2 .kpi .ideal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 50px;
+    background-color: #4CBB17;
+    font-size: 15px;
+    text-align: center;
+}
+
+.containerInteiro .container2 .kpi .quase-alto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 50px;
+    background-color: #FFC100;
+    font-size: 15px;
+    text-align: center;
+}
+
+.containerInteiro .container2 .kpi .alto {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 50px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #B00707;
+    font-size: 15px;
+    text-align: center;
+}
+
 .containerInteiro .container2 .alerta {
     display: flex;
     top: 1rem;
-    right: 10rem;
+    right: 5rem;
     width: 180px;
     height: 140px;
     background-color: #FFFFFF;
@@ -78,10 +149,11 @@ body {
     align-items: center;
 }
 
-.containerInteiro .container2 .alertaCentro p{
- margin: 3px;
- font-size: 15px;
+.containerInteiro .container2 .alertaCentro p {
+    margin: 3px;
+    font-size: 15px;
 }
+<<<<<<< HEAD
  
 .containerInteiro .container2 .alertaCentro {
         width: 300px;
@@ -100,13 +172,33 @@ body {
         justify-content: center;
         align-items: center;
     }
+=======
+>>>>>>> 350fbd5878746f58a70c5194957df3ddd394ddae
 
-    .containerInteiro .container2 .alertaCentro .alertaTexto {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        margin-left: 25px;
-    }
+.containerInteiro .container2 .alertaCentro {
+    width: 300px;
+    height: 70px;
+    display: flex;
+    position: absolute;
+    bottom: 3rem;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 1px 1px 4px black;
+    background-image: url(../assets/Error.png);
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerInteiro .container2 .alertaCentro .alertaTexto {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 25px;
+}
 
 
 .containerInteiro .container2 .alerta .alertTemp {
@@ -120,7 +212,7 @@ body {
     align-items: center;
     color: white;
     margin-right: 2px;
-    font-size: 23px;    
+    font-size: 23px;
 }
 
 .containerInteiro .container2 .alerta .alertUmi {

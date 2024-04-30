@@ -4,46 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="simulador.css">
+    <link rel="stylesheet" href="SimuladorTeste.css">
     <title>Document</title>
 </head>
 
 <body>
-    <div class="principal">
-        <div class="texto">
-            
-            <p class="titulo">Como funciona</p> 
-            
-            <p class="default">
-                A Calculadora Financeira será essencial para que você consiga visualizar os dados de todos os benefícios que obterá com o nosso Sistema intalado em seu capril.
-                    
-                    Consulte aqui os valores:
-            </p>
+    <div class="MaeDeTodos">
+        <div class="CaixaExplicacao">
+
+            <h1 class="TituloComoFunciona">Resultado</h1>
+
+                
+                    <div class="MensagemDeReposta" id="div_mensagem">
+                
+                    </div>
         </div>
-        <div class="container">
-
-            
-
-            <p class="titulo white">Tente você mesmo</p> 
-
-    Insira a quantidade de caprinos dentro do seu Capril <input type="text" id="input_qtd_caprinos">  <br>
-    Preco médio de cada caprino dentro do capril <input type="text" name="" id="input_preco_caprino"> <br>
-    Peso médio do caprino ao abate <input type="text" name="" id="input_peso"> <br>
-    Preco média da venda da carne por Kg <input type="text" id="input_preco_medio">
+        <div class="CaixaTenteVoce">
 
 
-    <br>
 
-    <button onclick="calcular()" class="btnCalc">Simule aqui</button>
-    <div id="div_mensagem"></div>
-</div>
+            <h1 class="TextoTenteVoce">Tente você mesmo</h1>
+             
+            <div class="CaixaDaInputs">
+                Insira a quantidade de caprinos dentro do seu Capril <input type="text" class="Input_dados" id="input_qtd_caprinos">
+                <br>
+                Preco médio de cada caprino dentro do capril <input type="text" class="Input_dados" name="" id="input_preco_caprino">
+                <br>
+                Peso médio do caprino ao abate <input type="text" class="Input_dados" name="" id="input_peso">
+                <br>
+                Preco média da venda da carne por Kg <input type="text" class="Input_dados" id="input_preco_medio">
+                <br>
+            </div>
 
+            <button onclick="calcular()" class="btn">Simule aqui</button>
+        </div>
+        
+    </div>
+    
 </div>
 </body>
 
 </html>
 <script>
-    function calcular(){
+    function calcular() {
         var qtd_caprinos = Number(input_qtd_caprinos.value); // qtd de caprinos em um Capril
         var preco_medio_caprinos = Number(input_preco_caprino.value) // preco medio do rebanho no capril
         var valor_caprino_capril = (qtd_caprinos * preco_medio_caprinos).toFixed(2); //valor total do rabanho do capril
@@ -55,7 +58,7 @@
         var perdas_valor_reduzido = (taxa_mortalidade_reduzida * valor_caprino_capril).toFixed(2); // perda reduzida no valor total do capril
         var peso_medio = Number(input_peso.value); // peso medio a cada abate do caprino mensal
         var preco_vendido_kg = Number(input_preco_medio.value).toFixed(2); // preço medio da venda da carne do caprino que o cliente deseja vender
-        var peso_total_carne =  (qtd_caprinos * peso_medio).toFixed(0); // peso total de carne produzido no mês
+        var peso_total_carne = (qtd_caprinos * peso_medio).toFixed(0); // peso total de carne produzido no mês
         var valor_total_carne = (peso_total_carne * preco_vendido_kg).toFixed(2); // valor total da receita gerada pela venda da carne de caprinos no mês
         var lucro_carne = valor_total_carne + valor_total_carne * 0.15 //Lucro da venda da carne através da boa qualidade do animal
 
@@ -66,4 +69,4 @@
 
 
     }
-</script>9
+</script>
