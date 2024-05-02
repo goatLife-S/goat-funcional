@@ -1,0 +1,171 @@
+body {
+    padding: 0%;
+    margin: 0%;
+    font-family: "Helvetica Light";
+    width: 100%;
+    height: 100%;
+}
+html {
+    scroll-behavior: smooth; /* Adiciona rolagem suave em todo o documento */
+  }
+.navbar {
+    justify-content: flex-end;
+    align-items: center;
+    color: #e0e3b6;
+    display: flex;
+    text-align: center;
+    width: 1784px;
+    padding: 40px;
+    text-decoration: none;
+    background-color: #e0e3b6;
+    height: 0px;
+}
+
+ul {
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: xx-large;
+}
+
+li {
+    margin-right: 60px;
+    float: left;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: darkgreen;
+}
+
+.header {
+    display: flex;
+    border-bottom: 3px solid #3F2305;
+
+}
+
+.container {
+    width: 100%;
+    margin: px;
+    align-items: center;
+    display: flex;
+    background-color: #e0e3b6;
+}
+
+/* Tente Você Mesmo! */
+
+.CaixaTenteVoce {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #E0E3B6;
+    border-radius: 50px;
+    width: 670px;
+    height: 690px;
+    box-shadow: -20px 20px 20px 10px #20201b
+}
+
+.TextoTenteVoce {
+    display: flex;
+    font-size: 60px;
+}
+
+.TextoInputs {
+    display: flex;
+    font-size: 20px;
+    color: black;
+}
+
+.CaixaDaInputs {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Input_dados {
+    display: flex;
+    /* font-size: 25px; */
+    width: 450px;
+    border-radius: 15px;
+    height: 40px;
+}
+
+.btn {
+    display: flex;
+    width: 160px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    background-color: #914108;
+    color: white;
+    border: 0px;
+    border-radius: 15px;
+    margin: 10px;
+    text-decoration: none;
+    box-shadow: 6px 8px 20px 5px black;
+}
+.Simule {
+    color: white;
+}
+
+.Simule a{
+    text-decoration: none;
+}
+.Simule a:hover{
+    color: red;
+}
+/* Aqui estou fazendo um ambiente de teste onde eu pretendo configurar um simulador animado */
+.Sumiu{
+    display: none;
+}
+.MaeDeTodos2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3F2305;
+    background-size: cover;
+    height: 875px;
+}
+.MaeDeTodos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3F2305;
+    background-size: cover;
+    height: 875px;
+}
+
+.Caixa {
+    display: flex;
+    /* background-color: white; */
+    height: 780px;
+    width: 1600px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.CaixaComConteudo {
+    display: flex;
+    /* color: crimson; */
+    background-color: #E0E3B6;
+    height: 390px;
+    width: 400px;
+    margin: 10px;
+    border-radius: 30px;
+    box-shadow: -20px 10px 20px 3px black;
+}
+
+.TextoCaixa{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}

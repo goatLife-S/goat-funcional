@@ -4,75 +4,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Simulador.css">
+    <link rel="stylesheet" href="SimuladorEstilizado2.0.css">
     <title>Simulador Finaceiro</title>
 </head>
 
 <body>
+
     <div class="header">
 
         <div class="container">
             <h1>GOAT+</h1>
             <div class="navbar">
                 <ul>
-                    <a href="../pagina-inicial/Site.html" >
+                    <a href="../pagina-inicial/Site.html">
                         <li> Inicio </li>
                     </a>
                     <a href="#Simulador">
                         <li> Simulador </li>
                     </a>
-                 
-                    
+
+
                     <a href="../login/login.html">
                         <li> Login </li>
                     </a>
-                    
+
                     <a href="../cadastro/cadastro.html">
                         <li> Cadastro </li>
                     </a>
                 </ul>
-            
-            </div>
-        </div>
-    </div>
-    <section id="Simulador">
 
-        <div class="MaeDeTodos">
-            <div class="CaixaExplicacao">
-                
-                <h1 class="TituloComoFunciona">Resultado</h1>
-                
-                <div class="MensagemDeReposta" id="div_mensagem">
-                    
-                </div>
             </div>
-            <div class="CaixaTenteVoce">
-                
-                
-                
-                <h1 class="TextoTenteVoce">Tente você mesmo</h1>
-                
-                <div class="CaixaDaInputs">
-                    Insira a quantidade de caprinos dentro do seu Capril <input type="text" class="Input_dados" id="input_qtd_caprinos">
-                    <br>
-                    Preco médio de cada caprino dentro do capril <input type="text" class="Input_dados" name="" id="input_preco_caprino">
-                    <br>
-                    Peso médio do caprino ao abate <input type="text" class="Input_dados" name="" id="input_peso">
-                    <br>
-                    Preco média  da venda da carne por Kg <input type="text" class="Input_dados" id="input_preco_medio">
-                    <br>
-                </div>
-                
-                <button onclick="calcular()" class="btn">Simule aqui</button>
-            </div>
-        
         </div>
-    
     </div>
-</section>
-</body>
+    <div class="MaeDeTodos">
+
+        <div class="CaixaTenteVoce">
+
+
+
+            <h1 class="TextoTenteVoce">Tente você mesmo</h1>
+
+            <div class="CaixaDaInputs">
+
+                <p class="TextoInputs">Insira a quantidade de caprinos dentro do seu Capril</p>
+
+                <input type="text" class="Input_dados" id="input_qtd_caprinos">
+
+                <p class="TextoInputs">Preco médio de cada caprino dentro do capril</p>
+
+                <input type="text" class="Input_dados" name="" id="input_preco_caprino">
+
+                <p class="TextoInputs"> Peso médio do caprino ao abate</p>
+                <input type="text" class="Input_dados" name="" id="input_peso">
+
+
+                <p class="TextoInputs">Preco média da venda da carne por Kg</p>
+
+                <input type="text" required class="Input_dados" id="input_preco_medio">
+
+            </div>
+            <a href="#Simulador">
+                <button onclick="scrollToSection('Simulador')" class="btn"><p class="Simule">Simule aqui</p></button>
+            </a>
+        </div>
+
+
+    </div>
+        
+        <section id="Simulador">
+            <div id="SegundaTela" class="Sumiu">
+                <div class="Caixa">
+
+                    <div class="CaixaComConteudo">
+                        <div class="TextoCaixa">
+                            
+                            <h1>leite</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum corrupti delectus voluptatibus
+                        nam repellendus, tempore optio nesciunt quisquam ut doloremque autem debitis cum numquam
+                        aperiam laboriosam at maxime amet et. Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Esse, alias error iusto velit dolor reprehenderit modi autem soluta magnam quos harum
+                        culpa? Necessitatibus magnam rem vel eaque error nam aspernatur? Lorem, ipsum dolor sit amet
+                        consectetur adipisicing elit. Exercitationem ex cupiditate nam ullam ipsum earum fugiat
+                        omnis distinctio quo saepe. Distinctio qui voluptate tempore, vero rem saepe cupiditate
+                        sequi id? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellendus
+                        perferendis aliquam eveniet architecto quas molestiae aperiam blanditiis illum neque eaque
+                        accusamus eligendi error tenetur impedit repellat quo, labore debitis.</p>
+                    </div>
+            </div>
+            
+            
+            <div class="CaixaComConteudo">
+                <div class="TextoCaixa">
+                    
+                    <h1>Carne</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum corrupti delectus voluptatibus
+                        nam repellendus, tempore optio nesciunt quisquam ut doloremque autem debitis cum numquam
+                        aperiam laboriosam at maxime amet et. Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Esse, alias error iusto velit dolor reprehenderit modi autem soluta magnam quos harum
+                        culpa? Necessitatibus magnam rem vel eaque error nam aspernatur? Lorem, ipsum dolor sit amet
+                        consectetur adipisicing elit. Exercitationem ex cupiditate nam ullam ipsum earum fugiat
+                        omnis distinctio quo saepe. Distinctio qui voluptate tempore, vero rem saepe cupiditate
+                        sequi id? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellendus
+                        perferendis aliquam eveniet architecto quas molestiae aperiam blanditiis illum neque eaque
+                        accusamus eligendi error tenetur impedit repellat quo, labore debitis.</p>
+                    </div>
+                </div>
+                
+                
+                <div class="CaixaComConteudo">
+                    <div class="TextoCaixa">
+                        
+                        <h1>mortalidade</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum corrupti delectus voluptatibus
+                            nam repellendus, tempore optio nesciunt quisquam ut doloremque autem debitis cum numquam
+                            aperiam laboriosam at maxime amet et. Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Esse, alias error iusto velit dolor reprehenderit modi autem soluta magnam quos harum
+                        culpa? Necessitatibus magnam rem vel eaque error nam aspernatur? Lorem, ipsum dolor sit amet
+                        consectetur adipisicing elit. Exercitationem ex cupiditate nam ullam ipsum earum fugiat
+                        omnis distinctio quo saepe. Distinctio qui voluptate tempore, vero rem saepe cupiditate
+                        sequi id? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellendus
+                        perferendis aliquam eveniet architecto quas molestiae aperiam blanditiis illum neque eaque
+                        accusamus eligendi error tenetur impedit repellat quo, labore debitis.</p>
+                    </div>
+                </div>
+
+                <div class="CaixaComConteudo">
+                <div class="TextoCaixa">
+                    
+                    <h1>Como Chegamos a esse Calculo?</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum corrupti delectus voluptatibus
+                        nam repellendus, tempore optio nesciunt quisquam ut doloremque autem debitis cum numquam
+                        aperiam laboriosam at maxime amet et. Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Esse, alias error iusto velit dolor reprehenderit modi autem soluta magnam quos harum
+                        culpa? Necessitatibus magnam rem vel eaque error nam aspernatur? Lorem, ipsum dolor sit amet
+                        consectetur adipisicing elit. Exercitationem ex cupiditate nam ullam ipsum earum fugiat
+                        omnis distinctio quo saepe. Distinctio qui voluptate tempore, vero rem saepe cupiditate
+                        sequi id? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellendus
+                        perferendis aliquam eveniet architecto quas molestiae aperiam blanditiis illum neque eaque
+                        accusamus eligendi error tenetur impedit repellat quo, labore debitis.</p>
+                    </div>
+                </div>
+                
+                <div class="CaixaComConteudo">
+                    <div class="TextoCaixa">
+                        
+                        <h1>Como Chegamos a esse Calculo?</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum corrupti delectus voluptatibus
+                            nam repellendus, tempore optio nesciunt quisquam ut doloremque autem debitis cum numquam
+                            aperiam laboriosam at maxime amet et. Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Esse, alias error iusto velit dolor reprehenderit modi autem soluta magnam quos harum
+                            culpa? Necessitatibus magnam rem vel eaque error nam aspernatur? Lorem, ipsum dolor sit amet
+                        consectetur adipisicing elit. Exercitationem ex cupiditate nam ullam ipsum earum fugiat
+                        omnis distinctio quo saepe. Distinctio qui voluptate tempore, vero rem saepe cupiditate
+                        sequi id? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellendus
+                        perferendis aliquam eveniet architecto quas molestiae aperiam blanditiis illum neque eaque
+                        accusamus eligendi error tenetur impedit repellat quo, labore debitis.</p>
+                    </div>
+                </div>
+                
+                <div class="CaixaComConteudo ">
+                <div class="TextoCaixa">
+
+                    <h1>Como Chegamos a esse Calculo?</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum corrupti delectus voluptatibus
+                        nam repellendus, tempore optio nesciunt quisquam ut doloremque autem debitis cum numquam
+                        aperiam laboriosam at maxime amet et. Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Esse, alias error iusto velit dolor reprehenderit modi autem soluta magnam quos harum
+                        culpa? Necessitatibus magnam rem vel eaque error nam aspernatur? Lorem, ipsum dolor sit amet
+                        consectetur adipisicing elit. Exercitationem ex cupiditate nam ullam ipsum earum fugiat
+                        omnis distinctio quo saepe. Distinctio qui voluptate tempore, vero rem saepe cupiditate
+                        sequi id? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellendus
+                        perferendis aliquam eveniet architecto quas molestiae aperiam blanditiis illum neque eaque
+                        accusamus eligendi error tenetur impedit repellat quo, labore debitis.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+            
+            
+            
+        </section>
+
+    </body>
 
 </html>
+
+
+<script>
+    // Aqui eu estou criando uma função nde eu peço para que ela selecione o id do section
+    function scrollToSection(sectionId) {
+        var TelaResultado = document.getElementById("SegundaTela")
+
+        TelaResultado.classList.remove("Sumiu");
+        TelaResultado.classList.add("MaeDeTodos2");
+
+
+
+        // aqui eu estou criando uma variavel onde ela vai ficar responsável por indentificar no HTML o section que eu quero
+        var section = document.getElementById(sectionId);
+        // aqui eu estou pedindo que para após encontrar que ele vá até ele de forma suave
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        calcular()
+    }
+
+</script>
+
 <script>
     function calcular() {
         var qtd_caprinos = Number(input_qtd_caprinos.value); // qtd de caprinos em um Capril
@@ -93,6 +231,7 @@
         div_mensagem.innerHTML = `Com base na quantidade de caprinos no seu capril e na taxa de mortalidade atual de 20%, estimamos que as perdas mensais devido à taxa de mortalidade sejam de ${perdas_mortalidade_atual} caprinos. Após a implementação dos sensores de temperatura e umidade, esperamos reduzir essa taxa para 2%, resultando em perdas mensais estimadas de ${perdas_mortalizade_reduzida} caprinos. <br>
         Além disso, calculamos as perdas mensal em termos de valor total do rebanho. Com o valor total do seu rebanho estimado em R$${valor_caprino_capril}, as perdas mensais atuais devido à mortalidade representam aproximadamente R$${perdas_valor_atual}. Após a implementação dos sensores, esperamos reduzir essas perdas para R$${perdas_valor_reduzido}.<br>
         Também consideramos um potencial ganho com a venda de carne de caprinos. Com um peso total de carne produzido por mês de ${peso_total_carne} kg e um preço médio de venda de R$ ${preco_vendido_kg} por kg, o ganho atual pela venda da carne será de R$${valor_total_carne}, o lucro estimado com a venda de carne é de R$${lucro_carne}.`
+
 
 
 
