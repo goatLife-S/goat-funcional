@@ -204,7 +204,6 @@ li{
 
 .ContainerNeto2{
     display: flex;
-    padding: 30px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
