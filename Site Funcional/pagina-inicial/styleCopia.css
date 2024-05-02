@@ -295,7 +295,7 @@ text-shadow: #ffffff;
     display: flex;
     justify-content: end;
     padding: 10px;
-    margin: 10px;
+    margin: 0px;
     margin-top: 90px;
     width: 750px;
     height: 630px;
@@ -310,7 +310,7 @@ text-shadow: #ffffff;
 }
 .footer{
     height: 80px;
-    width: 1693px;
+    width: 99.9%;
     background-color: rgba(63, 35, 5, 1);
     padding: 1px;
 }
@@ -326,7 +326,11 @@ text-shadow: #ffffff;
     justify-content: center;
     color: #ffffff;
 }
-
+.Teste1{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
 
 html {
     scroll-behavior: smooth; /* Adiciona rolagem suave em todo o documento */
