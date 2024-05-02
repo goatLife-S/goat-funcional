@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOAT+ MONITORING</title>
     <link rel="stylesheet" href="styleCopia.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="JavaScript.js"></script>
 
 </head>
@@ -147,6 +148,50 @@
 </div>
 </body>
 <script>
+     ScrollReveal().reveal('.Box', {
+        duration: 1000,
+        opacity: 0,
+        distance: '100px',
+        interval: 200
+    })
+
+    ScrollReveal().reveal('.QuemSou', {
+        duration: 1000,
+        opacity: 0,
+        distance: '200px',
+        delay: 200,
+        interval: 200
+    })
+
+    ScrollReveal().reveal('.Imagem', {
+        duration: 1000,
+        opacity: 0,
+        distance: '200px',
+        origin: 'right',
+        interval: 200
+    })
+
+    ScrollReveal().reveal('.Goat', {
+        duration: 2000,
+        opacity: 0,
+        distance: '100px',
+    })
+
+    ScrollReveal().reveal('.Diagnostico', {
+        duration: 1000,
+        opacity: 0,
+        distance: '100px',
+        origin: 'right',
+        interval: 200
+    })
+
+    ScrollReveal().reveal('li', {
+        duration: 1000,
+        opacity: 0,
+        distance: '100px',
+        origin: 'right',
+        interval: 200
+    })
     // Aqui eu estou criando uma função nde eu peço para que ela selecione o id do section
     function scrollToSection(sectionId) {
         // aqui eu estou criando uma variavel onde ela vai ficar responsável por indentificar no HTML o section que eu quero
