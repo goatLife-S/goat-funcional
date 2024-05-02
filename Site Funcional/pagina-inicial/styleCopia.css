@@ -180,9 +180,9 @@ li{
 }
 .Imagem{
     margin-top: 50px;
-    margin-right: 100px;
+    /* margin-right: 100px; */
     margin-bottom: 50px;
-    width: 750px;
+    width: 660px;
     height: 650px;
 }
 .ImagemModelo{
@@ -193,9 +193,13 @@ li{
 }
 
 .ContainerNeto{
+    display: flex;
     width: 1000px;
-    margin-left: 100px;
-    align-items: flex-start;
+    /* margin-left: 100px; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
 }
 
 .ContainerNeto2{
@@ -306,7 +310,7 @@ text-shadow: #ffffff;
 }
 .footer{
     height: 80px;
-    width: 1855px;
+    width: 1693px;
     background-color: rgba(63, 35, 5, 1);
     padding: 1px;
 }
