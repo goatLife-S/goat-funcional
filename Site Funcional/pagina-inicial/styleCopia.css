@@ -10,6 +10,7 @@ body {
 
 ::-webkit-scrollbar {
     width: 10px; /* largura do scroll */
+    height: 10px;
 }
 ::-webkit-scrollbar-track {
     background: #527853; /* cor do fundo do track */
@@ -33,7 +34,7 @@ body {
     display: flex;
     text-align: center;
     width: 100%;
-    height: 100px ;
+    height: 70px ;
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -73,7 +74,7 @@ li{
 }
 
 .container{
-    height: 100px;
+    height: 70px;
     width: 100%;
     align-items: center;
     display: flex;
@@ -92,20 +93,19 @@ li{
     height: 800px;
 }
 .banner1{
-    /* background-image: url("../ImagensPlanoDeFundo/SobreNos.png"); */
-    background-color: #FCFFE0;
+    background-image: url(../ImagensPlanoDeFundo/sobre.png);
     background-repeat: no-repeat;
     height: 800px;
     color: rgb(0, 0, 0);
 }
 .banner2{
-    background-image: url("../ImagensPlanoDeFundo/ModeloDeNegocio.png");
+    background-image: url(../ImagensPlanoDeFundo/modelo.png);
     background-repeat: no-repeat;
     height: 800px;
     color: rgb(0, 0, 0);
 }
 .Chefe{
-    background-image: url("../ImagensPlanoDeFundo/TeladeContato.png");
+    background-image: url(../ImagensPlanoDeFundo/início.png);
     background-repeat: no-repeat;
     height: 800px;
     color: rgb(0, 0, 0);
@@ -122,9 +122,12 @@ li{
     justify-content: column;
     align-items: center;
      flex-direction: row; 
-     font-size: large;
-     
-    }
+     font-size: large; 
+}
+
+.banner1 .container1 .ContainerNeto {
+    background-color: #FCFFE0;
+}
     
     .banner2 .container2{
         /* justify-content: column; */
@@ -208,7 +211,7 @@ li{
 .ContainerNeto{
     display: flex;
     width: 100%;
-    /* margin-left: 100px; */
+    margin-left: 100px; 
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -229,22 +232,24 @@ li{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 430px;
+    width: 445px;
     height: 500px;
     font-size: 17px;
 }
-.Modelo{
-    /* flex-direction: column; */
-    /* justify-content: center; */
+
+
+.ContainerMaior1 .banner2 .container2 .ContainerNeto2 .Box .Modelo{
+    padding: 10px;
     width: 400px;
     height: 550px;
-    background-color: #e0e3b6;
+    background-color: #FCFFE0;
 }
 
 .TituloModelo{
     justify-content: center;
     color: #FFF;
-    margin-bottom: 80px;
+    margin-top: 50px;
+    margin-bottom: 70px;
 font-size: 40px;
 font-style: normal;
 font-weight: 500;
@@ -359,6 +364,11 @@ html {
     justify-content: space-around
     
 }
+
+.Chefe .ContainerS h1{
+    color: #ffffff;
+}
+
 .Chefe .ContainerS #input3{
     margin-top: 20px;
     width: 450px;
