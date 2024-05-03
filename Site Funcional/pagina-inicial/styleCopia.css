@@ -4,6 +4,21 @@ body {
     font-family: "Helvetica";
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 10px; /* largura do scroll */
+}
+::-webkit-scrollbar-track {
+    background: #527853; /* cor do fundo do track */
+}
+::-webkit-scrollbar-thumb {
+    background: #888; /* cor do thumb */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* cor do thumb quando hover */
 }
 
 .titulo {
@@ -22,7 +37,7 @@ body {
     margin: 0;
     padding: 0;
     text-decoration: none;
-    background-color: #e0e3b6;
+    background-color: #BACD92;
     position: fixed;
     
    
@@ -58,9 +73,11 @@ li{
 }
 
 .container{
+    height: 100px;
     width: 100%;
     align-items: center;
     display: flex;
+    z-index: 500;
 }
 .container1{
     justify-content: column-reverse;
@@ -70,12 +87,13 @@ li{
 
 .banner{
     /* background-image: url("../ImagensPlanoDeFundo/Tela1.png"); */
-    background-color: #0f4620;
+    background-color: #527853;
     background-repeat: no-repeat;
     height: 800px;
 }
 .banner1{
-    background-image: url("../ImagensPlanoDeFundo/SobreNos.png");
+    /* background-image: url("../ImagensPlanoDeFundo/SobreNos.png"); */
+    background-color: #FCFFE0;
     background-repeat: no-repeat;
     height: 800px;
     color: rgb(0, 0, 0);
