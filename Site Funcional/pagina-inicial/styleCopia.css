@@ -15,7 +15,7 @@ body {
     background: #527853; /* cor do fundo do track */
 }
 ::-webkit-scrollbar-thumb {
-    background: #888; /* cor do thumb */
+    background: #E0E3B6; /* cor do thumb */
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #555; /* cor do thumb quando hover */
@@ -87,8 +87,8 @@ li{
 
 .banner{
     /* background-image: url("../ImagensPlanoDeFundo/Tela1.png"); */
-    background-color: #527853;
-    background-repeat: no-repeat;
+    background: url(../ImagensPlanoDeFundo/início.png);
+    background-size: cover;
     height: 800px;
 }
 .banner1{
