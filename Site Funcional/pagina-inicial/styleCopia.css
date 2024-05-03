@@ -65,7 +65,7 @@ li{
 
 .navbar a:hover{
     color: darkgreen;
-    
+    transition: 0.3s;
 }
 
 .header {
@@ -367,6 +367,7 @@ html {
 
 .Chefe .ContainerS h1{
     color: #ffffff;
+
 }
 
 .Chefe .ContainerS #input3{
