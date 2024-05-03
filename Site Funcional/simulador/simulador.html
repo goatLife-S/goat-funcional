@@ -62,6 +62,14 @@
 
                 <input type="text" required class="Input_dados" id="input_preco_medio">
 
+                <p class="TextoInputs">Quantidade de venda de litros de leite por mês</p>
+
+                <input type="text" required class="Input_dados" id="input_litro_leite">
+
+                <p class="TextoInputs">Preco médio da venda do leite por litro</p>
+
+                <input type="text" required class="Input_dados" id="input_venda_leite">
+
             </div>
             <a href="#Simulador">
                 <button onclick="scrollToSection('Simulador')" class="btn"><p class="Simule">Simule aqui</p></button>
@@ -202,6 +210,12 @@
         var peso_total_carne = (qtd_caprinos * peso_medio).toFixed(0); // peso total de carne produzido no mês
         var valor_total_carne = (peso_total_carne * preco_vendido_kg).toFixed(2); // valor total da receita gerada pela venda da carne de caprinos no mês
         var lucro_carne = valor_total_carne + valor_total_carne * 0.15 //Lucro da venda da carne através da boa qualidade do animal
+        var litro_leite = input_litro_leite.value; // Qtd de litros de leite vendido por mes pelo usuario
+        var venda_leite = input_venda_leite.value; // Valor da venda do leite por litro 
+        var venda_litro_mes_atual = litro_leite * venda_leite; // Valor de venda mensal total, na quantidade de litros vendido por mes 
+        var venda_litro_mes_acrescimo = venda_litro_mes_atual + (venda_litro_mes_atual * 0.70); // Valor da venda mensal total depois da boa qualidade no animal.
+
+
 
         div_mensagem.innerHTML = `Com base na quantidade de caprinos no seu capril e na taxa de mortalidade atual de 20%, estimamos que as perdas mensais devido à taxa de mortalidade sejam de ${perdas_mortalidade_atual} caprinos. Após a implementação dos sensores de temperatura e umidade, esperamos reduzir essa taxa para 2%, resultando em perdas mensais estimadas de ${perdas_mortalizade_reduzida} caprinos. <br>
         Além disso, calculamos as perdas mensal em termos de valor total do rebanho. Com o valor total do seu rebanho estimado em R$${valor_caprino_capril}, as perdas mensais atuais devido à mortalidade representam aproximadamente R$${perdas_valor_atual}. Após a implementação dos sensores, esperamos reduzir essas perdas para R$${perdas_valor_reduzido}.<br>
