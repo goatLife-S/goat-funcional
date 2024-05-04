@@ -13,7 +13,8 @@ body {
     height: 100%;
     width: 100%;
     position: fixed;
-    background-image: url(../assets/login.png);
+    /* background-image: url(../assets/login.png); */
+    background-color: #4b6841;
     background-size: cover;
 }
 
@@ -21,7 +22,7 @@ body {
     width: 480px;
     height: 400px;
     padding: 0;
-    background-color: #F2EAD3;
+    background-color: #f0f0e4;
     display: flex;
     justify-content: center;
     margin-left: auto;

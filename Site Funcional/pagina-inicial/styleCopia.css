@@ -38,7 +38,7 @@ body {
     margin: 0;
     padding: 0;
     text-decoration: none;
-    background-color: #BACD92;
+    background-color: #d0d6c0;
     position: fixed;
     
    
@@ -88,7 +88,9 @@ li{
 
 .banner{
     /* background-image: url("../ImagensPlanoDeFundo/Tela1.png"); */
-    background: url(../ImagensPlanoDeFundo/início.png);
+     /* background: url(../ImagensPlanoDeFundo/Goat_logo.jpeg);  */
+    background-color: #133B2D; 
+    
     background-size: cover;
     height: 800px;
 }
@@ -98,8 +100,10 @@ li{
     height: 800px;
     color: rgb(0, 0, 0);
 }
-.banner2{
-    background-image: url(../ImagensPlanoDeFundo/modelo.png);
+.banner2{  /* modelo de negocio */
+    /* background-image: url(../ImagensPlanoDeFundo/sobre.png); */
+    background-color: #cac7a2;
+    
     background-repeat: no-repeat;
     height: 800px;
     color: rgb(0, 0, 0);
@@ -207,6 +211,13 @@ li{
     padding: 5px;
     flex-shrink: 0;
 }
+.container .ImagemFundo{
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    flex-shrink: 0;
+}
+
 
 .ContainerNeto{
     display: flex;
@@ -235,6 +246,7 @@ li{
     width: 445px;
     height: 500px;
     font-size: 17px;
+    color: black;
 }
 
 
@@ -243,11 +255,12 @@ li{
     width: 400px;
     height: 550px;
     background-color: #FCFFE0;
+    color: black;
 }
 
 .TituloModelo{
     justify-content: center;
-    color: #FFF;
+    color: black;
     margin-top: 50px;
     margin-bottom: 70px;
 font-size: 40px;
