@@ -13,7 +13,7 @@ body {
     width: 100%;
     position: absolute;
     /* background-image: url(../assets/cadastro.png); */
-    background-color: #4b6841;
+    background-color: #133B2D;
     background-size: cover;
 }
 
@@ -26,7 +26,7 @@ body {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 115px;
     box-shadow: 8px 8px 0px #DFD7BF;
     border-radius: 8px;
 }

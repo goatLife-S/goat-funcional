@@ -3,7 +3,8 @@
     height: 710px;
     display: flex;
     flex-direction: row;
-    background-image:url("./SimuladorFinaceiro.png");
+    /* background-image:url("./SimuladorFinaceiro.png"); */
+    background-color: #133B2D;
     background-size: cover;
 }
 

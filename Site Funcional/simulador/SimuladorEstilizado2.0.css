@@ -67,8 +67,8 @@ li {
     text-align: center;
     background-color: #E0E3B6;
     border-radius: 50px;
-    width: 670px;
-    height: 690px;
+    width: 789px;
+    height: 825px;
     box-shadow: -20px 20px 20px 10px #20201b
 }
 
@@ -139,7 +139,7 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #3F2305;
+    background-color: #133B2D;
     background-size: cover;
     height: 875px;
 }
