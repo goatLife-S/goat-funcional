@@ -273,6 +273,7 @@ li{
     height: 500px;
     font-size: 15px;
     color: black;
+    text-align: center;
 }
 
 
@@ -481,6 +482,7 @@ html {
     margin-right: 88px;
     margin-left: 80px;
     margin-bottom: 30px;
+    margin-top: 20px;
 
 
 }
@@ -539,7 +541,11 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row-reverse;    
+    flex-direction: row-reverse;       
+}
+
+.CaixaMaior1 p{
+    margin-top: -15px;
 }
 
 .CaixaMenor{
