@@ -88,17 +88,8 @@
 
                             
                             
-                            <h1>leite</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum corrupti delectus voluptatibus
-                        nam repellendus, tempore optio nesciunt quisquam ut doloremque autem debitis cum numquam
-                        aperiam laboriosam at maxime amet et. Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Esse, alias error iusto velit dolor reprehenderit modi autem soluta magnam quos harum
-                        culpa? Necessitatibus magnam rem vel eaque error nam aspernatur? Lorem, ipsum dolor sit amet
-                        consectetur adipisicing elit. Exercitationem ex cupiditate nam ullam ipsum earum fugiat
-                        omnis distinctio quo saepe. Distinctio qui voluptate tempore, vero rem saepe cupiditate
-                        sequi id? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellendus
-                        perferendis aliquam eveniet architecto quas molestiae aperiam blanditiis illum neque eaque
-                        accusamus eligendi error tenetur impedit repellat quo, labore debitis.</p>
+                            <h1>Leite</h1>
+                            <div id="div_leite">  </div>
                     </div>
             </div>
             
@@ -106,35 +97,17 @@
             <div class="CaixaComConteudo">
                 <div class="TextoCaixa">
                     
-                    <h1>Carne</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum corrupti delectus voluptatibus
-                        nam repellendus, tempore optio nesciunt quisquam ut doloremque autem debitis cum numquam
-                        aperiam laboriosam at maxime amet et. Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Esse, alias error iusto velit dolor reprehenderit modi autem soluta magnam quos harum
-                        culpa? Necessitatibus magnam rem vel eaque error nam aspernatur? Lorem, ipsum dolor sit amet
-                        consectetur adipisicing elit. Exercitationem ex cupiditate nam ullam ipsum earum fugiat
-                        omnis distinctio quo saepe. Distinctio qui voluptate tempore, vero rem saepe cupiditate
-                        sequi id? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellendus
-                        perferendis aliquam eveniet architecto quas molestiae aperiam blanditiis illum neque eaque
-                        accusamus eligendi error tenetur impedit repellat quo, labore debitis.</p>
-                    </div>
+                    <h1>Mortalidade</h1>
+                    <div id="div_mortalidade"></div>
                 </div>
-                
-                
-                <div class="CaixaComConteudo">
-                    <div class="TextoCaixa">
-                        
-                        <h1>mortalidade</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum corrupti delectus voluptatibus
-                            nam repellendus, tempore optio nesciunt quisquam ut doloremque autem debitis cum numquam
-                            aperiam laboriosam at maxime amet et. Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Esse, alias error iusto velit dolor reprehenderit modi autem soluta magnam quos harum
-                        culpa? Necessitatibus magnam rem vel eaque error nam aspernatur? Lorem, ipsum dolor sit amet
-                        consectetur adipisicing elit. Exercitationem ex cupiditate nam ullam ipsum earum fugiat
-                        omnis distinctio quo saepe. Distinctio qui voluptate tempore, vero rem saepe cupiditate
-                        sequi id? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus repellendus
-                        perferendis aliquam eveniet architecto quas molestiae aperiam blanditiis illum neque eaque
-                        accusamus eligendi error tenetur impedit repellat quo, labore debitis.</p>
+            </div>
+            
+            
+            <div class="CaixaComConteudo">
+                <div class="TextoCaixa">
+                    
+                    <h1>Carne</h1>
+                    <div id="div_carne"></div>
                     </div>
                 </div>
 
@@ -142,7 +115,7 @@
                 <div class="TextoCaixa">
                     
                     <h1>Como Chegamos a esse Calculo?</h1>
-                    <p>Para calcular o valor do leite, multiplicamos a quantidade mensal de leite produzido pelo preço médio de venda, que é de R$ 1,50 por litro. Isso nos dá uma estimativa do valor total da receita com a venda de leite. Além disso, aplicamos um acréscimo de 70% a essa receita, o que representa um aumento significativo na renda proveniente da produção de leite em seu capril.</p>
+                    <p>Para calcular o valor do leite, multiplicamos a quantidade mensal de litros de leite produzido pelo preço médio da venda, que é de R$ 1,50 por litro. Isso nos dá uma estimativa do valor total da receita com a venda de leite. Além disso, aplicamos um acréscimo de 70% a essa receita, o que representa um aumento significativo na renda proveniente da produção de leite em seu capril.</p>
                     </div>
                 </div>
                 
@@ -190,6 +163,34 @@
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         
         calcular()
+
+        var qtd_caprinos = Number(input_qtd_caprinos.value); // qtd de caprinos em um Capril
+        var preco_medio_caprinos = Number(input_preco_caprino.value) // preco medio do rebanho no capril
+        var valor_caprino_capril = (qtd_caprinos * preco_medio_caprinos).toFixed(2); //valor total do rabanho do capril
+        var taxa_mortalidade = 0.20; // taxa de mortalidade em um capril pelo mal gereniciamento do capril
+        var taxa_mortalidade_reduzida = 0.20 - 0.18; // taxa de mortalidade reduzida com o nosso sensor de temperatura e umidade
+        var perdas_mortalidade_atual = (taxa_mortalidade * qtd_caprinos).toFixed(0); // perda mortalidade atual do cliente
+        var perdas_mortalidade_reduzida = (taxa_mortalidade_reduzida * qtd_caprinos).toFixed(0); // perda mortalidade reduzida depois da instalação dos sensores 
+        var perdas_valor_atual = (taxa_mortalidade * valor_caprino_capril).toFixed(2); // perda no valor total do rebanho do capril
+        var perdas_valor_reduzido = (taxa_mortalidade_reduzida * valor_caprino_capril).toFixed(2); // perda reduzida no valor total do capril
+        var peso_medio = Number(input_peso.value); // peso medio a cada abate do caprino mensal
+        var preco_vendido_kg = Number(input_preco_medio.value).toFixed(2); // preço medio da venda da carne do caprino que o cliente deseja vender
+        var peso_total_carne =  peso_medio; // peso total de carne produzido no mês
+        var valor_total_carne = (peso_total_carne * preco_vendido_kg); // valor total da receita gerada pela venda da carne de caprinos no mês
+        var lucro_carne = valor_total_carne + valor_total_carne * 0.15 //Lucro da venda da carne através da boa qualidade do animal
+        var litro_leite = input_litro_leite.value; // Qtd de litros de leite vendido por mes pelo usuario
+        var venda_leite = input_venda_leite.value; // Valor da venda do leite por litro 
+        var venda_litro_mes_atual = litro_leite * venda_leite; // Valor de venda mensal total, na quantidade de litros vendido por mes 
+        var venda_litro_mes_acrescimo = venda_litro_mes_atual + (venda_litro_mes_atual * 0.70); // Valor da venda mensal total depois da boa qualidade no animal.
+
+
+        
+        div_leite.innerHTML = `Venda atual por litro de leite R$${venda_litro_mes_atual}. <br> Já com o nosso sistema, garantimos o aumento em até R$${venda_litro_mes_acrescimo}.`
+
+        div_carne.innerHTML = `Venda atual por kilo de carne R$${valor_total_carne}. <br> Já com o nosso sistema, garantimos o aumento em até R$${lucro_carne}`
+
+        div_mortalidade.innerHTML = `A taxa de mortalidade sem o nosso monitoramento, pode resultar em perdas de até ${perdas_mortalidade_atual} caprinos, porém com todas as nossas funcionalidades, poderá chegar a perdas de somente ${perdas_mortalidade_reduzida} caprinos.`
+
     }
 
 </script>
@@ -202,7 +203,7 @@
         var taxa_mortalidade = 0.20; // taxa de mortalidade em um capril pelo mal gereniciamento do capril
         var taxa_mortalidade_reduzida = 0.20 - 0.18; // taxa de mortalidade reduzida com o nosso sensor de temperatura e umidade
         var perdas_mortalidade_atual = (taxa_mortalidade * qtd_caprinos).toFixed(0); // perda mortalidade atual do cliente
-        var perdas_mortalizade_reduzida = (taxa_mortalidade_reduzida * qtd_caprinos).toFixed(0); // perda mortalidade reduzida depois da instalação dos sensores 
+        var perdas_mortalidade_reduzida = (taxa_mortalidade_reduzida * qtd_caprinos).toFixed(0); // perda mortalidade reduzida depois da instalação dos sensores 
         var perdas_valor_atual = (taxa_mortalidade * valor_caprino_capril).toFixed(2); // perda no valor total do rebanho do capril
         var perdas_valor_reduzido = (taxa_mortalidade_reduzida * valor_caprino_capril).toFixed(2); // perda reduzida no valor total do capril
         var peso_medio = Number(input_peso.value); // peso medio a cada abate do caprino mensal
@@ -217,12 +218,7 @@
 
 
 
-        div_mensagem.innerHTML = `Com base na quantidade de caprinos no seu capril e na taxa de mortalidade atual de 20%, estimamos que as perdas mensais devido à taxa de mortalidade sejam de ${perdas_mortalidade_atual} caprinos. Após a implementação dos sensores de temperatura e umidade, esperamos reduzir essa taxa para 2%, resultando em perdas mensais estimadas de ${perdas_mortalizade_reduzida} caprinos. <br>
-        Além disso, calculamos as perdas mensal em termos de valor total do rebanho. Com o valor total do seu rebanho estimado em R$${valor_caprino_capril}, as perdas mensais atuais devido à mortalidade representam aproximadamente R$${perdas_valor_atual}. Após a implementação dos sensores, esperamos reduzir essas perdas para R$${perdas_valor_reduzido}.<br>
-        Também consideramos um potencial ganho com a venda de carne de caprinos. Com um peso total de carne produzido por mês de ${peso_total_carne} kg e um preço médio de venda de R$ ${preco_vendido_kg} por kg, o ganho atual pela venda da carne será de R$${valor_total_carne}, o lucro estimado com a venda de carne é de R$${lucro_carne}.`
-
-
-
+        
 
     }
 </script>

@@ -51,7 +51,7 @@
 
                 <span>
                     <input type="password" id="input_senha" placeholder="Senha" class="inputs2">
-                    <input type="password" id="input_confirma" placeholder="Confirme a Senha" class="inputs2">
+                    <input type="password" id="input_confirmaS" placeholder="Confirme a Senha" class="inputs2">
                 </span>
 
 
@@ -68,3 +68,45 @@
 </body>
 
 </html>
+<script>
+    function cadastrar() {
+        var razao = ipt_razao.value;
+        var nome = ipt_nome.value;
+        var email = input_email.value;
+        var telefone = Number(input_telefone.value);
+        var cnpj =Number (input_cnpj.value);
+        var cep = Number(input_cep.value);
+        var numeroend = Number(input_numeroend.value);
+        var complemento = input_complemento.value;
+        var senha = input_senha.value;
+        var confirmaS = input_confirmaS.value;
+        var indice_arroba = email.indexOf('@');
+        var indice_ponto = email.indexOf('.');
+
+
+        if (razao == '' || nome == '' || email == '' || telefone == '' || cnpj == '' || cep == '' || numeroend == '' || complemento == '' || senha == '' || confirmaS == '') {
+            alert('Preencha todos os Campos')
+        } else if (nome.length <= 6) {
+            alert('Comprimento do nome está pequeno')
+        } else if (indice_arroba == -1 || indice_ponto == -1) {
+            alert('Deve conter @ e .')
+        } else if (senha < 6) {
+            alert('Senha deve ser maior que 6 caracteres')
+        } else if (senha != confirmaS) {
+            alert('As senhas devem ser iguais.')
+        } else if (cnpj != 13) {
+            alert('CNPJ deve conter 14 dígitos')
+        } else if (telefone != 11){
+            alert('Telefone deve conter 11 dígitos')
+        } else {
+            div_msg.innerHTML = `Cadastro Correto!`
+            setTimeout(function () {
+                // Redireciona para a página do login
+                window.location.href = "../login/login.html";
+            }, 2000);
+            return;
+        }
+
+
+    }
+</script>

@@ -19,7 +19,7 @@ body {
 }
 
 .containerInteiro .divLista {
-    background-color: #3F2305;
+    background-color: #133B2D;
     padding: 0;
     height: 100%;
     width: 5%;
@@ -161,7 +161,7 @@ body {
     position: absolute;
     bottom: 3rem;
     border-radius: 8px;
-    background-color: white;
+    background-color: rgb(57, 218, 92);
     box-shadow: 1px 1px 4px black;
     background-image: url(../assets/Error.png);
     background-repeat: no-repeat;
