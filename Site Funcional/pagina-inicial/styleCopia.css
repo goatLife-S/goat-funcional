@@ -1,6 +1,6 @@
 body {
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
     font-family: "Helvetica";
     height: 100%;
     width: 100%;
@@ -38,7 +38,7 @@ body {
     margin: 0;
     padding: 0;
     text-decoration: none;
-    background-color: #d0d6c0;
+    background-color: #FCFFE0;
     position: fixed;
     
    
@@ -88,7 +88,7 @@ li{
 .banner{
     /* background-image: url("../ImagensPlanoDeFundo/Tela1.png"); */
      /* background: url(../ImagensPlanoDeFundo/Goat_logo.jpeg);  */
-    background-color: #133B2D; 
+    background-image: url(../ImagensPlanoDeFundo/inicio.png); 
     
     background-size: cover;
     height: 800px;
@@ -98,7 +98,7 @@ li{
     background-repeat: no-repeat;
     height: 800px;
     color: rgb(0, 0, 0);
-    background-color: #bcb68b;
+    background-image: url(../ImagensPlanoDeFundo/sobre.png);
 }
 .banner2{  /* modelo de negocio */
     /* background-image: url(../ImagensPlanoDeFundo/sobre.png); */
@@ -178,15 +178,11 @@ li{
     .Goat{
         display: flex;
         text-align: center ;
-        /* flex-direction: column; */
         justify-content: center;
         align-items: center;
         color: #fbf9f9;
-        font-family: Yusei MogiC;
         font-weight: 500;
-        height: 500;
-        font-size: 150px;
-        font-weight: 500;
+        font-size: 100px;
         margin-bottom: 5px;
         margin-top: 1px;
 }
@@ -206,12 +202,12 @@ li{
 
 .SobreNos{
     width: 250px;
-    margin-left: 30px;
+    margin-left: 80px;
     
 }
 
 .TextoSobre{
-    font-size: 30px;
+    font-size: 20px;
     width: 90%;
     margin-left: 50px;
     
@@ -230,6 +226,7 @@ li{
     height: 230px;
     padding: 5px;
     flex-shrink: 0;
+    border-radius: 8px;
 }
 .container .ImagemFundo{
     width: 100%;
@@ -242,12 +239,14 @@ li{
 .ContainerNeto{
     display: flex;
     width: 100%;
-    
     margin-left: 100px; 
     align-items: center;
     justify-content: center;
     text-align: center;
     flex-direction: column;
+    padding: 30px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .ContainerNeto2{
@@ -255,12 +254,8 @@ li{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 101%;
-    height: 100vh;
+    height: 95vh;
     text-align: center;
-    /* background-color: #133B2D; */
-    
-    
 }
 
 
@@ -268,11 +263,11 @@ li{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 545px;
-    height: 500px;
+    width: 454px;
     font-size: 15px;
     color: black;
     text-align: center;
+    height: 100px;
 }
 
 .box:hover{
@@ -291,10 +286,17 @@ li{
 .ContainerMaior1 .banner2 .container2 .ContainerNeto2 .Box .Modelo{
     padding: 10px;
     width: 400px;
-    height: 580px;
+    height: 500px;
     background-color: #FCFFE0;
     color: black;
+    border-radius: 8px;
+    transition: 250ms;
     
+}
+
+.ContainerMaior1 .banner2 .container2 .ContainerNeto2 .Box .Modelo:hover{
+    transform: scale(1.1);
+    transition: 250ms;
 }
 
 .TituloModelo{
@@ -302,13 +304,10 @@ li{
     color: white;
 background-color: #133B2D;
     align-items: center;
-    margin-bottom: 70px;
     font-size: 40px;
-    font-weight: 50;
-    text-shadow: #ffffff;
-    margin-left: 30px;
+    text-shadow: #ffffff;;
     width: 400px;
-
+margin-bottom: 0;
 } 
 
 
@@ -329,15 +328,15 @@ background-color: #133B2D;
     margin-left: 150px;
 }
 .InputTexto{
-    width: 639px;
-    height: 383px;
-    flex-shrink: 0;
+    width: 450px;
+    height: 270px;
     border-radius: 8px;
     border: 4px solid #000;
     background: #FFF;
     padding: 50px;
     text-align:start;
-    font-size: large;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 .InputTexto1{
     width: 356px;
@@ -381,7 +380,30 @@ background-color: #133B2D;
     
 }
 
+.btnContato{
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    border-radius: 8px;
+    height: 40px;
+    width: 100%;
+    background-color: #228B22;
+    color: white;
+    font-weight: 900;
+    border-style: none;
+    box-shadow: 6px 6px 0px #115D33; 
+    margin-bottom: 29px;
+    transition: 250ms;
+}
+
+.btnContato:hover{
+    transform: scale(1.1);
+    transition: 250ms;
+}
+
 .footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 50px;
     width: 100%;
     background-color: #cabfa2;
@@ -399,7 +421,7 @@ background-color: #133B2D;
     display: flex;
     justify-content: center;
     color: #000;
-    font-size: 20px;
+    font-size: 15px;
 }
 .Teste1{
     display: flex;
@@ -413,8 +435,7 @@ html {
   
 
   .Chefe{
-      
-      width: 100%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -427,8 +448,8 @@ html {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-around
-    
+    justify-content: space-around;
+    background-image: url(../ImagensPlanoDeFundo/contato.png);
 }
 
 .Chefe .ContainerS h1{
@@ -442,6 +463,11 @@ html {
     height: 229px;
     margin-bottom: 120px ;
     
+}
+
+.Chefe .ContainerS .tituloContato{
+    display: flex;
+    justify-content: center;
 }
 
 .Chefe .ContainerS #input2{
@@ -471,23 +497,27 @@ html {
     height: 100%;
     display: flex;
     flex-direction: column;
+    background-image: url(../ImagensPlanoDeFundo/boxess.png);
 }
 .caixa1{
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    background-color: #e7e7d6;
-    width: 307px;
-    width: 254px;
+    background-color: #FCFFE0;
+    width: 170px;
     align-items: center;
-    border-radius: 30px;
-    flex-wrap: wrap;
-    margin-right: 88px;
-    margin-left: 80px;
-    margin-bottom: 30px;
-    margin-top: 20px;
+    padding: 50px;
+    border: 2px solid black;
+    border-radius: 8px;
+    transition: 250ms;
+}
 
+.caixa1:hover{
+    transform: scale(1.1);
+    transition: 250ms;
+}
 
+.caixa1 h1{
+    font-size: 25px;
 }
 
 .conteudo{
@@ -498,10 +528,10 @@ html {
     
 }
 .imagem1{
-    height: 150px;
-    width: 171px;
+    width: 90px;
     border-radius: 15px;
     padding: 1%;
+    margin-top: 10px;
 
 }
 .pai{
@@ -511,6 +541,7 @@ html {
     width: 100%;
     height: 65%;
     align-items: center; 
+    margin: 50px auto 50px;
 }
 .ContainerMaior2 {
     display: flex;
@@ -522,29 +553,39 @@ html {
 
 .Modelo12{
     display: flex;
-    background-color: #133B2D;
+    background-image: url(../ImagensPlanoDeFundo/inicio.png);
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 .CaixaGrande{
     display: flex;
-    height: 500px;
     background-color: #e7e7d6;
     border-radius: 15px;
     width: 80%;
+    justify-content: space-evenly;
 }
 
 .CaixaMaior{
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center; 
+    padding: 30px;
+    background-color: #FCFFE0;
+    border: 2px solid black;
+    border-radius: 8px;   
 }
+
 .CaixaMaior1{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row-reverse;       
+    flex-direction: row-reverse;
+    padding: 30px;  
+    background-color: #FCFFE0;
+    border: 2px solid black;
+    border-radius: 8px;       
 }
 
 .CaixaMaior1 p{
@@ -554,21 +595,42 @@ html {
 .CaixaMenor{
     display: flex;
     flex-direction: column;
-    
+    margin: 10px;
 }
-.Imagem2{
-    width: 650px;
-    height: 460px;
-    border-radius: 15px;
+.CaixaMaior .Imagem2{
+    width: 200px;
+    height: 150px;
+    border-style: none;
+    transition: 250ms;
+}
+
+.CaixaMaior .Imagem2:hover{
+    transform: scale(1.1);
+    transition: 250ms;
+}
+
+.CaixaMaior1 .Imagem2{
+    width: 200px;
+    height: 150px;
+    border-style: none;
+    transition: 250ms;
+}
+
+.CaixaMaior1 .Imagem2:hover{
+    transform: scale(1.1);
+    transition: 250ms;
 }
 
 .CaixaMenor p {
-    font-size: 28px;
+    font-size: 20px;
+    margin: 0;
+    padding: 10px;
 }
 
 .CaixaMenor h1{
     text-align: center;
-    font-size: 50px;
+    font-size: 30px;
+    margin-top: 0;
 }
 
 .CaixaImperGrande{
