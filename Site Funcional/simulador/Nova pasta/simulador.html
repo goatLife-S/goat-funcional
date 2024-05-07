@@ -23,10 +23,7 @@
                         <li> Simulador </li>
                     </a>
 
-
-                    <a href="../login/login.html">
-                        <li> Login </li>
-                    </a>
+                    <li><a href="../login/login.html">Login</a></li>
 
                     <a href="../cadastro/cadastro.html">
                         <li> Cadastro </li>
@@ -35,117 +32,119 @@
 
             </div>
         </div>
-    </div>
-    <div class="MaeDeTodos">
+    </div> 
+    <section id="Simulador">
 
-        <div class="CaixaTenteVoce">
-
-
-
-            <h1 class="TextoTenteVoce">Tente você mesmo</h1>
-
-            <div class="CaixaDaInputs">
-
-                <p class="TextoInputs">Insira a quantidade de caprinos dentro do seu Capril</p>
-
-                <input type="text" class="Input_dados" id="input_qtd_caprinos">
-
-                <p class="TextoInputs">Preco médio de cada caprino dentro do capril</p>
-
-                <input type="text" class="Input_dados" name="" id="input_preco_caprino">
-
-                <p class="TextoInputs"> Peso médio do caprino ao abate</p>
-                <input type="text" class="Input_dados" name="" id="input_peso">
-
-
-                <p class="TextoInputs">Preco média da venda da carne por Kg</p>
-
-                <input type="text" required class="Input_dados" id="input_preco_medio">
-
-                <p class="TextoInputs">Quantidade de venda de litros de leite por mês</p>
-
-                <input type="text" required class="Input_dados" id="input_litro_leite">
-
-                <p class="TextoInputs">Preco médio da venda do leite por litro</p>
-
-                <input type="text" required class="Input_dados" id="input_venda_leite">
-
+        <div class="MaeDeTodos">
+            
+            <div class="CaixaTenteVoce">
+                
+                
+                
+                <h1 class="TextoTenteVoce">Tente você mesmo</h1>
+                
+                <div class="CaixaDaInputs">
+                    
+                    <p class="TextoInputs">Insira a quantidade de caprinos dentro do seu Capril</p>
+                    
+                    <input type="text" class="Input_dados" id="input_qtd_caprinos">
+                    
+                    <p class="TextoInputs">Preco médio de cada caprino dentro do capril</p>
+                    
+                    <input type="text" class="Input_dados" name="" id="input_preco_caprino">
+                    
+                    <p class="TextoInputs"> Peso médio do caprino ao abate</p>
+                    <input type="text" class="Input_dados" name="" id="input_peso">
+                    
+                    
+                    <p class="TextoInputs">Preco média da venda da carne por Kg</p>
+                    
+                    <input type="text" required class="Input_dados" id="input_preco_medio">
+                    
+                    <p class="TextoInputs">Quantidade de venda de litros de leite por mês</p>
+                    
+                    <input type="text" required class="Input_dados" id="input_litro_leite">
+                    
+                    <p class="TextoInputs">Preco médio da venda do leite por litro</p>
+                    
+                    <input type="text" required class="Input_dados" id="input_venda_leite">
+                    
+                </div>
+                <a href="#Simulador">
+                    <button onclick="scrollToSection('Simulador')" class="btn"><p class="Simule">Simule aqui</p></button>
+                </a>
             </div>
-            <a href="#Simulador">
-                <button onclick="scrollToSection('Simulador')" class="btn"><p class="Simule">Simule aqui</p></button>
-            </a>
+            
+            
         </div>
-
-
-    </div>
         
-        <section id="Simulador">
             <div id="SegundaTela" class="Sumiu">
                 <div class="Caixa">
-
+                    
                     <div class="CaixaComConteudo">
                         <div class="TextoCaixa">
-
+                            
                             
                             
                             <h1>Leite</h1>
                             <div id="div_leite">  </div>
+                        </div>
                     </div>
-            </div>
-            
-            
-            <div class="CaixaComConteudo">
-                <div class="TextoCaixa">
                     
-                    <h1>Mortalidade</h1>
-                    <div id="div_mortalidade"></div>
+                    
+                    <div class="CaixaComConteudo">
+                        <div class="TextoCaixa">
+                            
+                            <h1>Mortalidade</h1>
+                            <div id="div_mortalidade"></div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="CaixaComConteudo">
+                        <div class="TextoCaixa">
+                            
+                            <h1>Carne</h1>
+                            <div id="div_carne"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="CaixaComConteudo">
+                        <div class="TextoCaixa">
+                            
+                            <h1>Como Chegamos a esse Calculo?</h1>
+                            <p>Para calcular o valor do leite, multiplicamos a quantidade mensal de litros de leite produzido pelo preço médio da venda, que é de R$ 1,50 por litro. Isso nos dá uma estimativa do valor total da receita com a venda de leite. Além disso, aplicamos um acréscimo de 70% a essa receita, o que representa um aumento significativo na renda proveniente da produção de leite em seu capril.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="CaixaComConteudo">
+                        <div class="TextoCaixa">
+                            
+                            <h1>Como Chegamos a esse Calculo?</h1>
+                            <p>Para calcular o valor da carne de caprinos, multiplicamos o peso médio mensal da carne pelo preço médio de venda informado pelo cliente. Isso nos dá o valor total da receita gerada pela venda da carne de caprinos no mês.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="CaixaComConteudo ">
+                        <div class="TextoCaixa">
+                            
+                            <h1>Como Chegamos a esse Calculo?</h1>
+                            <p>Para calcular as perdas devido à mortalidade, utilizamos uma taxa inicial de 20%. Isso significa que, sem medidas preventivas, esperamos perder uma certa quantidade de caprinos a cada mês. Após a implementação dos sensores de temperatura e umidade, esperamos reduzir essa taxa para 2%, o que resultará em menos perdas para o seu negócio.</p>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
-            
-            
-            <div class="CaixaComConteudo">
-                <div class="TextoCaixa">
-                    
-                    <h1>Carne</h1>
-                    <div id="div_carne"></div>
-                    </div>
-                </div>
-
-                <div class="CaixaComConteudo">
-                <div class="TextoCaixa">
-                    
-                    <h1>Como Chegamos a esse Calculo?</h1>
-                    <p>Para calcular o valor do leite, multiplicamos a quantidade mensal de litros de leite produzido pelo preço médio da venda, que é de R$ 1,50 por litro. Isso nos dá uma estimativa do valor total da receita com a venda de leite. Além disso, aplicamos um acréscimo de 70% a essa receita, o que representa um aumento significativo na renda proveniente da produção de leite em seu capril.</p>
-                    </div>
-                </div>
-                
-                <div class="CaixaComConteudo">
-                    <div class="TextoCaixa">
-                        
-                        <h1>Como Chegamos a esse Calculo?</h1>
-                        <p>Para calcular o valor da carne de caprinos, multiplicamos o peso médio mensal da carne pelo preço médio de venda informado pelo cliente. Isso nos dá o valor total da receita gerada pela venda da carne de caprinos no mês.</p>
-                    </div>
-                </div>
-                
-                <div class="CaixaComConteudo ">
-                <div class="TextoCaixa">
-
-                    <h1>Como Chegamos a esse Calculo?</h1>
-                    <p>Para calcular as perdas devido à mortalidade, utilizamos uma taxa inicial de 20%. Isso significa que, sem medidas preventivas, esperamos perder uma certa quantidade de caprinos a cada mês. Após a implementação dos sensores de temperatura e umidade, esperamos reduzir essa taxa para 2%, o que resultará em menos perdas para o seu negócio.</p>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-            
             
             
         </section>
-
+            
+        </section>
+        
     </body>
-
-</html>
-
+    
+    </html>
+    
 
 <script>
     // Aqui eu estou criando uma função nde eu peço para que ela selecione o id do section
