@@ -53,17 +53,11 @@
                 
             </section>
             <div id="carne" class=" Sumir">
-                <h1>Calculos Sobre a Carne</h1>
-                <p class="TextoInputs">Insira a quantidade de caprinos dentro do seu Capril</p>
-                <input type="text" class="Input_dados" id="input_qtd_caprinos">
                 
-                <p class="TextoInputs">Preço médio de cada caprino dentro do capril</p>
-                <input type="text" class="Input_dados" id="input_preco_caprino">
-                
-                <p class="TextoInputs">Peso médio do caprino ao abate</p>
+                <p class="TextoInputs">Peso médio mensal do caprino (em Kg)</p>
                 <input type="text" class="Input_dados" id="input_peso">
                 
-                <p class="TextoInputs">Preço média da venda da carne por Kg</p>
+                <p class="TextoInputs">Valor médio da venda da carne mensal (por Kg)</p>
                 <input type="text" required class="Input_dados" id="input_preco_medio">
                 
                 <br>
@@ -71,17 +65,12 @@
             </div>
             
             <div id="Leite" class="Sumir">
-                <h1>Calculos Sobre o Leite</h1>
-                <p class="TextoInputs">Insira a quantidade de caprinos dentro do seu Capril</p>
-            <input type="text" class="Input_dados" id="input_qtd_caprinos_leite">
-
-            <p class="TextoInputs">Preço médio de cada caprino dentro do capril</p>
-            <input type="text" class="Input_dados" id="input_preco_caprino_leite">
+                <h1>Leite</h1>
             
-            <p class="TextoInputs">Quantidade de venda de litros de leite por mês</p>
+            <p class="TextoInputs">Quantidade de litros de leite vendidos por mês</p>
             <input type="text" required class="Input_dados" id="input_litro_leite_leite">
             
-            <p class="TextoInputs">Preço médio da venda do leite por litro</p>
+            <p class="TextoInputs">Preço médio da venda do leite (em L)</p>
             <input type="text" required class="Input_dados" id="input_venda_leite_leite">
             <br>
             <button class="botao" onclick="CalculoLeite()">Simular</button>
@@ -89,13 +78,13 @@
         
         
         <div id="Resultado" class="Sumir ">
-            <h1>Resultado do Calculos</h1>
+            <h1>Resultado do cálculo</h1>
             <div id="TelaLeite" class="Sumir">
-                <h1>Resultado Leite</h1>
+                <h1>Leite:</h1>
                 <div id="div_resultadoLeite"></div>
             </div>
             <div id="TelaCarne" class="Sumir">
-                <h1>Resultado Carne</h1>
+                <h1>Carne:</h1>
                 <div id="div_resultadoCarne"></div>
             </div>
         </div>
@@ -134,8 +123,7 @@
         
         function CalculoLeite() {
             var TelaLeite = document.getElementById("TelaLeite")
-            var QtdCaprinos = Number(input_qtd_caprinos_leite.value);
-            var PrecoCaprino = Number(input_preco_caprino_leite.value);
+
             var LitrosLeites = Number(input_litro_leite_leite.value);
             var ValorLeite = Number(input_venda_leite_leite.value)
             
@@ -151,13 +139,13 @@
             
             div_resultadoLeite.innerHTML = `<p>
             Litros de Leite Produzidos:
-            ${litro_leite}<br>
-            Valor da Venda do Leite:
-            ${venda_leite}<br>
-            Lucro do mês sem a GOAT+:
-            ${venda_litro_mes_atual}<br>
-            Lucro do mês com a GOAT+
-            ${venda_litro_mes_acrescimo}<br>
+            ${litro_leite}L<br>
+            Valor da Venda do Leite: R$
+            ${venda_leite},00<br>
+            Lucro do mês sem a GOAT+: R$
+            ${venda_litro_mes_atual},00<br>
+            Lucro do mês com a GOAT+: R$
+            ${venda_litro_mes_acrescimo},00<br>
             </p>    `
             
         }
@@ -165,11 +153,9 @@
             div_resultadoCarne.innerHtml = ``
             var TelaCarne = document.getElementById("TelaCarne")
             // Cálculos relacionados à venda de carne
-            var QtdCaprinos = Number(input_qtd_caprinos.value);
             var peso_medio = Number(input_peso.value);
             var preco_vendido_kg = Number(input_preco_medio.value).toFixed(2);
-            var peso_total_carne = (QtdCaprinos * peso_medio).toFixed(0);
-            var valor_total_carne = (peso_total_carne * preco_vendido_kg).toFixed(2);
+            var valor_total_carne = (peso_medio * preco_vendido_kg);
             var lucro_carne = valor_total_carne + valor_total_carne * 0.15;
             
 
@@ -180,18 +166,14 @@
             TelaCarne.classList.add("TestCaixaLeite")
 
             div_resultadoCarne.innerHTML = `<p>
-            Quantidade de Caprinos
-           ${QtdCaprinos}<br>
-           Peso medio do Caprino
-           ${peso_medio} Kgs<br>
-           Preço a ser Vendido Por Kg
+           Peso médio do caprino:
+           ${peso_medio} Kg<br>
+           Preço a ser vendido (por Kg)
            R$${preco_vendido_kg}<br>
-           Peso Total de Carne
-           ${peso_total_carne} Kgs<br>
-           Valor Total de Carne
-           R$${valor_total_carne}<br>
-           Rendimento Obtido com GOAT+
-           R$${lucro_carne}
+           Valor total da carne:
+           R$${valor_total_carne},00<br>
+           Rendimento obtido com GOAT+:
+           R$${lucro_carne},00
             </p>
             `
         }

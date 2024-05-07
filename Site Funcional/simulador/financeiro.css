@@ -23,8 +23,7 @@ body{
     text-decoration: none;
     background-color: #d0d6c0;
     position: fixed;
-    
-   
+    z-index: 1;
 }
 ul{
    
@@ -60,7 +59,7 @@ li{
     display: flex;
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -79,6 +78,7 @@ li{
     box-shadow: 8px 8px 0px #DFD7BF;
     animation-duration: 1s;
     animation-name: slidein;
+    padding: 20px 0;
 }
 
 .containerInteiro .containerBotao .opcao1{
@@ -88,6 +88,12 @@ li{
     background-size: cover;
     border: 1px solid black;
     border-radius: 8px;
+    transition: 250ms;
+}
+
+.containerInteiro .containerBotao .opcao1:hover{
+transform: scale(1.1);
+transition: 250ms;
 }
 
 .containerInteiro .containerBotao .opcao2{
@@ -97,7 +103,13 @@ li{
     background-size: cover;
     border: 1px solid black;
     border-radius: 8px;
+    transition: 250ms;
 }
+
+.containerInteiro .containerBotao .opcao2:hover{
+    transform: scale(1.1);
+    transition: 250ms;
+    }
 
 .containerInteiro .containerInputs{
     display: flex;
@@ -108,7 +120,11 @@ li{
     box-shadow: 8px 8px 0px #DFD7BF;
     border-radius: 8px;
     height: 50%;
-    padding: 40px;
+    padding: 63px 10px;
+}
+
+.containerInteiro .containerInputs h1{
+    font-size: 20px;
 }
 
 .containerInteiro .containerInputs2{
@@ -120,7 +136,11 @@ li{
     box-shadow: 8px 8px 0px #DFD7BF;
     border-radius: 8px;
     height: 50%;
-    padding: 40px;
+    padding: 63px 10px;
+}
+
+.containerInteiro .containerInputs2 h1{
+    font-size: 20px;
 }
 
 .containerInteiro .containerInputs .TextoInputs{
@@ -207,12 +227,13 @@ li{
 .CaixaMaior{
     display: flex;
     flex-direction: column;
+    padding: 50px;
 }
 
 
 .ConteudoCaixa{
     display:flex;
-    font-size: 25px;
+    font-size: 22px;
 }
 .TestCaixaMaior{
     display: flex;
@@ -222,17 +243,22 @@ li{
     flex-wrap: wrap;
     align-items: center;
     width: 25%;
-    height: 87%;
+    height: 82%;
     flex-wrap: nowrap;
     justify-content: center;
     box-shadow: 8px 8px 0px #DFD7BF;
-    margin-top: 40px;
+    margin-top: 63px;
     animation-duration: 1s;
     animation-name: slidein;
     animation-duration: 1s;
     animation-name: slidein;
+    border-radius: 8px;
+    padding: 0 10px;
 }
 
+.TestCaixaMaior h1{
+font-size: 25px;
+}
 
 .TestCaixaLeite{
     display: flex;
