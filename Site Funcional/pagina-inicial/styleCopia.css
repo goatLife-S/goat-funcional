@@ -98,7 +98,7 @@ li{
     background-repeat: no-repeat;
     height: 800px;
     color: rgb(0, 0, 0);
-    background-image: url(../ImagensPlanoDeFundo/sobre.png);
+    background-image: url(../ImagensPlanoDeFundo/modelo.png);
 }
 .banner2{  /* modelo de negocio */
     /* background-image: url(../ImagensPlanoDeFundo/sobre.png); */
@@ -406,7 +406,7 @@ margin-bottom: 0;
     align-items: center;
     height: 50px;
     width: 100%;
-    background-color: #cabfa2;
+    background-color: #FCFFE0;
    
 }
 .metade1{
@@ -449,7 +449,7 @@ html {
     flex-direction: row;
     width: 100%;
     justify-content: space-around;
-    background-image: url(../ImagensPlanoDeFundo/contato.png);
+    background-image: url(../ImagensPlanoDeFundo/inicio.png);
 }
 
 .Chefe .ContainerS h1{
@@ -497,7 +497,7 @@ html {
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-image: url(../ImagensPlanoDeFundo/boxess.png);
+    background-image: url(../ImagensPlanoDeFundo/modelo.png);
 }
 .caixa1{
     display: flex;
@@ -506,7 +506,7 @@ html {
     width: 170px;
     align-items: center;
     padding: 50px;
-    border: 2px solid black;
+    border: 2px solid #133B2D;
     border-radius: 8px;
     transition: 250ms;
 }
@@ -573,7 +573,7 @@ html {
     align-items: center; 
     padding: 30px;
     background-color: #FCFFE0;
-    border: 2px solid black;
+    border: 2px solid #133B2D;
     border-radius: 8px;   
 }
 
@@ -584,7 +584,7 @@ html {
     flex-direction: row-reverse;
     padding: 30px;  
     background-color: #FCFFE0;
-    border: 2px solid black;
+    border: 2px solid #133B2D;
     border-radius: 8px;       
 }
 
