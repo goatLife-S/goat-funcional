@@ -88,13 +88,11 @@
 
 
         if (razao == '' || nome == '' || email == '' || telefone == '' || cnpj == '' || cep == '' || numeroend == '' || complemento == '' || senha == '' || confirmaS == '') {
-            alert('Preencha todos os Campos')
-        } else if (nome.length <= 6) {
-            alert('Comprimento do nome está pequeno')
+            alert('Preencha todos os campos.')
         } else if (indice_arroba == -1 || indice_ponto == -1) {
-            alert('Deve conter @ e .')
+            alert('E-mail deve conter "@" e "."')
         } else if (senha <= 6) {
-            alert('Senha deve ser maior que 6 caracteres')
+            alert('Senha deve ser maior que 6 caractéres')
         } else if (senha != confirmaS) {
             alert('As senhas devem ser iguais.')
         } else if (cnpj <= 13) {
