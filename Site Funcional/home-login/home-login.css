@@ -1,0 +1,185 @@
+@font-face {
+    font-family: Helvetica, sans-serif;
+    src: url(../assets/fonts/Helvetica.ttf);
+}
+
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+.containerInteiro {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-image: url(../assets/funcional.png);
+    background-size: cover
+}
+
+.containerInteiro .divLista {
+    background-color: #133B2D;
+    padding: 0;
+    height: 100%;
+    width: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.containerInteiro .divLista .lista {
+    list-style: none;
+    padding: 0;
+    margin-right: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.containerInteiro .divLista .lista .icones {
+    height: 100px;
+}
+
+.containerInteiro .containerDashboard {
+    display: flex;
+    height: 450px;
+    width: 600px;
+    border-radius: 8px;
+    flex-direction: column;
+    background-color: #F2EAD3;
+    box-shadow: 1px 1px 4px black;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerInteiro .container2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerInteiro .containerDashboard .capris{
+    height: 90%;
+    width: 90%;
+    display: flex;
+}
+
+.containerInteiro .container2 .containerDashboard .capris .capril1{
+    background-color: #228B22;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    margin-right: 20px;
+}
+
+.containerInteiro .container2 .containerDashboard .capris .capril2{
+    background-color: #228B22;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    margin-right: 20px;
+}
+
+.containerInteiro .container2 .containerDashboard .capris .capril3{
+    background-color: #228B22;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    margin-right: 20px;
+}
+
+.containerInteiro .containerDashboard .capris .tooltip{
+    text-align: center;
+    position: absolute;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    left: 429px;
+    top: 63px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 250ms ease;
+}
+
+.containerInteiro .containerDashboard .capris .tooltip::before{
+    content: "";
+    position: absolute;
+    border: 15px solid;
+    border-color: #000 #0000 #0000 #0000;
+    top: 35px;
+    left: 16px;
+}
+
+.containerInteiro .containerDashboard .capris .tooltip2{
+    text-align: center;
+    position: absolute;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    left: 480px;
+    top: 64px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 250ms ease;
+}
+
+.containerInteiro .containerDashboard .capris .tooltip2::before{
+    content: "";
+    position: absolute;
+    border: 15px solid;
+    border-color: #000 #0000 #0000 #0000;
+    top: 33px;
+    left: 16px;
+}
+
+.containerInteiro .containerDashboard .capris .tooltip3{
+    text-align: center;
+    position: absolute;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    top: 64px;
+    left: 530px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 250ms ease;
+}
+
+.containerInteiro .containerDashboard .capris .tooltip3::before{
+    content: "";
+    position: absolute;
+    border: 15px solid;
+    border-color: #000 #0000 #0000 #0000;
+    top: 33px;
+    left: 16px;
+}
+
+.containerInteiro .containerDashboard .capris .capril1:hover ~ .tooltip{
+    visibility: visible;
+    opacity: 0.8;
+}
+
+.containerInteiro .containerDashboard .capris .capril2:hover ~ .tooltip2{
+    visibility: visible;
+    opacity: 0.8;
+}
+
+.containerInteiro .containerDashboard .capris .capril3:hover ~ .tooltip3{
+    visibility: visible;
+    opacity: 0.8;
+}
+
+
+
+
