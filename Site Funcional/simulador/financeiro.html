@@ -5,33 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="financeiro.css" />
-    <title>Simulador financeiro</title>
+    <title>GOAT+ MONITORING | Simulador</title>
 </head>
 
 <body>
-    <div class="header">
-
-        <div class="container">
-            <div class="navbar">
-                <ul>
-                    <a href="../pagina-inicial/Site.html">
-                        <li> Inicio </li>
-                    </a>
-                    <a href="#Simulador">
-                        <li> Simulador </li>
-                    </a>
-
-                    <li><a href="../login/login.html">Login</a></li>
-
-                    <a href="../cadastro/cadastro.html">
-                        <li> Cadastro </li>
-                    </a>
-                </ul>
-
-            </div>
-        </div>
-    </div>  
     <div class="containerInteiro">
+        <img onclick="back()" src="../ImagensPlanoDeFundo/BackWhite.png" id="back" height="60px" width="60px">
         <div id="ComoFunciona" class="CaixaGrande">
             <div class="CaixaMaior">
                 <h1>Como Funciona</h1>
@@ -70,7 +49,7 @@
             <p class="TextoInputs">Quantidade de litros de leite vendidos por mês</p>
             <input type="text" required class="Input_dados" id="input_litro_leite_leite">
             
-            <p class="TextoInputs">Preço médio da venda do leite (em L)</p>
+            <p class="TextoInputs">Preço médio da venda do litro do leite (em R$)</p>
             <input type="text" required class="Input_dados" id="input_venda_leite_leite">
             <br>
             <button class="botao" onclick="CalculoLeite()">Simular</button>
@@ -215,6 +194,10 @@
         div_mensagem.innerHTML = `Com base na quantidade de caprinos no seu capril e na taxa de mortalidade atual de 20%, estimamos que as perdas mensais devido à taxa de mortalidade sejam de ${perdas_mortalidade_atual} caprinos. Após a implementação dos sensores de temperatura e umidade, esperamos reduzir essa taxa para 2%, resultando em perdas mensais estimadas de ${perdas_mortalizade_reduzida} caprinos. <br>
         Além disso, calculamos as perdas mensal em termos de valor total do rebanho. Com o valor total do seu rebanho estimado em R$${valor_caprino_capril}, as perdas mensais atuais devido à mortalidade representam aproximadamente R$${perdas_valor_atual}. Após a implementação dos sensores, esperamos reduzir essas perdas para R$${perdas_valor_reduzido}.<br>
         Também consideramos um potencial ganho com a venda de carne de caprinos. Com um peso total de carne produzido por mês de ${peso_total_carne} kg e um preço médio de venda de R$ ${preco_vendido_kg} por kg, o ganho atual pela venda da carne será de R$${valor_total_carne}, o lucro estimado com a venda de carne é de R$${lucro_carne}.`;
+    }
+
+    function back(){
+        window.location.href = "../pagina-inicial/Site.html";
     }
 </script>
 

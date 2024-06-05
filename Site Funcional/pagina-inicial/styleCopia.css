@@ -13,7 +13,7 @@ body {
     height: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: #527853; /* cor do fundo do track */
+    background: #133B2D; /* cor do fundo do track */
 }
 ::-webkit-scrollbar-thumb {
     background: #E0E3B6; /* cor do thumb */
@@ -40,6 +40,7 @@ body {
     text-decoration: none;
     background-color: #FCFFE0;
     position: fixed;
+    transition: 250ms;
     
    
 }
@@ -63,8 +64,8 @@ li{
 }
 
 .navbar a:hover{
-    color: darkgreen;
-    transition: 0.3s;
+    color: #133B2D;
+    transition: 250ms;
 }
 
 .header {
@@ -88,7 +89,7 @@ li{
 .banner{
     /* background-image: url("../ImagensPlanoDeFundo/Tela1.png"); */
      /* background: url(../ImagensPlanoDeFundo/Goat_logo.jpeg);  */
-    background-image: url(../ImagensPlanoDeFundo/inicio.png); 
+    background-image: url(../ImagensPlanoDeFundo/inicioplus.png); 
     
     background-size: cover;
     height: 800px;
@@ -175,6 +176,7 @@ li{
         display: flex;
         flex-direction: row;
         font-size: 40px;
+        margin-bottom: 0;
     }
     
     .Goat{
@@ -342,24 +344,28 @@ margin-bottom: 0;
 }
 .InputTexto1{
     width: 356px;
-    height: 68px;
+    height: 60px;
     border-radius: 8px;
     border: 4px solid #000;
     background: #FFF;
+    padding: 5px;
 }
 .InputTexto2{
     width: 276px;
-    height: 68px;
+    height: 60px;
     flex-shrink: 0;
     margin-right: 15px;
     border-radius: 8px;
     border: 4px solid #000;
     background: #FFF;
+    padding: 5px;
 }
 .BoxInput{
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    justify-content: center;
+    align-items: center;
 }
 .ImagemContato{
     display: flex;
@@ -387,7 +393,7 @@ margin-bottom: 0;
     font-size: 20px;
     border-radius: 8px;
     height: 40px;
-    width: 100%;
+    width: 80%;
     background-color: #228B22;
     color: white;
     font-weight: 900;
@@ -398,7 +404,8 @@ margin-bottom: 0;
 }
 
 .btnContato:hover{
-    transform: scale(1.1);
+    background-color: #115D33;
+    box-shadow: 6px 6px 0px #228B22 ;
     transition: 250ms;
 }
 
@@ -451,7 +458,7 @@ html {
     flex-direction: row;
     width: 100%;
     justify-content: space-around;
-    background-image: url(../ImagensPlanoDeFundo/inicio.png);
+    background-image: url(../ImagensPlanoDeFundo/inicioplus.png);
     background-size: cover;
 }
 
@@ -474,11 +481,11 @@ html {
 }
 
 .Chefe .ContainerS #input2{
-    width: 240px;
+    width: 231px;
 }
 
 .Chefe .ContainerS span{
-    width: 450px;
+    width: 420px;
     flex-wrap:nowrap;
 }
 
