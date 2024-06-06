@@ -106,6 +106,7 @@ body {
     visibility: hidden;
     opacity: 0;
     transition: opacity 250ms ease;
+    font-weight: 400;
 }
 
 .containerInteiro .containerDashboard .capris .tooltip::before{
@@ -130,6 +131,7 @@ body {
     visibility: hidden;
     opacity: 0;
     transition: opacity 250ms ease;
+    font-weight: 400;
 }
 
 .containerInteiro .containerDashboard .capris .tooltip2::before{
@@ -154,6 +156,7 @@ body {
     visibility: hidden;
     opacity: 0;
     transition: opacity 250ms ease;
+    font-weight: 400;
 }
 
 .containerInteiro .containerDashboard .capris .tooltip3::before{
@@ -168,16 +171,19 @@ body {
 .containerInteiro .containerDashboard .capris .capril1:hover ~ .tooltip{
     visibility: visible;
     opacity: 0.8;
+    cursor: pointer;
 }
 
 .containerInteiro .containerDashboard .capris .capril2:hover ~ .tooltip2{
     visibility: visible;
     opacity: 0.8;
+    cursor: pointer;
 }
 
 .containerInteiro .containerDashboard .capris .capril3:hover ~ .tooltip3{
     visibility: visible;
     opacity: 0.8;
+    cursor: pointer;
 }
 
 
