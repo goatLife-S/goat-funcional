@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOAT+ | Login</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="containerInteiro">
+        <div class="container">
+            <div class="titulo">
+                <a href="../pagina-inicial/index.html">
+                <h2>GOAT+</h2>
+            </a>
+            </div>
+            <div class="container2">
+                <h3>Login</h3>
+                <input type="text" id="ipt_email" placeholder="Login" class="inputs" autocomplete="off">
+                <br>
+                <input type="password" id="ipt_senha" placeholder="Senha" class="inputs" autocomplete="off">
+                <br>
+                <div id="div_mensagem"></div>
+                <span>Ainda não é cliente GOAT+?<span><a href="cadastro.html" id="conta"> Crie uma
+                            conta.</a></span></span>
+                <br>
+                <button class="botao" onclick="entrar()">Entrar</button>
+                <div class="sombra">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+var tentativas = 3;
+
+function entrar() {
+
+        var emailVar = ipt_email.value;
+        var senhaVar = ipt_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            console.log = "(Mensagem de erro para todos os campos em branco)";
+            return false;
+        }
+    
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.emailVar;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.idFazenda;
+                    
+
+                    setTimeout(function () {
+                        window.location = "home-login.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+    
+   
+
+</script>

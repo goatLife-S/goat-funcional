@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOAT+ | Cadastro</title>
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="containerInteiro">
+        <div class="container">
+            <div class="titulo">
+                <h2><a href="../pagina-inicial/index.html" id="goat">GOAT+</a></h2>
+            </div>
+            <div class="container2">
+                <h3>Cadastro</h3>
+                <span>
+                    <input type="text" id="ipt_razao" placeholder="Razão Social" class="inputs2" autocomplete="off">
+
+                    <input type="text" id="ipt_nome" placeholder="Nome Fantasia" class="inputs2" autocomplete="off">
+                </span>
+
+                <br>
+                <span>
+                    <input type="text" id="input_email" placeholder="Email" class="inputs" autocomplete="off">
+                </span>
+
+
+                <br>
+
+                <span>
+                    <input type="text" id="input_telefone" placeholder="Telefone" class="inputs2" autocomplete="off">
+                    <input type="text" id="input_cnpj" placeholder="CNPJ" class="inputs2" autocomplete="off">
+                </span>
+
+                <br>
+
+                <span>
+                    <input type="text" id="input_cep" placeholder="CEP" class="inputs" autocomplete="off">
+                </span>
+
+                <br>
+
+                <span>
+                    <input type="text" id="input_numeroend" placeholder="Numero do endereço" class="inputs2"
+                        autocomplete="off">
+                    <input type="text" id="input_complemento" placeholder="Complemento" class="inputs2"
+                        autocomplete="off">
+                </span>
+                <br>
+
+                <span>
+                    <input type="password" id="input_senha" placeholder="Senha" class="inputs2" autocomplete="off">
+                    <input type="password" id="input_confirmaS" placeholder="Confirme a Senha" class="inputs2"
+                        autocomplete="off">
+                </span>
+
+
+                <br>
+                <button class="botao" onclick="cadastrar()">Cadastrar</button>
+
+                <a href="../login/login.html">
+                </a>
+                <div id="div_msg"></div>
+                <div class="sombra">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    function cadastrar() {
+        var razaoVar = ipt_razao.value;
+        var nomeVar = ipt_nome.value;
+        var emailVar = input_email.value;
+        var telefoneVar = Number(input_telefone.value);
+        var cnpjVar = Number(input_cnpj.value);
+        var cepVar = Number(input_cep.value);
+        var numeroendVar = Number(input_numeroend.value);
+        var complementoVar = input_complemento.value;
+        var senhaVar = input_senha.value;
+        var confirmaSVar = input_confirmaS.value;
+        var indice_arroba = emailVar.indexOf('@');
+        var indice_ponto = emailVar.indexOf('.');
+
+
+        if (razaoVar == '' || nomeVar == '' || emailVar == '' || telefoneVar == '' || cnpjVar == '' || cepVar == '' || numeroendVar == '' || complementoVar == '' || senhaVar == '' || confirmaSVar == '') {
+            alert('Preencha todos os campos.')
+        } else if (indice_arroba == -1 || indice_ponto == -1) {
+            alert('E-mail deve conter "@" e "."')
+        } else if (senhaVar.length <= 6) {
+            alert('Senha deve ser maior que 6 caracteres.')
+        } else if (senhaVar != confirmaSVar) {
+            alert('As senhas devem ser iguais.')
+        } else if (cnpjVar.length <= 13) {
+            alert('CNPJ deve conter 14 dígitos')
+        } else if (telefoneVar.length <= 11) {
+            alert('Telefone deve conter 11 dígitos')
+        } else {
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    razaoServer: razaoVar,
+                    nomeServer: nomeVar,
+                    emailServer: emailVar,
+                    telefoneServer: telefoneVar,
+                    cnpjServer: cnpjVar,
+                    cepServer: cepVar,
+                    numeroendServer: numeroendVar,
+                    complementoServer: complementoVar,
+                    senhaServer: senhaVar
+                }),
+            })
+                .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+
+                    if (resposta.ok) {
+                        setTimeout(() => {
+                            window.location = "login.html";
+                        }, "2000");
+
+                    } else {
+                        throw "Houve um erro ao tentar realizar o cadastro!";
+                    }
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                });
+
+            return false;
+        }
+    }
+
+
+
+</script>
