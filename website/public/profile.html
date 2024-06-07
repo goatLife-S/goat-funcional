@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/profile.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="shortcut icon" href="./assets" type="image/x-icon">
+    <title>GOAT+ | Cadastro do Funcionário</title>
+</head>
+
+<body>
+    <div class="containerInteiro">
+
+        <div class="divLista">
+            <ul class="lista">
+                <a href="home-login.html"><li class="icones"><img width="30px" src="./assets/Menu.png"></li></a>
+                <a href=""><li class="icones"><img width="30px" src="./assets/Person.png"></li></a>
+                <a href="dashboard.html"><li class="icones"><img width="30px" src="./assets/Increase Profits.png"></li></a>
+                <a href="cadastro-func.html"><li class="icones"><img width="30px" src="./assets/adduser.png"></li></a>
+                <a href="./index.html"></a><li class="icones"><img width="30px" src="./assets/Logout.png"></li></a>
+            </ul>
+        </div>
+        <div class="container2">
+            <div class="containerDashboard">
+                <div class="divInfos">
+                    <div class="titulo">
+                        <h3>Informações do usuário</h3>
+                    </div>
+                    <div class="infos">
+                        <span class="info">Nome: Fazenda Caprinos <span onclick="alterar_nome()" class="alterar">Alterar</span></span>
+                        <span class="info">CNPJ: 57.160.750/0001-48 <span onclick="alterar_cnpj()"  class="alterar">Alterar</span></span>
+                        <span class="info">CEP: 01234-056 <span onclick="alterar_cep()" class="alterar">Alterar</span></span>
+                        <span class="info">E-mail: fazendacaprinos@gmail.com <span onclick="alterar_email()"  class="alterar">Alterar</span></span>
+                    </div>
+                </div>
+                <div id="nome" class="divAlterar">
+                    <div class="tituloAlterar">
+                        <h3>Alterar nome</h3>
+                    </div>
+                    <div class="formAlterar">
+                        <input class="inputs" type="text" id="ipt_nome" placeholder="Novo nome">
+                        <span>
+                            <input class="inputs" type="text" id="ipt_senha" placeholder="Senha">
+                            <input class="inputs" type="text" id="ipt_confirma" placeholder="Confirma">
+                        </span>
+                    </div>
+                    <div class="botao">
+                        <button id="btnAlterar">Alterar</button>
+                    </div>
+                </div>
+                <div id="email" class="divAlterar">
+                    <div class="tituloAlterar">
+                        <h3>Alterar e-mail</h3>
+                    </div>
+                    <div class="formAlterar">
+                        <input class="inputs" type="text" id="ipt_email" placeholder="Novo e-mail">
+                        <span>
+                            <input class="inputs" type="text" id="ipt_senha" placeholder="Senha">
+                            <input class="inputs" type="text" id="ipt_confirma" placeholder="Confirma">
+                        </span>
+                    </div>
+                    <div class="botao">
+                        <button id="btnAlterar">Alterar</button>
+                    </div>
+                </div>
+                <div id="cnpj" class="divAlterar">
+                    <div class="tituloAlterar">
+                        <h3>Alterar CNPJ</h3>
+                    </div>
+                    <div class="formAlterar">
+                        <input class="inputs" type="text" id="ipt_cnpj" placeholder="Novo CNPJ">
+                        <span>
+                            <input class="inputs" type="text" id="ipt_senha" placeholder="Senha">
+                            <input class="inputs" type="text" id="ipt_confirma" placeholder="Confirma">
+                        </span>
+                    </div>
+                    <div class="botao">
+                        <button id="btnAlterar">Alterar</button>
+                    </div>
+                </div>
+                <div id="cep" class="divAlterar">
+                    <div class="tituloAlterar">
+                        <h3>Alterar CEP</h3>
+                    </div>
+                    <div class="formAlterar">
+                        <input class="inputs" type="text" id="ipt_cep" placeholder="Novo CEP">
+                        <input class="inputs" type="text" id="ipt_numero" placeholder="Novo número">
+                        <input class="inputs" type="text" id="ipt_complemento" placeholder="Novo complemento">
+                        <span>
+                            <input class="inputs" type="text" id="ipt_senha" placeholder="Senha">
+                            <input class="inputs" type="text" id="ipt_confirma" placeholder="Confirma">
+                        </span>
+                    </div>
+                    <div class="botao">
+                        <button id="btnAlterar">Alterar</button>
+                    </div>
+                </div>
+                <div id="senha" class="divAlterar">
+                    <div class="tituloAlterar">
+                        <h3>Alterar senha</h3>
+                    </div>
+                    <div class="formAlterar">
+                        <input class="inputs" type="text" id="ipt_novaSenha" placeholder="Nova senha">
+                        <span>
+                            <input class="inputs" type="text" id="ipt_senha" placeholder="Senha antiga">
+                            <input class="inputs" type="text" id="ipt_confirma" placeholder="Confirma senha antiga">
+                        </span>
+                    </div>
+                    <div class="botao">
+                        <button id="btnAlterar">Alterar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function alterar_nome(){
+
+        if (email.style.display == "flex"){
+            email.style.display == "none";
+        } else if (cnpj.style.display == "flex"){
+            cnpj.style.display == "none";
+        } else if (cep.style.display == "flex"){
+            cep.style.display == "none";
+        } else if (senha.style.display == "flex"){
+            senha.style.display == "none";
+        } else {
+            nome.style.display = "flex";
+        }
+        
+    }
+
+    function alterar_email(){
+        
+        if (nome.style.display == "flex"){
+            nome.style.display == "none";
+        } else if (cnpj.style.display == "flex"){
+            cnpj.style.display == "none";
+        } else if (cep.style.display == "flex"){
+            cep.style.display == "none";
+        } else if (senha.style.display == "flex"){
+            senha.style.display == "none";
+        } else {
+            email.style.display = "flex";
+        }
+    }
+
+    function alterar_cnpj(){
+
+        if (nome.style.display == "flex"){
+            nome.style.display == "none";
+        } else if (cep.style.display == "flex"){
+            cep.style.display == "none";
+        } else if (email.style.display == "flex"){
+            email.style.display == "none";
+        } else if (senha.style.display == "flex"){
+            senha.style.display == "none";
+        } else {
+            cnpj.style.display = "flex";
+        }
+        
+    }
+
+    function alterar_cep(){
+
+        if (nome.style.display == "flex"){
+            nome.style.display == "none";
+        } else if (cnpj.style.display == "flex"){
+            cnpj.style.display == "none";
+        } else if (email.style.display == "flex"){
+            email.style.display == "none";
+        } else if (senha.style.display == "flex"){
+            senha.style.display == "none";
+        } else {
+            cep.style.display = "flex";
+        }
+
+        
+    }
+
+    function alterar_senha(){
+
+        if (nome.style.display == "flex"){
+            nome.style.display == "none";
+        } else if (cnpj.style.display == "flex"){
+            cnpj.style.display == "none";
+        } else if (email.style.display == "flex"){
+            email.style.display == "none";
+        } else if (cep.style.display == "flex"){
+            cep.style.display == "none";
+        } else {
+            senha.style.display = "flex";
+        }
+        
+    }
+</script>
