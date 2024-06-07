@@ -8,7 +8,7 @@ body{
     width: 100%;
     height: 100%;
     font-family: Helvetica, sans-serif;
-    background-image: url(../ImagensPlanoDeFundo/inicioplus.png);
+    background-image: url(../assets/inicioplus.png);
 }
 
 
@@ -42,7 +42,7 @@ body{
 .containerInteiro .containerBotao .opcao1{
     height: 100px;
     width: 100px;
-    background-image: url(./carne.jpg);
+    background-image: url(../assets/carne.jpg);
     background-size: cover;
     border: 1px solid black;
     border-radius: 8px;
@@ -57,7 +57,7 @@ transition: 250ms;
 .containerInteiro .containerBotao .opcao2{
     height: 100px;
     width: 100px;
-    background-image: url(./leite.jpg);
+    background-image: url(../assets/leite.jpg);
     background-size: cover;
     border: 1px solid black;
     border-radius: 8px;

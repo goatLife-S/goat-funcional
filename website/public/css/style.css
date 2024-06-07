@@ -89,7 +89,7 @@ li{
 .banner{
     /* background-image: url("../ImagensPlanoDeFundo/Tela1.png"); */
      /* background: url(../ImagensPlanoDeFundo/Goat_logo.jpeg);  */
-    background-image: url(../ImagensPlanoDeFundo/inicioplus.png); 
+    background-image: url(../assets/inicioplus.png); 
     
     background-size: cover;
     height: 800px;
@@ -99,7 +99,7 @@ li{
     background-repeat: no-repeat;
     height: 800px;
     color: rgb(0, 0, 0);
-    background-image: url(../ImagensPlanoDeFundo/modelo.png);
+    background-image: url(../assets/modelo.png);
     background-size: cover;
 
 }
@@ -458,7 +458,7 @@ html {
     flex-direction: row;
     width: 100%;
     justify-content: space-around;
-    background-image: url(../ImagensPlanoDeFundo/inicioplus.png);
+    background-image: url(../assets/inicioplus.png);
     background-size: cover;
 }
 
@@ -507,7 +507,7 @@ html {
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-image: url(../ImagensPlanoDeFundo/modelo.png);
+    background-image: url(../assets/modelo.png);
     background-size: cover;
 }
 .caixa1{
@@ -564,7 +564,7 @@ html {
 
 .Modelo12{
     display: flex;
-    background-image: url(../ImagensPlanoDeFundo/inicio.png);
+    background-image: url(../assets/inicio.png);
     background-size: cover;
     flex-direction: column;
     align-items: center;
