@@ -238,6 +238,71 @@
         </div>
     </section>
 
+    <section id="financeiro">
+        <div class="ContainerMaeFinanceiro">
+            <h1 class="TituloFinanceiro">Simulador Financeiro</h1>
+            <div class="containerInteiro">
+                <div id="ComoFunciona" class="CaixaGrandeFinanceiro">
+                    <div class="CaixaMaiorFinanceiro">
+                        <h1>Como Funciona</h1>
+                        <div class="ConteudoCaixa">
+                            <p>Para realizar os cálculos, clique nos botões ao lado para inserir as informações
+                                necessárias.
+                                Em
+                                seguida, pressione o botão "Simular".</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="containerBotao">
+                    <h1>Calcular Carne</h1>
+                    <button onclick="simulador()" class="opcao1"></button>
+                    <h1>Calcular Leite</h1>
+                    <button onclick="leite()" class="opcao2"></button>
+                </div>
+
+                <div id="carne" class=" Sumir">
+
+                    <p class="TextoInputs">Peso médio mensal do caprino (em Kg)</p>
+                    <input type="text" class="Input_dados" id="input_peso">
+
+                    <p class="TextoInputs">Valor médio da venda da carne mensal (por Kg)</p>
+                    <input type="text" required class="Input_dados" id="input_preco_medio">
+
+                    <br>
+                    <button class="botao" onclick="CalculoCarne()">Simular</button>
+                </div>
+
+                <div id="Leite" class="Sumir">
+                    <h1>Leite</h1>
+
+                    <p class="TextoInputs">Quantidade de litros de leite vendidos por mês</p>
+                    <input type="text" required class="Input_dados" id="input_litro_leite_leite">
+
+                    <p class="TextoInputs">Preço médio da venda do litro do leite (em R$)</p>
+                    <input type="text" required class="Input_dados" id="input_venda_leite_leite">
+                    <br>
+                    <button class="botao" onclick="CalculoLeite()">Simular</button>
+                </div>
+
+
+                <div id="Resultado" class="Sumir ">
+                    <h1>Resultado do cálculo</h1>
+                    <div id="TelaLeite" class="Sumir">
+                        <h1>Leite:</h1>
+                        <div id="div_resultadoLeite"></div>
+                    </div>
+                    <div id="TelaCarne" class="Sumir">
+                        <h1>Carne:</h1>
+                        <div id="div_resultadoCarne"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section id="Contato">
         <div class="Chefe">
             <div class="ContainerS">
@@ -346,6 +411,103 @@
         // aqui eu estou pedindo que para após encontrar que ele vá até ele de forma suave
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
+</script>
+
+<script>
+    // calculo do simulador
+
+    function simulador() {
+        var carne = document.getElementById("carne");
+        var ComoFunciona = document.getElementById("ComoFunciona")
+        var Resultado = document.getElementById("Resultado")
+
+        carne.classList.remove("Sumir");
+        carne.classList.add("containerInputs");
+
+        ComoFunciona.classList.remove("CaixaGrande");
+        ComoFunciona.classList.add("Sumir");
+
+        Resultado.classList.remove("Sumir")
+        Resultado.classList.add("TestCaixaMaior")
+    }
+
+    function leite() {
+        var ComoFunciona = document.getElementById("ComoFunciona")
+        var leite = document.getElementById("Leite");
+        var Resultado = document.getElementById("Resultado")
+
+        leite.classList.remove("Sumir");
+        leite.classList.add("containerInputs2");
+
+        ComoFunciona.classList.remove("CaixaGrande");
+        ComoFunciona.classList.add("Sumir");
+
+        Resultado.classList.remove("Sumir")
+        Resultado.classList.add("TestCaixaMaior")
+    }
+
+    function CalculoLeite() {
+        var TelaLeite = document.getElementById("TelaLeite")
+
+        var LitrosLeites = Number(input_litro_leite_leite.value);
+        var ValorLeite = Number(input_venda_leite_leite.value)
+
+        // Cálculos relacionados à venda de leite
+        var litro_leite = Number(input_litro_leite_leite.value);
+        var venda_leite = Number(input_venda_leite_leite.value);
+        var venda_litro_mes_atual = litro_leite * venda_leite;
+        var venda_litro_mes_acrescimo = venda_litro_mes_atual + (venda_litro_mes_atual * 0.70);
+
+
+        TelaLeite.classList.remove("Sumir")
+        TelaLeite.classList.add("TestCaixaLeite")
+
+        div_resultadoLeite.innerHTML = `<p>
+            Litros de Leite Produzidos:
+            ${litro_leite}L<br>
+            Valor da Venda do Leite: R$
+            ${venda_leite},00<br>
+            Lucro do mês sem a GOAT+: R$
+            ${venda_litro_mes_atual},00<br>
+            Lucro do mês com a GOAT+: R$
+            ${venda_litro_mes_acrescimo},00<br>
+            </p>    `
+
+    }
+    function CalculoCarne() {
+        div_resultadoCarne.innerHtml = ``
+        var TelaCarne = document.getElementById("TelaCarne")
+        // Cálculos relacionados à venda de carne
+        var peso_medio = Number(input_peso.value);
+        var preco_vendido_kg = Number(input_preco_medio.value).toFixed(2);
+        var valor_total_carne = (peso_medio * preco_vendido_kg);
+        var lucro_carne = valor_total_carne + valor_total_carne * 0.15;
+
+
+
+
+
+        TelaCarne.classList.remove("Sumir")
+        TelaCarne.classList.add("TestCaixaLeite")
+
+        div_resultadoCarne.innerHTML = `<p>
+           Peso médio do caprino:
+           ${peso_medio} Kg<br>
+           Preço a ser vendido (por Kg)
+           R$${preco_vendido_kg}<br>
+           Valor total da carne:
+           R$${valor_total_carne},00<br>
+           Rendimento obtido com GOAT+:
+           R$${lucro_carne},00
+            </p>
+            `
+    }
+
+
+
+
+
+
 </script>
 
 </html>

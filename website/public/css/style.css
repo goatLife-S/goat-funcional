@@ -89,7 +89,7 @@ li{
 .banner{
     /* background-image: url("../ImagensPlanoDeFundo/Tela1.png"); */
      /* background: url(../ImagensPlanoDeFundo/Goat_logo.jpeg);  */
-    background-image: url(../assets/inicioplus.png); 
+    background-image: url(../assets/Frame14.png); 
     
     background-size: cover;
     height: 800px;
@@ -129,9 +129,12 @@ li{
 
 .banner .container{
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100%;
     flex-direction: column;
+    background-image: url(../assets/goat.png);
+    background-position: right;
+    background-repeat: no-repeat;
 }
 .banner1 .container1{
     justify-content: column;
@@ -163,7 +166,7 @@ li{
         
     }
     .banner .container p {
-        font-size: 30px;
+        font-size: 40px;
     }
     .banner1 .container1 p {
         flex-direction: row-reverse;
@@ -186,9 +189,11 @@ li{
         align-items: center;
         color: #fbf9f9;
         font-weight: 500;
-        font-size: 100px;
+        font-size: 150px;
         margin-bottom: 5px;
         margin-top: 1px;
+        margin: 0px;
+        margin-left: 20px;
 }
 
 .Diagnostico{
@@ -202,6 +207,7 @@ li{
     justify-content: center;
     margin-top: 1px;
     margin-bottom: 1px;
+    margin-left: 30px;
 }
 
 .SobreNos{
@@ -649,4 +655,301 @@ html {
     display: flex;
     justify-content: center;
     margin: 50px;
+}
+
+/* Área do Simulador Finaceiro  */
+
+@font-face {
+    font-family: Helvetica, sans-serif;
+    src: url(Helvetica.ttf);
+}
+.ContainerMaeFinanceiro{
+    padding: 0px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Helvetica, sans-serif;
+    background-image: url(../assets/Frame14.png);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+}
+
+.TituloFinanceiro{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    font-size: 50px;
+    color: white;
+
+}
+
+.containerInteiro{
+    display: flex;
+    width: 100%;
+    height: 85vh;
+    /* position: absolute; */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.containerInteiro .containerBotao{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 440px;
+    height: 400px;
+    background-color: #f0f0e4;
+    align-items: center;
+    border-radius: 32px;
+    color: black;
+    box-shadow: 8px 8px 0px #DFD7BF;
+    animation-duration: 1s;
+    animation-name: slidein;
+    padding: 20px 0;
+}
+
+.containerInteiro .containerBotao .opcao1{
+    height: 100px;
+    width: 100px;
+    background-image: url(../assets/carne.jpg);
+    background-size: cover;
+    border: 1px solid black;
+    border-radius: 8px;
+    transition: 250ms;
+}
+
+.containerInteiro .containerBotao .opcao1:hover{
+transform: scale(1.1);
+transition: 250ms;
+}
+
+.containerInteiro .containerBotao .opcao2{
+    height: 100px;
+    width: 100px;
+    background-image: url(../assets/leite.jpg);
+    background-size: cover;
+    border: 1px solid black;
+    border-radius: 8px;
+    transition: 250ms;
+}
+
+.containerInteiro .containerBotao .opcao2:hover{
+    transform: scale(1.1);
+    transition: 250ms;
+    }
+
+.containerInteiro .containerInputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0e4;
+    justify-content: center;
+    box-shadow: 8px 8px 0px #DFD7BF;
+    border-radius: 8px;
+    height: 50%;
+    padding: 63px 10px;
+}
+
+.containerInteiro .containerInputs h1{
+    font-size: 20px;
+}
+
+.containerInteiro .containerInputs2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0e4;
+    justify-content: center;
+    box-shadow: 8px 8px 0px #DFD7BF;
+    border-radius: 8px;
+    height: 50%;
+    padding: 63px 10px;
+}
+
+.containerInteiro .containerInputs2 h1{
+    font-size: 20px;
+}
+
+.containerInteiro .containerInputs .TextoInputs{
+    font-size: 15px;
+}
+
+.containerInteiro .containerInputs .Input_dados{
+    font-size: 15px;
+    border-radius: 8px;
+    border: 2px solid black;
+    width: 100px;
+    height: 25px;
+}
+
+.containerInteiro .containerInputs .botao{
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    border-radius: 8px;
+    height: 40px;
+    width: 115px;
+    background-color: #228B22;
+    color: white;
+    font-weight: 500;
+    border-style: none;
+    box-shadow: 6px 6px 0px #115D33;
+}
+
+.containerInteiro .containerInputs .botao:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.containerInteiro .containerInputs2 .TextoInputs{
+    font-size: 15px;
+}
+
+.containerInteiro .containerInputs2 .Input_dados{
+    font-size: 15px;
+    border-radius: 8px;
+    border: 2px solid black;
+    width: 100px;
+    height: 20px;
+}
+
+.containerInteiro .containerInputs2 .botao{
+    margin-top: 1rem;
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    border-radius: 8px;
+    height: 30px;
+    width: 115px;
+    background-color: #228B22;
+    color: white;
+    font-weight: 500;
+    border-style: none;
+    box-shadow: 6px 6px 0px #115D33;
+}
+
+.containerInteiro .containerInputs2 .botao:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.Sumir{
+    display: none;
+}
+
+/* Mudar */
+.CaixaGrandeFinanceiro{
+    display: flex;
+    height: 400px;
+    width: 400px;
+    background-color: #f0f0e4;
+    box-shadow: 8px 8px 0px #DFD7BF;
+    border-radius: 30px;
+    text-align: center;
+    flex-wrap: wrap;
+    animation-duration: 1ms;
+    animation-name: Mudinho;
+    
+}
+
+/* Mudar */
+.CaixaMaiorFinanceiro{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+
+.ConteudoCaixa{
+    display:flex;
+    font-size: 22px;
+}
+.TestCaixaMaior{
+    display: flex;
+    background-color: #f0f0e4;
+    /* background-color: darkred; */
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 25%;
+    height: 82%;
+    flex-wrap: nowrap;
+    justify-content: center;
+    box-shadow: 8px 8px 0px #DFD7BF;
+    /* margin-top: 63px; */
+    animation-duration: 1s;
+    animation-name: slidein;
+    animation-duration: 1s;
+    animation-name: slidein;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+.TestCaixaMaior h1{
+font-size: 25px;
+}
+
+.TestCaixaLeite{
+    display: flex;
+    /* background-color: #f0f0e4; */
+    /* background-color: aqua; */
+    width: 100%;
+    height: 80%;
+    padding: 1px;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+.TestCaixaCarne{
+    display: flex;
+    /* background-color: #f0f0e4; */
+    /* background-color: khaki; */
+    width: 100%;
+    height: 80%;
+    align-items: center;
+    flex-direction: column;
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+.TestCaixaCarne p {
+    font-size: 22px;
+    padding: 2px;
+}
+.TestCaixaLeite p {
+    font-size: 22px;
+    padding: 2px;
+}
+
+#back{
+    position: absolute;
+    top: 3rem;
+    left: 2rem;
+    transition: 250ms;
+}
+
+#back:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 250ms;
+}
+
+
+
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+    }
+}
+
+@keyframes Mudinho {
+    from {
+        margin-right: 100%;
+    }
 }
