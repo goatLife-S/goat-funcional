@@ -12,14 +12,23 @@
 
 <body>
     <div class="containerInteiro">
-
         <div class="divLista">
             <ul class="lista">
-                <a href="home-login.html"><li class="icones"><img width="30px" src="./assets/Menu.png"></li></a>
-                <a href=""><li class="icones"><img width="30px" src="./assets/Person.png"></li></a>
-                <a href="dashboard.html"><li class="icones"><img width="30px" src="./assets/Increase Profits.png"></li></a>
-                <a href="cadastro-func.html"><li class="icones"><img width="30px" src="./assets/adduser.png"></li></a>
-                <a href="./index.html"></a><li class="icones"><img width="30px" src="./assets/Logout.png"></li></a>
+                <a href="home-login.html">
+                    <li class="icones"><img width="30px" src="./assets/Menu.png"></li>
+                </a>
+                <a href="">
+                    <li class="icones"><img width="30px" src="./assets/Person.png"></li>
+                </a>
+                <a href="dashboard.html">
+                    <li class="icones"><img width="30px" src="./assets/Increase Profits.png"></li>
+                </a>
+                <a href="cadastro-func.html">
+                    <li class="icones"><img width="30px" src="./assets/adduser.png"></li>
+                </a>
+                <a href="./index.html">
+                    <li class="icones"><img width="30px" src="./assets/Logout.png"></li>
+                </a>
             </ul>
         </div>
         <div class="container2">
@@ -58,34 +67,73 @@
     </div>
 </body>
 
-</html>
-
 <script>
     const ctx = document.getElementById('myChart');
 
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
-            datasets: [{
-                label: 'Temperatura',
-                data: [21, 24, 25, 27, 20, 23, 26, 30, 22, 28, 29, 20, 25, 24, 26, 23, 27, 21, 22, 30, 28, 29, 20],
-                borderWidth: 3
-            }, 
-            {
-                label: 'Umidade',
-                data: [66, 67, 65, 66, 64, 65, 63, 62, 60, 59, 59, 66, 67, 65, 66, 64, 65, 63, 62, 60, 59, 59, 63],
-                borderWidth: 3
+    let chart;
+
+    window.onload = function() {
+        const idUsuario = sessionStorage.getItem('ID_USUARIO');
+        if (idUsuario) {
+            obterDadosGrafico(idUsuario);
+        } else {
+            console.error('ID do usuário não encontrado no sessionStorage');
+        }
+    };
+
+    function obterDadosGrafico(idUsuario) {
+        fetch(`/medidas/dia/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
             }
-        ]
-            
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+    }
+
+    function plotarGrafico(dados) {
+        if (chart) {
+            chart.destroy();
+        }
+
+        const labels = dados.map(d => d.dtCaptura);
+        const temperaturas = dados.map(d => d.dht11_temperatura);
+        const umidades = dados.map(d => d.dht11_umidade);
+        
+        chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Temperatura',
+                        data: temperaturas,
+                        borderWidth: 3
+                    },
+                    {
+                        label: 'Umidade',
+                        data: umidades,
+                        borderWidth: 3
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
+        });
+    }
 </script>
+
+</html>
