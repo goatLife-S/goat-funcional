@@ -9,11 +9,17 @@ body {
     font-family: Helvetica, sans-serif;
 }
 
-.containerInteiro{
+.header .voltar {
+    width: 15px;
+    height: 70px;
+}
+
+.containerInteiro {
     height: 100%;
     width: 100%;
     position: fixed;
-    background-image: url(../assets/inicioplus.png);
+    /* background-image: url(../assets/inicioplus.png); */
+    background-color: #133B2D;
     background-size: cover;
 }
 
@@ -53,10 +59,10 @@ body {
     font-style: none;
 }
 
-.titulo a{
-        color: black;
-        text-decoration: none;
-    
+.titulo a {
+    color: black;
+    text-decoration: none;
+
 }
 
 .inputs {
@@ -68,7 +74,7 @@ body {
     padding-left: 10px;
 }
 
-.botao{
+.botao {
     font-family: Helvetica, sans-serif;
     font-size: 20px;
     border-radius: 8px;
@@ -82,22 +88,20 @@ body {
     transition: 250ms;
 }
 
-.botao:hover{
+.botao:hover {
     transform: scale(1.1);
     transition: 250ms;
 }
 
-#conta{
+#conta {
     color: #228B22;
     text-decoration: none;
 }
 
-.container .container2 h3{
+.container .container2 h3 {
     font-size: 30px
 }
 
-.container .container2 span{
+.container .container2 span {
     font-size: 15px
 }
-
-

@@ -9,17 +9,24 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 10px; /* largura do scroll */
+    width: 10px;
+    /* largura do scroll */
     height: 10px;
 }
+
 ::-webkit-scrollbar-track {
-    background: #133B2D; /* cor do fundo do track */
+    background: #133B2D;
+    /* cor do fundo do track */
 }
+
 ::-webkit-scrollbar-thumb {
-    background: #E0E3B6; /* cor do thumb */
+    background: #E0E3B6;
+    /* cor do thumb */
 }
+
 ::-webkit-scrollbar-thumb:hover {
-    background: #555; /* cor do thumb quando hover */
+    background: #555;
+    /* cor do thumb quando hover */
 }
 
 .titulo {
@@ -28,84 +35,89 @@ body {
 
 }
 
-.navbar{
+.navbar {
     justify-content: space-evenly;
     align-items: center;
     display: flex;
     text-align: center;
     width: 100%;
-    height: 70px ;
+    height: 70px;
     margin: 0;
     padding: 0;
     text-decoration: none;
     background-color: #FCFFE0;
     position: fixed;
     transition: 250ms;
-    
-   
+
+
 }
-ul{
-   
+
+ul {
+
     list-style: none;
     margin: 0;
     padding: 0;
     font-size: 25px;
-   
+
 }
 
-li{
+li {
     margin-right: 30px;
-    float:  left; 
-} 
+    float: left;
+}
 
 .navbar a {
     color: black;
-    text-decoration: none;  
+    text-decoration: none;
 }
 
-.navbar a:hover{
+.navbar a:hover {
     color: #133B2D;
     transition: 250ms;
 }
 
 .header {
     display: flex;
-    
+
 }
 
-.container{
+.container {
     height: 70px;
     width: 100%;
     align-items: center;
     display: flex;
     z-index: 500;
 }
-.container1{
+
+.container1 {
     justify-content: column-reverse;
     display: flex;
 }
 
 
-.banner{
+.banner {
     /* background-image: url("../ImagensPlanoDeFundo/Tela1.png"); */
-     /* background: url(../ImagensPlanoDeFundo/Goat_logo.jpeg);  */
+    /* background: url(../ImagensPlanoDeFundo/Goat_logo.jpeg);  */
     /* background-image: url(../assets/Frame14.png); 
      */
-     background-color: #133B2D;
+    background-color: #133B2D;
     background-size: cover;
     height: 800px;
 }
-.banner1{
+
+.banner1 {
     /* background-image: url(../ImagensPlanoDeFundo/sobre.png); */
     background-repeat: no-repeat;
     height: 800px;
     color: rgb(0, 0, 0);
     /* background-image: url(../assets/modelo.png); */
-    background-color:#b3d399b4;
+    background-color: #a5c78aa9;
     background-size: cover;
 
 }
-.banner2{  /* modelo de negocio */
+
+.banner2 {
+    /* modelo de negocio */
     /* background-image: url(../ImagensPlanoDeFundo/sobre.png); */
     background-color: #bcb68b;
     height: 100%;
@@ -115,21 +127,22 @@ li{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
-    
+
+
 }
-.Chefe{
+
+.Chefe {
     /* background-image: url(../ImagensPlanoDeFundo/início.png); */
     background-repeat: no-repeat;
-    background-color: #133B2D;
-    
+    background-color: #a5c78aa9;
+
     height: 800px;
     color: rgb(0, 0, 0);
-    
+
 }
 
 
-.banner .container{
+.banner .container {
     justify-content: center;
     align-items: flex-start;
     height: 100%;
@@ -138,67 +151,72 @@ li{
     background-position: right;
     background-repeat: no-repeat;
 }
-.banner1 .container1{
+
+.banner1 .container1 {
     justify-content: column;
     align-items: center;
-     flex-direction: row; 
-     font-size: large; 
+    flex-direction: row;
+    font-size: large;
+    background-color: #a5c78aa9;
 }
 
 .banner1 .container1 .ContainerNeto {
     background-color: #FCFFE0;
 }
-    
-.container2{
+
+.container2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
 }
-    .banner2 .container2{
-        /* justify-content: column; */
-        align-items: center;
-        height: 100%; 
-        flex-direction: column; 
-        font-size: large;
-        /* padding: 1px; */
-        display: flex;
-        text-align: center;
-        flex-wrap: nowrap;
-        
-    }
-    .banner .container p {
-        font-size: 40px;
-    }
-    .banner1 .container1 p {
-        flex-direction: row-reverse;
-        justify-content: flex-start;
-        /* font-size: 32px; */
-        /* width: 200px; */
-    }
-    
-    .banner1 h1{
-        display: flex;
-        flex-direction: row;
-        font-size: 40px;
-        margin-bottom: 0;
-    }
-    
-    .Goat{
-        display: flex;
-        text-align: center ;
-        justify-content: center;
-        align-items: center;
-        color: #fbf9f9;
-        font-weight: 500;
-        font-size: 150px;
-        margin-bottom: 5px;
-        margin-top: 1px;
-        margin: 0px;
-        margin-left: 20px;
+
+.banner2 .container2 {
+    /* justify-content: column; */
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    font-size: large;
+    /* padding: 1px; */
+    display: flex;
+    text-align: center;
+    flex-wrap: nowrap;
+
 }
 
-.Diagnostico{
+.banner .container p {
+    font-size: 40px;
+}
+
+.banner1 .container1 p {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    /* font-size: 32px; */
+    /* width: 200px; */
+}
+
+.banner1 h1 {
+    display: flex;
+    flex-direction: row;
+    font-size: 40px;
+    margin-bottom: 0;
+}
+
+.Goat {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #fbf9f9;
+    font-weight: 500;
+    font-size: 150px;
+    margin-bottom: 5px;
+    margin-top: 1px;
+    margin: 0px;
+    margin-left: 20px;
+}
+
+.Diagnostico {
     display: flex;
     justify-items: center;
     color: #ffffff;
@@ -212,35 +230,38 @@ li{
     margin-left: 30px;
 }
 
-.SobreNos{
+.SobreNos {
     width: 250px;
     margin-left: 80px;
-    
+
 }
 
-.TextoSobre{
+.TextoSobre {
     font-size: 20px;
     width: 90%;
     margin-left: 50px;
-    
+
 }
-.Imagem{
+
+.Imagem {
     margin-top: 80px;
     margin-right: 50px;
     margin-bottom: 90px;
     width: 600px;
     height: 600px;
     color: #cac7a2;
-    
+
 }
-.ImagemModelo{
+
+.ImagemModelo {
     width: 390px;
     height: 230px;
     padding: 5px;
     flex-shrink: 0;
     border-radius: 8px;
 }
-.container .ImagemFundo{
+
+.container .ImagemFundo {
     width: 100%;
     height: 100%;
     padding: 5px;
@@ -248,10 +269,10 @@ li{
 }
 
 
-.ContainerNeto{
+.ContainerNeto {
     display: flex;
     width: 100%;
-    margin-left: 100px; 
+    margin-left: 100px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -261,7 +282,7 @@ li{
     border-bottom-left-radius: 8px;
 }
 
-.ContainerNeto2{
+.ContainerNeto2 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -271,7 +292,7 @@ li{
 }
 
 
-.Box{
+.Box {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -282,8 +303,8 @@ li{
     height: 100px;
 }
 
-.box:hover{
-   transform: scale(0.8);
+.box:hover {
+    transform: scale(0.8);
 }
 
 
@@ -292,10 +313,10 @@ li{
     justify-content: center;
     height: 100%;
     width: 100%;
-    
+
 }
 
-.ContainerMaior1 .banner2 .container2 .ContainerNeto2 .Box .Modelo{
+.ContainerMaior1 .banner2 .container2 .ContainerNeto2 .Box .Modelo {
     padding: 10px;
     width: 400px;
     height: 500px;
@@ -303,54 +324,59 @@ li{
     color: black;
     border-radius: 8px;
     transition: 250ms;
-    
+
 }
 
-.ContainerMaior1 .banner2 .container2 .ContainerNeto2 .Box .Modelo:hover{
+.ContainerMaior1 .banner2 .container2 .ContainerNeto2 .Box .Modelo:hover {
     transform: scale(1.1);
     transition: 250ms;
 }
 
-.TituloModelo{
+.TituloModelo {
     justify-content: center;
     color: white;
-background-color: #133B2D;
+    background-color: #133B2D;
     align-items: center;
     font-size: 40px;
-    text-shadow: #ffffff;;
+    text-shadow: #ffffff;
+    
     width: 400px;
-margin-bottom: 0;
-} 
+    margin-bottom: 0;
+}
 
 
-.QuemSou{
+.QuemSou {
     display: flex;
 }
+
 .Box .Modelo {
     flex-direction: row;
     justify-content: space-between;
     background-color: #d0d6c0;
     height: 496px;
     width: 401px;
-    
+
 }
-.Gerente{
+
+.Gerente {
     display: flex;
     align-items: center;
     margin-left: 150px;
 }
-.InputTexto{
+
+.InputTexto {
     width: 450px;
     height: 270px;
     border-radius: 8px;
     border: 4px solid #000;
     background: #FFF;
     padding: 50px;
-    text-align:start;
+    text-align: start;
     margin-bottom: 10px;
     margin-top: 10px;
 }
-.InputTexto1{
+
+.InputTexto1 {
     width: 356px;
     height: 60px;
     border-radius: 8px;
@@ -358,7 +384,8 @@ margin-bottom: 0;
     background: #FFF;
     padding: 5px;
 }
-.InputTexto2{
+
+.InputTexto2 {
     width: 276px;
     height: 60px;
     flex-shrink: 0;
@@ -368,14 +395,16 @@ margin-bottom: 0;
     background: #FFF;
     padding: 5px;
 }
-.BoxInput{
+
+.BoxInput {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
     justify-content: center;
     align-items: center;
 }
-.ImagemContato{
+
+.ImagemContato {
     display: flex;
     justify-content: end;
     padding: 10px;
@@ -384,19 +413,21 @@ margin-bottom: 0;
     width: 750px;
     height: 630px;
 }
-.Amor{
+
+.Amor {
     display: flex;
     flex-direction: row;
-    
-    
-}
-.Contato{
-    text-align: center;
-    font-size: 50px;
-    
+
+
 }
 
-.btnContato{
+.Contato {
+    text-align: center;
+    font-size: 50px;
+
+}
+
+.btnContato {
     font-family: Helvetica, sans-serif;
     font-size: 20px;
     border-radius: 8px;
@@ -406,52 +437,57 @@ margin-bottom: 0;
     color: white;
     font-weight: 900;
     border-style: none;
-    box-shadow: 6px 6px 0px #115D33; 
+    box-shadow: 6px 6px 0px #115D33;
     margin-bottom: 29px;
     transition: 250ms;
 }
 
-.btnContato:hover{
+.btnContato:hover {
     background-color: #115D33;
-    box-shadow: 6px 6px 0px #228B22 ;
+    box-shadow: 6px 6px 0px #228B22;
     transition: 250ms;
 }
 
-.footer{
+.footer {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50px;
     width: 100%;
     background-color: #FCFFE0;
-   
+
 }
-.metade1{
+
+.metade1 {
     width: 30%;
 }
-.metade2{
+
+.metade2 {
     justify-content: flex-end;
     width: 30%;
 }
-.textoContato{
+
+.textoContato {
     margin: 0;
     display: flex;
     justify-content: center;
     color: #000;
     font-size: 15px;
 }
-.Teste1{
+
+.Teste1 {
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
 
 html {
-    scroll-behavior: smooth; /* Adiciona rolagem suave em todo o documento */
+    scroll-behavior: smooth;
+    /* Adiciona rolagem suave em todo o documento */
 }
-  
 
-  .Chefe{
+
+.Chefe {
     width: 100%;
     height: 100%;
     display: flex;
@@ -461,49 +497,49 @@ html {
 }
 
 
-.Chefe .ContainerS{
+.Chefe .ContainerS {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-around;
-   background-color:#b3d399b4;
+    background-color: #a5c78aa9;
     background-size: cover;
 }
 
-.Chefe .ContainerS h1{
+.Chefe .ContainerS h1 {
     color: #ffffff;
-    
+
 }
 
-.Chefe .ContainerS #input3{
+.Chefe .ContainerS #input3 {
     margin-top: 20px;
     width: 450px;
     height: 229px;
-    margin-bottom: 120px ;
-    
+    margin-bottom: 120px;
+
 }
 
-.Chefe .ContainerS .tituloContato{
+.Chefe .ContainerS .tituloContato {
     display: flex;
     justify-content: center;
 }
 
-.Chefe .ContainerS #input2{
+.Chefe .ContainerS #input2 {
     width: 231px;
 }
 
-.Chefe .ContainerS span{
+.Chefe .ContainerS span {
     width: 420px;
-    flex-wrap:nowrap;
+    flex-wrap: nowrap;
 }
 
-.Chefe .Iframe{
+.Chefe .Iframe {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.Iframe{
+.Iframe {
     display: flex;
 }
 
@@ -511,15 +547,17 @@ html {
     width: 458px;
     height: 476.88px;
 }
-.mae{
+
+.mae {
     height: 100%;
     display: flex;
     flex-direction: column;
-    
+
     background: #a5c78aa9;
     background-size: cover;
 }
-.caixa1{
+
+.caixa1 {
     display: flex;
     flex-direction: column;
     background-color: #FCFFE0;
@@ -531,47 +569,50 @@ html {
     transition: 250ms;
 }
 
-.caixa1:hover{
+.caixa1:hover {
     transform: scale(1.1);
     transition: 250ms;
 }
 
-.caixa1 h1{
+.caixa1 h1 {
     font-size: 25px;
 }
 
-.conteudo{
+.conteudo {
     display: flex;
     justify-content: center;
     color: black;
     font-size: 20px;
-    
+
 }
-.imagem1{
+
+.imagem1 {
     width: 90px;
     border-radius: 15px;
     padding: 1%;
     margin-top: 10px;
 
 }
-.pai{
+
+.pai {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
     height: 65%;
-    align-items: center; 
+    align-items: center;
     margin: 50px auto 50px;
 }
+
 .ContainerMaior2 {
     display: flex;
     justify-content: space-around;
     height: 100%;
     width: 100%;
-    
+
 }
 
-.Modelo12{
+.Modelo12 {
     display: flex;
     /* background-image: url(../assets/inicio.png); */
     background-color: #133B2D;
@@ -580,7 +621,8 @@ html {
     align-items: center;
     width: 100%;
 }
-.CaixaGrande{
+
+.CaixaGrande {
     display: flex;
     background-color: #e7e7d6;
     border-radius: 15px;
@@ -588,63 +630,65 @@ html {
     justify-content: space-evenly;
 }
 
-.CaixaMaior{
+.CaixaMaior {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     padding: 30px;
     background-color: #FCFFE0;
     border: 2px solid #133B2D;
-    border-radius: 8px;   
+    border-radius: 8px;
 }
 
-.CaixaMaior1{
+.CaixaMaior1 {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row-reverse;
-    padding: 30px;  
+    padding: 30px;
     background-color: #FCFFE0;
     border: 2px solid #133B2D;
-    border-radius: 8px;       
+    border-radius: 8px;
 }
 
-.CaixaMaior1 p{
+.CaixaMaior1 p {
     margin-top: -15px;
 }
 
-.CaixaMenor{
+.CaixaMenor {
     display: flex;
     flex-direction: column;
     margin: 10px;
 }
-.CaixaMaior .Imagem2{
+
+.CaixaMaior .Imagem2 {
     width: 200px;
     height: 150px;
     border-style: none;
     transition: 250ms;
 }
 
-.CaixaMaior .Imagem2:hover{
+.CaixaMaior .Imagem2:hover {
     transform: scale(1.1);
     transition: 250ms;
 }
-    .img_conteudo{
-        width: 200px;
-        height: 150px;
-        border-style: none;
-        margin-left: 1372px;
-    }
 
-.CaixaMaior1 .Imagem2{
+.img_conteudo {
     width: 200px;
     height: 150px;
     border-style: none;
-   
+    margin-left: 1372px;
 }
 
-.CaixaMaior1 .Imagem2:hover{
+.CaixaMaior1 .Imagem2 {
+    width: 200px;
+    height: 150px;
+    border-style: none;
+
+}
+
+.CaixaMaior1 .Imagem2:hover {
     transform: scale(1.1);
     transition: 250ms;
 }
@@ -655,13 +699,13 @@ html {
     padding: 10px;
 }
 
-.CaixaMenor h1{
+.CaixaMenor h1 {
     text-align: center;
     font-size: 30px;
     margin-top: 0;
 }
 
-.CaixaImperGrande{
+.CaixaImperGrande {
     display: flex;
     justify-content: center;
     margin: 50px;
@@ -673,13 +717,14 @@ html {
     font-family: Helvetica, sans-serif;
     src: url(Helvetica.ttf);
 }
-.ContainerMaeFinanceiro{
+
+.ContainerMaeFinanceiro {
     padding: 0px;
     margin: 0;
     width: 100%;
     height: 100%;
     font-family: Helvetica, sans-serif;
-   background-color: #133B2D;
+    background-color: #133B2D;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -687,7 +732,7 @@ html {
 
 }
 
-.TituloFinanceiro{
+.TituloFinanceiro {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -698,7 +743,7 @@ html {
 
 }
 
-.containerInteiro{
+.containerInteiro {
     display: flex;
     width: 100%;
     height: 85vh;
@@ -708,7 +753,7 @@ html {
     align-items: center;
 }
 
-.containerInteiro .containerBotao{
+.containerInteiro .containerBotao {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -724,7 +769,7 @@ html {
     padding: 20px 0;
 }
 
-.containerInteiro .containerBotao .opcao1{
+.containerInteiro .containerBotao .opcao1 {
     height: 100px;
     width: 100px;
     background-image: url(../assets/carne.jpg);
@@ -734,12 +779,12 @@ html {
     transition: 250ms;
 }
 
-.containerInteiro .containerBotao .opcao1:hover{
-transform: scale(1.1);
-transition: 250ms;
+.containerInteiro .containerBotao .opcao1:hover {
+    transform: scale(1.1);
+    transition: 250ms;
 }
 
-.containerInteiro .containerBotao .opcao2{
+.containerInteiro .containerBotao .opcao2 {
     height: 100px;
     width: 100px;
     background-image: url(../assets/leite.jpg);
@@ -749,12 +794,12 @@ transition: 250ms;
     transition: 250ms;
 }
 
-.containerInteiro .containerBotao .opcao2:hover{
+.containerInteiro .containerBotao .opcao2:hover {
     transform: scale(1.1);
     transition: 250ms;
-    }
+}
 
-.containerInteiro .containerInputs{
+.containerInteiro .containerInputs {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -766,11 +811,11 @@ transition: 250ms;
     padding: 63px 10px;
 }
 
-.containerInteiro .containerInputs h1{
+.containerInteiro .containerInputs h1 {
     font-size: 20px;
 }
 
-.containerInteiro .containerInputs2{
+.containerInteiro .containerInputs2 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -782,15 +827,15 @@ transition: 250ms;
     padding: 63px 10px;
 }
 
-.containerInteiro .containerInputs2 h1{
+.containerInteiro .containerInputs2 h1 {
     font-size: 20px;
 }
 
-.containerInteiro .containerInputs .TextoInputs{
+.containerInteiro .containerInputs .TextoInputs {
     font-size: 15px;
 }
 
-.containerInteiro .containerInputs .Input_dados{
+.containerInteiro .containerInputs .Input_dados {
     font-size: 15px;
     border-radius: 8px;
     border: 2px solid black;
@@ -798,7 +843,7 @@ transition: 250ms;
     height: 25px;
 }
 
-.containerInteiro .containerInputs .botao{
+.containerInteiro .containerInputs .botao {
     font-family: Helvetica, sans-serif;
     font-size: 20px;
     border-radius: 8px;
@@ -811,16 +856,16 @@ transition: 250ms;
     box-shadow: 6px 6px 0px #115D33;
 }
 
-.containerInteiro .containerInputs .botao:hover{
+.containerInteiro .containerInputs .botao:hover {
     transform: scale(1.1);
     transition: 0.3s;
 }
 
-.containerInteiro .containerInputs2 .TextoInputs{
+.containerInteiro .containerInputs2 .TextoInputs {
     font-size: 15px;
 }
 
-.containerInteiro .containerInputs2 .Input_dados{
+.containerInteiro .containerInputs2 .Input_dados {
     font-size: 15px;
     border-radius: 8px;
     border: 2px solid black;
@@ -828,7 +873,7 @@ transition: 250ms;
     height: 20px;
 }
 
-.containerInteiro .containerInputs2 .botao{
+.containerInteiro .containerInputs2 .botao {
     margin-top: 1rem;
     font-family: Helvetica, sans-serif;
     font-size: 20px;
@@ -842,17 +887,17 @@ transition: 250ms;
     box-shadow: 6px 6px 0px #115D33;
 }
 
-.containerInteiro .containerInputs2 .botao:hover{
+.containerInteiro .containerInputs2 .botao:hover {
     transform: scale(1.1);
     transition: 0.3s;
 }
 
-.Sumir{
+.Sumir {
     display: none;
 }
 
 /* Mudar */
-.CaixaGrandeFinanceiro{
+.CaixaGrandeFinanceiro {
     display: flex;
     height: 400px;
     width: 400px;
@@ -863,22 +908,23 @@ transition: 250ms;
     flex-wrap: wrap;
     animation-duration: 1ms;
     animation-name: Mudinho;
-    
+
 }
 
 /* Mudar */
-.CaixaMaiorFinanceiro{
+.CaixaMaiorFinanceiro {
     display: flex;
     flex-direction: column;
     padding: 50px;
 }
 
 
-.ConteudoCaixa{
-    display:flex;
+.ConteudoCaixa {
+    display: flex;
     font-size: 22px;
 }
-.TestCaixaMaior{
+
+.TestCaixaMaior {
     display: flex;
     background-color: #f0f0e4;
     /* background-color: darkred; */
@@ -899,11 +945,11 @@ transition: 250ms;
     padding: 0 10px;
 }
 
-.TestCaixaMaior h1{
-font-size: 25px;
+.TestCaixaMaior h1 {
+    font-size: 25px;
 }
 
-.TestCaixaLeite{
+.TestCaixaLeite {
     display: flex;
     /* background-color: #f0f0e4; */
     /* background-color: aqua; */
@@ -916,7 +962,8 @@ font-size: 25px;
     animation-duration: 1s;
     animation-name: slidein;
 }
-.TestCaixaCarne{
+
+.TestCaixaCarne {
     display: flex;
     /* background-color: #f0f0e4; */
     /* background-color: khaki; */
@@ -927,23 +974,25 @@ font-size: 25px;
     animation-duration: 1s;
     animation-name: slidein;
 }
+
 .TestCaixaCarne p {
     font-size: 22px;
     padding: 2px;
 }
+
 .TestCaixaLeite p {
     font-size: 22px;
     padding: 2px;
 }
 
-#back{
+#back {
     position: absolute;
     top: 3rem;
     left: 2rem;
     transition: 250ms;
 }
 
-#back:hover{
+#back:hover {
     cursor: pointer;
     transform: scale(1.1);
     transition: 250ms;

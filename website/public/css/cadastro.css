@@ -8,7 +8,8 @@ body {
     padding: 0;
     font-family: Helvetica, sans-serif;
 }
-.containerInteiro{
+
+.containerInteiro {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -37,7 +38,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-right: 110px;
-    
+
 }
 
 .container .titulo {
@@ -61,7 +62,8 @@ body {
     border: 3px solid;
     padding-left: 10px;
 }
-.inputs2{
+
+.inputs2 {
     font-family: Helvetica, sans-serif;
     border-radius: 8px;
     height: 40px;
@@ -71,7 +73,7 @@ body {
 }
 
 
-.botao{
+.botao {
     font-family: Helvetica, sans-serif;
     font-size: 20px;
     border-radius: 8px;
@@ -86,24 +88,23 @@ body {
     transition: 250ms;
 }
 
-.botao:hover{
+.botao:hover {
     transform: scale(1.1);
     transition: 250ms;
 }
-#conta{
+
+#conta {
     color: #228B22;
     text-decoration: none;
 }
 
-.container .container2 h3{
+.container .container2 h3 {
     font-size: 30px;
     margin-top: 5px;
     margin-bottom: 30px;
 }
 
-#goat{
+#goat {
     color: black;
     text-decoration: none;
 }
-
-

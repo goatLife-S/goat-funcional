@@ -10,12 +10,15 @@
 </head>
 
 <body>
+    <header>
+        <img class="voltar" src="./assets/voltar.png" alt="">
+    </header>
     <div class="containerInteiro">
         <div class="container">
             <div class="titulo">
                 <a href="./index.html">
-                <h2>GOAT+</h2>
-            </a>
+                    <h2>GOAT+</h2>
+                </a>
             </div>
             <div class="container2">
                 <h3>Login</h3>
@@ -40,9 +43,9 @@
 </html>
 
 <script>
-var tentativas = 3;
+    var tentativas = 3;
 
-function entrar() {
+    function entrar() {
 
         var emailVar = ipt_email.value;
         var senhaVar = ipt_senha.value;
@@ -51,7 +54,7 @@ function entrar() {
             console.log = "(Mensagem de erro para todos os campos em branco)";
             return false;
         }
-    
+
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -77,7 +80,7 @@ function entrar() {
                     sessionStorage.EMAIL_USUARIO = json.emailVar;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.idFazenda;
-                    
+
 
                     setTimeout(function () {
                         window.location = "home-login.html";
@@ -100,7 +103,7 @@ function entrar() {
 
         return false;
     }
-    
-   
+
+
 
 </script>
