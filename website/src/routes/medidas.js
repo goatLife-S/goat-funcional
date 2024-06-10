@@ -3,12 +3,8 @@ var router = express.Router();
 
 var medidaController = require("../controllers/medidaController");
 
-router.get("/ultimas/:idAquario", function (req, res) {
-    medidaController.buscarUltimasMedidas(req, res);
+router.get("/dia/:idUsuario", function (req, res) {
+    medidaController.buscarMedidasDoDia(req, res);
 });
-
-router.get("/tempo-real/:idAquario", function (req, res) {
-    medidaController.buscarMedidasEmTempoReal(req, res);
-})
 
 module.exports = router;
