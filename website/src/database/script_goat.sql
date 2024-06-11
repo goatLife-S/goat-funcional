@@ -97,6 +97,10 @@ SELECT * FROM medida;
 
 SELECT * FROM responsavel JOIN fazenda ON fkResponsavel = idResponsavel
  JOIN capril ON fkFazenda = idFazenda;
+
+ SELECT dht11_temperatura, 
+    dht11_umidade,
+    dtCaptura FROM medida;
  
  -- SELECT DOS DADOS DO CLIENTE, FAZENDA, FUNCIONÁRIO E CAPRIS QUE POSSUEM O MONITORAMENTO
  

@@ -81,14 +81,14 @@
         }
     };
 
-    function obterDadosGrafico(idUsuario) {
-        fetch(`/medidas/dia/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+    function obterDadosGrafico() {
+        fetch(`/medidas/dia`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
 
-                    plotarGrafico(resposta);
+                   plotarGrafico(resposta);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -134,6 +134,10 @@
             }
         });
     }
+    setInterval(function() {
+        obterDadosGrafico()
+        console.log("Peguei")
+}, 10000);
 </script>
 
 </html>

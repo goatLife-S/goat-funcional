@@ -3,7 +3,7 @@ var router = express.Router();
 
 var medidaController = require("../controllers/medidaController");
 
-router.get("/dia/:idUsuario", function (req, res) {
+router.get("/dia", function (req, res) {
     medidaController.buscarMedidasDoDia(req, res);
 });
 
