@@ -30,27 +30,69 @@
                     </div>
                     <div class="formulario">
                         <span>
-                            <input type="text" class="inputs" placeholder="Nome">
-                            <input type="text" class="inputs" placeholder="Sobrenome">
+                            <input type="text" class="inputs" placeholder="Nome" id="ipt_nome">
+                            <input type="text" class="inputs" placeholder="Sobrenome" id="ipt_sobrenome">
                         </span>
                         <input type="text" class="inputs" placeholder="E-mail" id="ipt_email">
-                        <input type="text" class="inputs" placeholder="Telefone">
+                        <input type="text" class="inputs" placeholder="Telefone" id="ipt_telefone">
                         <span>
-                            <input type="text" class="inputs" placeholder="Senha">
-                            <input type="text" class="inputs" placeholder="Confirma">
+                            <input type="password" class="inputs" placeholder="Senha" id="ipt_senha">
+                            <input type="password" class="inputs" placeholder="Confirma" id="ipt_confirma">
                         </span>
                     </div>
                     <div class="botao">
-                        <button id="btnCadastrar">Cadastrar</button>
+                        <button onclick="btnCadastrar()">Cadastrar</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
-
 </html>
-
 <script>
+    function btnCadastrar(){
+
+        var nomeVar = ipt_nome.value;
+        var sobrenomeVar = ipt_sobrenome.value;
+        var emailVar = ipt_email.value;
+        var telefoneVar = ipt_telefone.value;
+        var senhaVar = ipt_senha.value;
+        var confirmaVar = ipt_confirma.value;
+
+
+        fetch("/funcionario/cadastrar", {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                   
+                    nomeServer: nomeVar,
+                    sobrenomeServer: sobrenomeVar,
+                    emailServer: emailVar,
+                    telefoneServer: telefoneVar,
+                    senhaServer: senhaVar
+                    
+                }),
+            })
+                .then(function (resposta) {
+
+                    if (resposta.ok) {
+                        setTimeout(() => {
+                            window.location = "dashboard.html";
+                        }, "2000");
+
+                    } else {
+                        throw "Houve um erro ao tentar realizar o cadastro!";
+                    }
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                });
+        }
+
+
+
     
+
 </script>
