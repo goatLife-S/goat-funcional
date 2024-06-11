@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Goat + </title>
+    <link rel="stylesheet" href="Dashboard1.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+
+</head>
+
+<body>
+    <div class="MaedeTodos">
+        <div class="Container">
+            <nav id="NavbarPrincipal" class="Navbar1">
+                <ul>
+                    <li>
+                        <img src="./assets/Menu.png" alt="">
+                        <p>Menu</p>
+                    </li>
+                    <li>
+                        <img src="./assets/Dashboard/Person.png" alt="">
+                        <p><a href="home-login.html">Minha Conta</a></p>
+                    </li>
+                    <li>
+                        <img src="./assets/Dashboard/AddUser.png" alt="">
+                        <p><a href="cadastro-func.html">Novo Funcionario</a></p>
+                    </li>
+                    <li>
+                        <img src="./assets/Dashboard/estastica.png" alt="">
+                        <p><a href="./Dashboard_2.html">Visão Geral </a></p>
+                    </li>
+                    <li>
+                        Ajuda
+                    </li>
+                    <li>
+                        <img src="./assets/Dashboard/Logout.png" alt="">
+                        <p><a href="./index.html">Sair</a></p>
+                    </li>
+                </ul>
+            </nav>
+            <section id="GraficosControle">
+                <div class="DashboardConteudo2">
+
+                    <div class="Graficos">
+                        <div class="GraficoTemperatura">
+                            <canvas id="GraficoTemperatura"></canvas>
+                        </div>
+                        <div class="GraficoUmidade">
+                            <canvas id="GraficoUmidade"></canvas>
+                        </div>
+                    </div>
+                    <div class="KPI">
+                        <div class="AlertaTemperatura">
+                            <div class="Alertas">
+                                <div class="Alerta1">Muito Baixa</div>
+                                <div class="Alerta2">Baixa</div>
+                                <div class="Alerta3">Ideal</div>
+                                <div class="Alerta4">Alta</div>
+                                <div class="Alerta5">Muito Alta</div>
+                            </div>
+                            <h1>Temperatura Atual</h1>
+                            <div class="AlertaAtualTemperatura">
+                                <h2 class="Alerta5">asd1</h2>
+                            </div>
+                        </div>
+                        <div class="AlertaUmidade">
+                            <div class="Alertas">
+                                <div class="Alerta1"> Muito Baixa </div>
+                                <div class="Alerta2"> Baixa </div>
+                                <div class="Alerta3"> Ideal </div>
+                                <div class="Alerta4"> Alta </div>
+                                <div class="Alerta5"> Muito Alta</div>
+                            </div>
+
+                            <h1> Umidade Atual</h1>
+                            <div class="AlertaAtualUmidade">
+                                <h2 class="Alerta1">asd2</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</body>
+
+<!-- Configurações dos gráficos -->
+<script>
+    Chart.defaults.color = 'white'; // Define a cor do texto globalmente
+    Chart.defaults.font.size = 20; // Define o tamanho da fonte globalmente
+
+    const data = {
+        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
+        datasets: [{
+            label: 'Temperatura',
+            borderColor: 'white',
+            data: [0, 10, 5, 2, 20, 12, 1],
+        }],
+    };
+
+
+    const ctx = document.getElementById('GraficoTemperatura');
+    const chart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: {
+            elements: {
+                line: {
+                    tension: 0, // Define se as linhas serão retas ou curvas
+                },
+            },
+        },
+    });
+</script>
+<script>
+
+    const dataUmidade = {
+        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
+        datasets: [{
+            label: 'Umidade',
+            borderColor: 'white',
+            data: [0, 10, 5, 2, 20, 12, 1],
+        }],
+    };
+
+
+    const ctxUmidade = document.getElementById('GraficoUmidade');
+    const chartUmidade = new Chart(ctxUmidade, {
+        type: 'line',
+        data: dataUmidade,
+        options: {
+            elements: {
+                line: {
+                    tension: 0, // Define se as linhas serão retas ou curvas
+                },
+            },
+        },
+    });
+</script>
+
+</html>

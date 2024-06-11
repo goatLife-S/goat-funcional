@@ -1,0 +1,49 @@
+/* styles.css */
+
+/* Estilo para o container principal */
+.MaedeTodos {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/* Estilo para o menu hambúrguer */
+.Menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.Menu img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Estilo para a lista de itens do menu */
+nav.Sumiu {
+    display: none;
+}
+
+/* Estilo para os itens da lista */
+nav.Sumiu ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav.Sumiu li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+nav.Sumiu li:hover {
+    background-color: #ddd;
+}
+
+nav.Sumiu img {
+    width: 24px;
+    height: 24px;
+}
