@@ -22,7 +22,7 @@ body {
     background-color: #133B2D;
     padding: 0;
     height: 100%;
-    width: 5%;
+    width: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,7 +81,7 @@ body {
     display: flex;
     align-items: center;
     height: 100%;
-    width: 50px;
+    width: 125px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     background-color: #135D66;
@@ -89,44 +89,17 @@ body {
     text-align: center;
 }
 
-.containerInteiro .container2 .kpi .quase-baixo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 50px;
-    background-color: #218C99;
-    font-size: 15px;
+ul{
     text-align: center;
 }
 
-.containerInteiro .container2 .kpi .ideal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 50px;
-    background-color: #4CBB17;
-    font-size: 15px;
-    text-align: center;
-}
 
-.containerInteiro .container2 .kpi .quase-alto {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 50px;
-    background-color: #FFC100;
-    font-size: 15px;
-    text-align: center;
-}
 
 .containerInteiro .container2 .kpi .alto {
     display: flex;
     align-items: center;
     height: 100%;
-    width: 50px;
+    width: 125px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     background-color: #B00707;
@@ -241,4 +214,12 @@ body {
     width: 90%;
     margin-top: 10px;
     margin-left: 85px;
+}
+
+a:visited{
+    color: white;
+}
+
+a{
+    text-decoration: none;
 }

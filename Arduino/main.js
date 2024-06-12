@@ -32,7 +32,7 @@ const serial = async (
             host: '10.18.37.7',
             user: 'aluno',
             password: 'Sptech#2024',
-            database: 'sprint_2',
+            database: 'sprint_3',
             port: 3307
         }
     ).promise();

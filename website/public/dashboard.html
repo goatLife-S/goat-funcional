@@ -15,42 +15,41 @@
     <div class="containerInteiro">
         <div class="divLista">
             <ul class="lista">
-                <a href="home-login.html">
-                    <li class="icones"><img width="30px" src="./assets/Menu.png"></li>
-                </a>
-                <a href="Dashboard_2.html">
-                    <li class="icones"><img width="30px" src="./assets/Increase Profits.png"></li>
-                </a>
-                <a href="cadastro-func.html">
-                    <li class="icones"><img width="30px" src="./assets/adduser.png"></li>
-                </a>
-                <a href="./index.html">
-                    <li class="icones"><img width="30px" src="./assets/Logout.png"></li>
-                </a>
+               
+                <li>
+                    <img src="./assets/Dashboard/estastica.png" alt="">
+                    <p><a href="./dashboard.html">Visão Geral </a></p>
+                </li>
+                <li>
+                    <img src="./assets/Dashboard/estastica.png" alt="">
+                    <p><a href="./Dashboard_2.html">Visão Detalhada </a></p>
+                </li>
+                <li>
+                    <img src="./assets/adduser.png" alt="">
+                    <p><a href="./cadastro-func.html">Cadastro Funcionario</a></p>
+                </li>
+                <li>
+                    <img src="./assets/Logout.png" alt="">
+                    <p><a href="./cadastro-func.html">Exit </a></p>
+                </li>
+                
+               
             </ul>
         </div>
         <div class="container2">
             <div class="kpi">
-                <div class="baixo">Muito Baixa</div>
-                <div class="quase-baixo">Baixa</div>
-                <div class="ideal">Ideal</div>
-                <div class="quase-alto">Alta</div>
-                <div class="alto">Muito Alta</div>
+                <div class="baixo">Temperatura</div>
+                <div class="alto">Umidade</div>
             </div>
-            <div class="alertaCentro">
-                <div class="alertaTexto">
-                    <p>Temperatura ideal.</p>
-                    <p>Umidade ideal.</p>
-                </div>
-            </div>
-            <div class="alerta">
+         
+            <!-- <div class="alerta">
                 <div class="alertTemp">
                     <p>31°C</p>
                 </div>
                 <div class="alertUmi">
                     <p>30%</p>
-                </div>
-            </div>
+                </div> -->
+         
             <div class="containerDashboard">
                 <div class="tituloCapril">
                     <h2>Capril</h2>
@@ -116,7 +115,8 @@
                     {
                         label: 'Temperatura',
                         data: temperaturas,
-                        borderWidth: 3
+                        borderWidth: 3,
+                        color: blue
                     },
                     {
                         label: 'Umidade',

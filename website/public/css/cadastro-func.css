@@ -22,7 +22,7 @@ body {
     background-color: #133B2D;
     padding: 0;
     height: 100%;
-    width: 5%;
+    width: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -137,3 +137,14 @@ body {
 
 
 
+a:visited{
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    text-align: center;
+}
