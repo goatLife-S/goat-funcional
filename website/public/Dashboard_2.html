@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Goat + </title>
-    <link rel="stylesheet" href="Dashboard1.css">
+    <link rel="stylesheet" href="./css/Dashboard1.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 
@@ -87,59 +87,96 @@
     </div>
     </div>
 </body>
-
-<!-- Configurações dos gráficos -->
 <script>
+    window.onload = function () {
+        const idUsuario = sessionStorage.getItem('ID_USUARIO');
+        if (idUsuario) {
+            obterDadosGrafico(idUsuario);
+        } else {
+            console.error('ID do usuário não encontrado no sessionStorage');
+        }
+    };
+
+    function obterDadosGrafico() {
+        fetch(`/medidas/dia`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    // Alerta(resposta)
+                    plotarGrafico(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+
+</script>
+  <!-- Configurações dos gráficos -->
+ <script>
     Chart.defaults.color = 'white'; // Define a cor do texto globalmente
     Chart.defaults.font.size = 20; // Define o tamanho da fonte globalmente
+    function plotarGrafico(dados) {
+        // if (chart) {
+        //     chart.destroy();
+        // }
+        
 
-    const data = {
-        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
-        datasets: [{
-            label: 'Temperatura',
-            borderColor: 'white',
-            data: [0, 10, 5, 2, 20, 12, 1],
-        }],
-    };
+        const labels = dados.map(d => d.dtCaptura);
+        const temperaturas = dados.map(d => d.dht11_temperatura);
+        const umidades = dados.map(d => d.dht11_umidade);
+        const data = {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
+            datasets: [{
+                label: 'Temperatura',
+                borderColor: 'white',
+                data: temperaturas,
+            }],
+        };
 
 
-    const ctx = document.getElementById('GraficoTemperatura');
-    const chart = new Chart(ctx, {
-        type: 'line',
-        data: data,
-        options: {
-            elements: {
-                line: {
-                    tension: 0, // Define se as linhas serão retas ou curvas
+        const ctx = document.getElementById('GraficoTemperatura');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: {
+                elements: {
+                    line: {
+                        tension: 0, // Define se as linhas serão retas ou curvas
+                    },
                 },
             },
-        },
-    });
-</script>
-<script>
+        });
 
-    const dataUmidade = {
-        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
-        datasets: [{
-            label: 'Umidade',
-            borderColor: 'white',
-            data: [0, 10, 5, 2, 20, 12, 1],
-        }],
-    };
+        const dataUmidade = {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
+            datasets: [{
+                label: 'Umidade',
+                borderColor: 'white',
+                data: umidades,
+            }],
+        };
 
 
-    const ctxUmidade = document.getElementById('GraficoUmidade');
-    const chartUmidade = new Chart(ctxUmidade, {
-        type: 'line',
-        data: dataUmidade,
-        options: {
-            elements: {
-                line: {
-                    tension: 0, // Define se as linhas serão retas ou curvas
+        const ctxUmidade = document.getElementById('GraficoUmidade');
+        const chartUmidade = new Chart(ctxUmidade, {
+            type: 'line',
+            data: dataUmidade,
+            options: {
+                elements: {
+                    line: {
+                        tension: 0, // Define se as linhas serão retas ou curvas
+                    },
                 },
             },
-        },
-    });
-</script>
+        });
+    }
+</script> 
 
 </html>
