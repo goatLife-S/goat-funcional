@@ -233,6 +233,8 @@ body {
     justify-content: center;
     width: 100%;
     height: 50%;
+    margin-right: 97px;
+    margin-top: 30px;
 }
 
 .containerInteiro .container2 .containerDashboard span {

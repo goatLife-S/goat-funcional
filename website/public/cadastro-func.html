@@ -52,26 +52,26 @@
 <script>
     function btnCadastrar(){
 
-        var nomeVar = ipt_nome.value;
-        var sobrenomeVar = ipt_sobrenome.value;
-        var emailVar = ipt_email.value;
-        var telefoneVar = ipt_telefone.value;
-        var senhaVar = ipt_senha.value;
-        var confirmaVar = ipt_confirma.value;
+        var Funcnome = ipt_nome.value;
+        var Funcsobrenome= ipt_sobrenome.value;
+        var Funcemail = ipt_email.value;
+        var Functelefone = ipt_telefone.value;
+        var Funcsenha = ipt_senha.value;
+        var Funcconfirma = ipt_confirma.value;
 
 
-        fetch("/funcionario/cadastrar", {
+        fetch("/funcionario/cadastrarFunc", {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
                    
-                    nomeServer: nomeVar,
-                    sobrenomeServer: sobrenomeVar,
-                    emailServer: emailVar,
-                    telefoneServer: telefoneVar,
-                    senhaServer: senhaVar
+                    nomeServer: Funcnome,
+                    sobrenomeServer: Funcsobrenome,
+                    emailServer: Funcemail,
+                    telefoneServer: Functelefone,
+                    senhaServer: Funcsenha
                     
                 }),
             })

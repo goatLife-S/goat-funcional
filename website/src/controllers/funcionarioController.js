@@ -1,5 +1,6 @@
 var usuarioModel = require("../models/usuarioModel");
-var aquarioModel = require("../models/aquarioModel");
+var funcionarioModel = require("../models/funcionarioModel");
+// var aquarioModel = require("../models/aquarioModel");
 
 function autenticar(req, res) {
     var email = req.body.emailServer;
@@ -43,30 +44,30 @@ function autenticar(req, res) {
 
 }
 
-function cadastrar(req, res) {
+function cadastrarFunc(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
 
-    var nomeVar = req.body.nomeServer
-    var sobrenomeVar = req.body.sobrenomeServer
-    var emailVar = req.body.emailServer
-    var telefoneVar = req.body.telefoneServer
-    var senhaVar = req.body.senhaServer
+    var nome = req.body.nomeServer
+    var sobrenome = req.body.sobrenomeServer
+    var email = req.body.emailServer
+    var telefone = req.body.telefoneServer
+    var senha = req.body.senhaServer
 
     // Faça as validações dos valores
-    if (nomeVar == undefined) {
+    if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
-    } else if (sobrenomeVar == undefined) {
+    } else if (sobrenome == undefined) {
         res.status(400).send("Seu sobrenome está undefined!");
-    } else if (emailVar == undefined) {
+    } else if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
-    } else if (telefoneVar == undefined) {
+    } else if (telefone == undefined) {
         res.status(400).send("Sua telefone está undefined!");
-    } else if (senhaVar == undefined) {
+    } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nomeVar, emailVar, telefoneVar, senhaVar)
+        funcionarioModel.cadastrarFunc(nome, sobrenome, email, telefone, senha)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -86,5 +87,5 @@ function cadastrar(req, res) {
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrarFunc
 }
