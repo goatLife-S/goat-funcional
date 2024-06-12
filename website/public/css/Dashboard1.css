@@ -74,12 +74,12 @@ body {
     justify-content: space-evenly;
 }
 
-.Menu {
+/* .Menu {
     display: flex;
     align-items: flex-start;
     width: 15%;
     height: 100%;
-}
+} */
 
 .Navbar {
     display: flex;
@@ -98,11 +98,11 @@ body {
     cursor: pointer;
 }
 
-.Menu img {
+/* .Menu img {
     height: 30%;
     width: 30%;
 }
-
+ */
 
 
 

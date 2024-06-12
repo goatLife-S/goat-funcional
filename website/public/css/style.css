@@ -153,11 +153,11 @@ li {
 }
 
 .banner1 .container1 {
-    justify-content: column;
     align-items: center;
     flex-direction: row;
     font-size: large;
     background-color: #a5c78aa9;
+    height: 100%;
 }
 
 .banner1 .container1 .ContainerNeto {
