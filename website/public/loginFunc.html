@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOAT+ | Login</title>
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/loginFunc.css">
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
 </head>
 
@@ -21,15 +21,14 @@
                 </a>
             </div>
             <div class="container2">
-                <h3>Login</h3>
+                <h3>Login Funcionario</h3>
                 <input type="text" id="ipt_email" placeholder="Login" class="inputs" autocomplete="off">
                 <br>
                 <input type="password" id="ipt_senha" placeholder="Senha" class="inputs" autocomplete="off">
                 <br>
                 <div id="div_mensagem"></div>
                 <span>Ainda não é cliente GOAT+?<span><a href="cadastro.html" id="conta"> Crie uma
-                            conta.</a></span></span> <br>
-                            <span>Autenticar como funcionario?<span><a href="loginFunc.html" id="conta"> Entre aqui!.</a></span></span>
+                            conta.</a></span></span>
                 <br>
                 <button class="botao" onclick="entrar()">Entrar</button>
                 <div class="sombra">
@@ -60,7 +59,7 @@
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
-        fetch("/usuarios/autenticar", {
+        fetch("/usuarioFunc/autenticarFunc", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -80,12 +79,12 @@
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.emailVar;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.idFazenda;
+                    sessionStorage.ID_FAZENDA = json.fkFFazenda;
 
 
                     setTimeout(function () {
                         window.location = "dashboard.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 100); // apenas para exibir o loading
 
                 });
 

@@ -10,16 +10,25 @@
     <title>GOAT+ | Cadastro do Funcionário</title>
 </head>
 
-<body>
+<body onload="listar()">
     <div class="containerInteiro">
 
         <div class="divLista">
             <ul class="lista">
-                <a href="home-login.html"><li class="icones"><img width="30px" src="./assets/Menu.png"></li></a>
-                <a href=""><li class="icones"><img width="30px" src="./assets/Person.png"></li></a>
-                <a href="dashboard.html"><li class="icones"><img width="30px" src="./assets/Increase Profits.png"></li></a>
-                <a href="cadastro-func.html"><li class="icones"><img width="30px" src="./assets/adduser.png"></li></a>
-                <a href="./index.html"></a><li class="icones"><img width="30px" src="./assets/Logout.png"></li></a>
+                <a href="home-login.html">
+                    <li class="icones"><img width="30px" src="./assets/Menu.png"></li>
+                </a>
+                <a href="">
+                    <li class="icones"><img width="30px" src="./assets/Person.png"></li>
+                </a>
+                <a href="dashboard.html">
+                    <li class="icones"><img width="30px" src="./assets/Increase Profits.png"></li>
+                </a>
+                <a href="cadastro-func.html">
+                    <li class="icones"><img width="30px" src="./assets/adduser.png"></li>
+                </a>
+                <a href="./index.html"></a>
+                <li class="icones"><img width="30px" src="./assets/Logout.png"></li></a>
             </ul>
         </div>
         <div class="container2">
@@ -29,6 +38,12 @@
                         <span>Cadastre um novo funcionário.</span>
                     </div>
                     <div class="formulario">
+                        <div class="campo">
+                            <span>Empresa:</span>
+                            <select name="empresas" id="listaEmpresas">
+                              <option selected>Selecione uma empresa</option>
+                            </select>
+                          </div>
                         <span>
                             <input type="text" class="inputs" placeholder="Nome" id="ipt_nome">
                             <input type="text" class="inputs" placeholder="Sobrenome" id="ipt_sobrenome">
@@ -48,51 +63,73 @@
         </div>
     </div>
 </body>
+
 </html>
 <script>
-    function btnCadastrar(){
+    function btnCadastrar() {
 
         var Funcnome = ipt_nome.value;
-        var Funcsobrenome= ipt_sobrenome.value;
+        var Funcsobrenome = ipt_sobrenome.value;
         var Funcemail = ipt_email.value;
         var Functelefone = ipt_telefone.value;
         var Funcsenha = ipt_senha.value;
         var Funcconfirma = ipt_confirma.value;
+        var FuncfkFFazenda = listaEmpresas.value;
 
 
         fetch("/funcionario/cadastrarFunc", {
-                method: 'POST',
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                   
-                    nomeServer: Funcnome,
-                    sobrenomeServer: Funcsobrenome,
-                    emailServer: Funcemail,
-                    telefoneServer: Functelefone,
-                    senhaServer: Funcsenha
-                    
-                }),
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+
+                nomeServer: Funcnome,
+                sobrenomeServer: Funcsobrenome,
+                emailServer: Funcemail,
+                telefoneServer: Functelefone,
+                fkFFazendaServer: FuncfkFFazenda,
+                senhaServer: Funcsenha
+
+            }),
+        })
+            .then(function (resposta) {
+
+                if (resposta.ok) {
+                    setTimeout(() => {
+                        window.location = "dashboard.html";
+                    }, "2000");
+
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                }
             })
-                .then(function (resposta) {
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+    }
 
-                    if (resposta.ok) {
-                        setTimeout(() => {
-                            window.location = "dashboard.html";
-                        }, "2000");
 
-                    } else {
-                        throw "Houve um erro ao tentar realizar o cadastro!";
-                    }
-                })
-                .catch(function (resposta) {
-                    console.log(`#ERRO: ${resposta}`);
+    function listar() {
+        fetch("/empresas/listar", {
+            method: "GET",
+        })
+            .then(function (resposta) {
+                resposta.json().then((empresas) => {
+                    empresas.forEach((empresa) => {
+                        console.log(empresa)
+                       
+                            listaEmpresas.innerHTML += `<option value='${empresa.idFazenda}'>${empresa.CNPJ}</option>`;
+
+                        
+                    });
                 });
-        }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+    }
 
 
-
-    
 
 </script>

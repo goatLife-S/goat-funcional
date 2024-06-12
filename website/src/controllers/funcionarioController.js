@@ -51,6 +51,7 @@ function cadastrarFunc(req, res) {
     var sobrenome = req.body.sobrenomeServer
     var email = req.body.emailServer
     var telefone = req.body.telefoneServer
+    var fkFFazenda = req.body.fkFFazendaServer
     var senha = req.body.senhaServer
 
     // Faça as validações dos valores
@@ -67,7 +68,7 @@ function cadastrarFunc(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        funcionarioModel.cadastrarFunc(nome, sobrenome, email, telefone, senha)
+        funcionarioModel.cadastrarFunc(nome, sobrenome, email, telefone,fkFFazenda, senha)
             .then(
                 function (resultado) {
                     res.json(resultado);
