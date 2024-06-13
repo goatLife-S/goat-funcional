@@ -223,3 +223,19 @@ a:visited {
 a {
     text-decoration: none;
 }
+
+.AlertaAtualTemperatura1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: 15%;
+    width: 20%;
+    z-index: 999;
+    position: absolute;
+    left: 79%;
+    border-radius: 15px;
+    bottom: 3%;
+    transition: 5s;
+    background-color: #F2EAD3;
+}

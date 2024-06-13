@@ -7,6 +7,8 @@
     <title>Dashboard | Goat + </title>
     <link rel="stylesheet" href="./css/Dashboard1.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="./js/AlertaGoat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -49,28 +51,31 @@
                     <div class="KPI">
                         <div class="AlertaTemperatura">
                             <div class="Alertas">
-                                <div class="Alerta1">Muito Baixa < 15°</div>
-                                <div class="Alerta2">Baixa >= 15° & < 20° </div>
-                                <div class="Alerta3">Ideal >= 20° & < 31.5°</div>
-                                <div class="Alerta4">Alta  >= 31.5° & < 35°</div>
-                                <div class="Alerta5">Muito Alta >= 35°</div>
+                                <div class="Alerta1">Muito <br> Baixa < 15°</div>
+                                <div class="Alerta2">Baixa <br> >= 15° & < 20° </div>
+                                <div class="Alerta3">Ideal <br> >= 20° & < 31.5°</div>
+                                <div class="Alerta4">Alta <br> >= 31.5° & < 35°</div>
+                                <div class="Alerta5">Muito Alta <br> >= 35°</div>
                             </div>
                             <h1>Temperatura Atual</h1>
-                            <div class="AlertaAtualTemperatura">
-                                <h2 class="Alerta5">asd1</h2>
+                            <div id="AlertaAtualTemperatura" class="AlertaAtualTemperatura">
+                                <h2 id="Resultado_Temperatura"></h2>
                             </div>
                         </div>
                         <div class="AlertaUmidade">
+
+                            <div id="AlertaTempera"></div>
+
                             <div class="Alertas">
-                                <div class="Alerta1"> Muito Baixa < 40 </div>
-                                <div class="Alerta2"> Baixa >= 40 & < 50</div>
-                                <div class="Alerta3"> Ideal >= 50 & < 70 </div>
-                                <div class="Alerta4"> Alta >= 70 & < 80</div>
-                                <div class="Alerta5"> Muito Alta >= 80</div>
+                                <div class="Alerta1"> Muito Baixa <br> < 40 </div>
+                                <div class="Alerta2"> Baixa <br> >= 40 & < 50</div>
+                                <div class="Alerta3"> Ideal <br> >= 50 & < 70 </div>
+                                <div class="Alerta4"> Alta <br> >= 70 & < 80</div>
+                                <div class="Alerta5"> Muito Alta <br> >= 80</div>
                             </div>
                             <h1> Umidade Atual</h1>
-                            <div class="AlertaAtualUmidade">
-                                <h2 class="Alerta1">asd2</h2>
+                            <div id="AlertaAtualUmidade" class="AlertaAtualUmidade">
+                                <h2 id="Resultado_Umidade"></h2>
                             </div>
                         </div>
                     </div>
@@ -80,27 +85,166 @@
     </div>
 </body>
 <script>
+//     window.onload = function () {
+//         const idUsuario = sessionStorage.getItem('ID_USUARIO');
+//         if (idUsuario) {
+//             obterDadosGrafico(idUsuario);
+//         } else {
+//             console.error('ID do usuário não encontrado no sessionStorage');
+//         }
+//     };
+
+//     function obterDadosGrafico() {
+       
+//         fetch(`/medidas/dia`, { cache: 'no-store' }).then(function (response) {
+//             if (response.ok) {
+//                 response.json().then(function (resposta) {
+//                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+//                     resposta.reverse();
+//                     plotarGrafico(resposta);
+//                 });
+//             } else {
+//                 console.error('Nenhum dado encontrado ou erro na API');
+//             }
+//         })
+//             .catch(function (error) {
+//                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+//             });
+//     }
+
+//     Chart.defaults.color = 'black';
+//     Chart.defaults.font.size = 20;
+
+//     function plotarGrafico(dados) {
+       
+      
+//         var Alerta = document.getElementById('AlertaTempera');
+//         const labels = dados.map(d => d.dtCaptura);
+//         const temperaturas = dados.map(d => d.dht11_temperatura);
+//         const umidades = dados.map(d => d.dht11_umidade);
+
+//         AlertaTemperatura(temperaturas, Alerta)
+//         ExibirTemperatura(temperaturas)
+
+//         const ctxTemperatura = document.getElementById('GraficoTemperatura').getContext("2d");
+//         new Chart(ctxTemperatura, {
+//             type: 'line',
+//             data: {
+//                 labels: labels,
+//                 datasets: [{
+//                     label: 'Temperatura',
+//                     borderColor: 'red',
+//                     data: temperaturas,
+//                 }],
+//             },
+//             options: {
+//                 elements: {
+//                     line: {
+//                         tension: 0,
+//                     },
+//                 },
+//             },
+//         });
+
+//         const ctxUmidade = document.getElementById('GraficoUmidade').getContext("2d");
+//         new Chart(ctxUmidade, {
+//             type: 'line',
+//             data: {
+//                 labels: labels,
+//                 datasets: [{
+//                     label: 'Umidade',
+//                     borderColor: 'blue',
+//                     data: umidades,
+//                 }],
+//             },
+//             options: {
+//                 elements: {
+//                     line: {
+//                         tension: 0,
+//                     },
+//                 },
+//             },
+//         });
+//     if (ctxTemperatura && ctxUmidade) {
+//         ctxTemperatura.destroy();
+//         ctxUmidade.destroy();
+//     }
+//     }  setInterval(function() {
+//         obterDadosGrafico()
+//         console.log("Peguei")
+//         console.clear()
+// }, 1000);
+</script>
+<script>
+     let temperaturaChart;
+    let umidadeChart;
+
+    function ExibirTemperatura(temperaturas) {
+        var Resultado = document.getElementById('Resultado_Temperatura');
+        var AlertaTemperatura = document.getElementById('AlertaAtualTemperatura')
+        let TamanhoDoArray = temperaturas.length
+
+        for (let i = 0; i < TamanhoDoArray; i++) {
+            let posicaoAtual = temperaturas[i]
+            Resultado.innerHTML = `${posicaoAtual}°C`
+            if(posicaoAtual > 35){
+                AlertaTemperatura.style.backgroundColor = '#ff0000'
+                }else if (posicaoAtual >= 31.5 && posicaoAtual <= 35) {
+                AlertaTemperatura.style.backgroundColor = '#FFC100'
+                } else if (posicaoAtual >= 20 && posicaoAtual < 31.5){
+                AlertaTemperatura.style.backgroundColor = '#4dc714'
+                } else if(posicaoAtual >= 15 && posicaoAtual < 20){
+                AlertaTemperatura.style.backgroundColor = '#1f9eaf'
+                } else if (posicaoAtual < 15){
+                AlertaTemperatura.style.backgroundColor = '#20b8cc'
+                }
+        }
+    }
+    function ExibirUmidade(umidades) {
+        var Resultado = document.getElementById('Resultado_Umidade');
+        var AlertaUmidade = document.getElementById('AlertaAtualUmidade')
+        let TamanhoDoArrayUmidade = umidades.length
+
+        for (let i = 0; i < TamanhoDoArrayUmidade; i++) {
+            let posicaoAtual = umidades[i]
+            Resultado.innerHTML = `${posicaoAtual}%`
+            if(posicaoAtual > 80){
+                AlertaUmidade.style.backgroundColor = '#ff0000'
+                }else if (posicaoAtual >= 70 && posicaoAtual <= 80) {
+                AlertaUmidade.style.backgroundColor = '#FFC100'
+                } else if (posicaoAtual >= 50 && posicaoAtual < 70){
+                AlertaUmidade.style.backgroundColor = '#4dc714'
+                } else if(posicaoAtual >= 40 && posicaoAtual < 50){
+                AlertaUmidade.style.backgroundColor = '#1f9eaf'
+                } else if (posicaoAtual < 40){
+                AlertaUmidade.style.backgroundColor = '#20b8cc'
+                }
+        }
+    }
+
     window.onload = function () {
         const idUsuario = sessionStorage.getItem('ID_USUARIO');
         if (idUsuario) {
-            obterDadosGrafico(idUsuario);
+            obterDadosGrafico();
+            setInterval(obterDadosGrafico, 1000);
         } else {
             console.error('ID do usuário não encontrado no sessionStorage');
         }
     };
 
     function obterDadosGrafico() {
-        fetch(`/medidas/dia`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    resposta.reverse();
-                    plotarGrafico(resposta);
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
+        fetch(`/medidas/dia`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        resposta.reverse();
+                        plotarGrafico(resposta);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
@@ -114,46 +258,60 @@
         const temperaturas = dados.map(d => d.dht11_temperatura);
         const umidades = dados.map(d => d.dht11_umidade);
 
-        const ctxTemperatura = document.getElementById('GraficoTemperatura');
-        new Chart(ctxTemperatura, {
-            type: 'line',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Temperatura',
-                    borderColor: 'white',
-                    data: temperaturas,
-                }],
-            },
-            options: {
-                elements: {
-                    line: {
-                        tension: 0,
-                    },
-                },
-            },
-        });
+        ExibirTemperatura(temperaturas);
+        ExibirUmidade(umidades);
 
-        const ctxUmidade = document.getElementById('GraficoUmidade');
-        new Chart(ctxUmidade, {
-            type: 'line',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Umidade',
-                    borderColor: 'white',
-                    data: umidades,
-                }],
-            },
-            options: {
-                elements: {
-                    line: {
-                        tension: 0,
+        if (temperaturaChart) {
+            temperaturaChart.data.labels = labels;
+            temperaturaChart.data.datasets[0].data = temperaturas;
+            temperaturaChart.update();
+        } else {
+            const ctxTemperatura = document.getElementById('GraficoTemperatura').getContext("2d");
+            temperaturaChart = new Chart(ctxTemperatura, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Temperatura',
+                        borderColor: 'red',
+                        data: temperaturas,
+                    }],
+                },
+                options: {
+                    elements: {
+                        line: {
+                            tension: 0,
+                        },
                     },
                 },
-            },
-        });
+            });
+        }
+
+        if (umidadeChart) {
+            umidadeChart.data.labels = labels;
+            umidadeChart.data.datasets[0].data = umidades;
+            umidadeChart.update();
+        } else {
+            const ctxUmidade = document.getElementById('GraficoUmidade').getContext("2d");
+            umidadeChart = new Chart(ctxUmidade, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Umidade',
+                        borderColor: 'blue',
+                        data: umidades,
+                    }],
+                },
+                options: {
+                    elements: {
+                        line: {
+                            tension: 0,
+                        },
+                    },
+                },
+            });
+        }
     }
 </script>
-
 </html>

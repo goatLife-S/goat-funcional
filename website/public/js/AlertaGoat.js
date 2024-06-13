@@ -1,4 +1,4 @@
-function AlertaTemperatura(temperaturas) {
+function AlertaTemperatura(temperaturas, Alerta) {
   // prgando os valores do banco
   let TamanhoDoArray = temperaturas.length
 
@@ -6,7 +6,7 @@ function AlertaTemperatura(temperaturas) {
   const TemperaturaAlta = 35;
   const TemperaturaBaixa = 20;
   const TemperaturaMuitoBaixa = 10;
-  let ligado = false
+  
 
   let Sinal = {
     MuitoAlta: false,
@@ -21,11 +21,11 @@ function AlertaTemperatura(temperaturas) {
     //Validação para ver se não e nulo o valor 
     if (posicaoAtual == undefined || posicaoAtual == NaN) {
       console.log("fala Programador! De boas? /n Então eu tenho uma noticia ruim, o seu código deu B.O.")
-      ligado = false
-
-
-    } else if (posicaoAtual > TemperaturaMuitoAlta) {
-      console.log("temperatura sendo captada, mas acima do normal")
+      
+      
+      } else if (posicaoAtual > TemperaturaMuitoAlta) {
+        console.log("temperatura sendo captada, mas acima do normal")
+        AlertaTempera.innerHTML = `<div class="AlertaAtualTemperatura1"><h1>Temperatura do capril muito alta</div>`
 
       Sinal.MuitoAlta = true
 
