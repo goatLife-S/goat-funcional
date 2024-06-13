@@ -6,42 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Goat + </title>
     <link rel="stylesheet" href="./css/Dashboard1.css">
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-
 </head>
 
 <body>
-    <div class="MaedeTodos">
-        <div class="Container">
-            <nav id="NavbarPrincipal" class="Navbar1">
-                <ul>
-                    <!-- <li>
-                        <img src="./assets/Menu.png" alt="">
-                        <p>Menu</p>
-                    </li> -->
-                    
-
-                    <li>
-                        <img src="./assets/Dashboard/AddUser.png" alt="">
-                        <p><a href="cadastro-func.html">Novo Funcionario</a></p>
-                    </li>
-                    <li>
-                        <img src="./assets/Dashboard/estastica.png" alt="">
-                        <p><a href="./dashboard.html">Visão Geral</a></p>
-                    </li>
-                    <li>
-                        <p><a href="https://goatpluss.atlassian.net/servicedesk/customer">Ajuda</a></p>
-                    </li>
-                    <li>
-                        <img src="./assets/Dashboard/Logout.png" alt="">
-                        <p><a href="./index.html">Sair</a></p>
-                    </li>
-                </ul>
-            </nav>
+    <div class="containerInteiro">
+        <div class="divLista">
+            <ul class="lista">
+                <li>
+                    <img src="./assets/Dashboard/estastica.png" alt="">
+                    <p><a href="./dashboard.html">Visão Geral</a></p>
+                </li>
+                <li>
+                    <img src="./assets/Dashboard/estastica.png" alt="">
+                    <p><a href="./Dashboard_2.html">Visão Detalhada</a></p>
+                </li>
+                <li>
+                    <img src="./assets/adduser.png" alt="">
+                    <p><a href="./cadastro-func.html">Cadastro Funcionario</a></p>
+                </li>
+                <li>
+                    <img src="./assets/ajuda (1).png" alt="">
+                    <p><a href="https://goatpluss.atlassian.net/servicedesk/customer/">Ajuda</a></p>
+                </li>
+                <li>
+                    <img src="./assets/Logout.png" alt="">
+                    <p><a href="./index.html">Exit</a></p>
+                </li>
+            </ul>
+        </div>
+        <div class="container2">
             <section id="GraficosControle">
                 <div class="DashboardConteudo2">
-
                     <div class="Graficos">
                         <div class="GraficoTemperatura">
                             <canvas id="GraficoTemperatura"></canvas>
@@ -72,7 +68,6 @@
                                 <div class="Alerta4"> Alta >= 70 & < 80</div>
                                 <div class="Alerta5"> Muito Alta >= 80</div>
                             </div>
-
                             <h1> Umidade Atual</h1>
                             <div class="AlertaAtualUmidade">
                                 <h2 class="Alerta1">asd2</h2>
@@ -82,7 +77,6 @@
                 </div>
             </section>
         </div>
-    </div>
     </div>
 </body>
 <script>
@@ -101,8 +95,6 @@
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
-
-                    // Alerta(resposta)
                     plotarGrafico(resposta);
                 });
             } else {
@@ -114,67 +106,54 @@
             });
     }
 
+    Chart.defaults.color = 'black';
+    Chart.defaults.font.size = 20;
 
-</script>
-  <!-- Configurações dos gráficos -->
- <script>
-    Chart.defaults.color = 'black'; // Define a cor do texto globalmente
-    Chart.defaults.font.size = 20; // Define o tamanho da fonte globalmente
     function plotarGrafico(dados) {
-        // if (chart) {
-        //     chart.destroy();
-        // }
-        
-
         const labels = dados.map(d => d.dtCaptura);
         const temperaturas = dados.map(d => d.dht11_temperatura);
         const umidades = dados.map(d => d.dht11_umidade);
-        const data = {
-            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
-            datasets: [{
-                label: 'Temperatura',
-                borderColor: 'white',
-                data: temperaturas,
-            }],
-        };
 
-
-        const ctx = document.getElementById('GraficoTemperatura');
-        const chart = new Chart(ctx, {
+        const ctxTemperatura = document.getElementById('GraficoTemperatura');
+        new Chart(ctxTemperatura, {
             type: 'line',
-            data: data,
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Temperatura',
+                    borderColor: 'white',
+                    data: temperaturas,
+                }],
+            },
             options: {
                 elements: {
                     line: {
-                        tension: 0, // Define se as linhas serão retas ou curvas
+                        tension: 0,
                     },
                 },
             },
         });
 
-        const dataUmidade = {
-            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
-            datasets: [{
-                label: 'Umidade',
-                borderColor: 'white',
-                data: umidades,
-            }],
-        };
-
-
         const ctxUmidade = document.getElementById('GraficoUmidade');
-        const chartUmidade = new Chart(ctxUmidade, {
+        new Chart(ctxUmidade, {
             type: 'line',
-            data: dataUmidade,
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Umidade',
+                    borderColor: 'white',
+                    data: umidades,
+                }],
+            },
             options: {
                 elements: {
                     line: {
-                        tension: 0, // Define se as linhas serão retas ou curvas
+                        tension: 0,
                     },
                 },
             },
         });
     }
-</script> 
+</script>
 
 </html>
