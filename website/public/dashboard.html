@@ -15,7 +15,7 @@
     <div class="containerInteiro">
         <div class="divLista">
             <ul class="lista">
-               
+
                 <li>
                     <img src="./assets/Dashboard/estastica.png" alt="">
                     <p><a href="./dashboard.html">Visão Geral </a></p>
@@ -32,8 +32,8 @@
                     <img src="./assets/Logout.png" alt="">
                     <p><a href="./cadastro-func.html">Exit </a></p>
                 </li>
-                
-               
+
+
             </ul>
         </div>
         <div class="container2">
@@ -41,7 +41,7 @@
                 <div class="baixo">Temperatura</div>
                 <div class="alto">Umidade</div>
             </div>
-         
+
             <!-- <div class="alerta">
                 <div class="alertTemp">
                     <p>31°C</p>
@@ -49,7 +49,7 @@
                 <div class="alertUmi">
                     <p>30%</p>
                 </div> -->
-         
+
             <div class="containerDashboard">
                 <div class="tituloCapril">
                     <h2>Capril</h2>
@@ -60,7 +60,31 @@
                 </div>
                 <span>Umidade e temperatura em função do tempo (h)</span>
             </div>
-            <div id="AlertaTempera"></div>
+            <div style="display: flex; height: 100%; width: 10%; justify-content: center; align-items: center; flex-direction: column;"
+                id="AlertaTempera">
+                <div
+                    style="display: flex; align-items: center; justify-content: end; width: 100%; height: 100%; flex-direction: column;">
+
+                    <!-- <div class="AlertaAtualTemperatura5">
+                        <h1>Temperatura do capril Muito baixa</h1>
+                        <img class="imageTemp" src="./assets/thermometer.png" alt="">
+                    </div>
+                    <div class="AlertaAtualTemperatura4">
+                        <h1>Temperatura do capril baixa</h1>
+                        <img class="imageTemp" src="./assets/thermometer.png" alt="">
+                    </div>
+                    <div class="AlertaAtualTemperatura2">
+                        <h1>Temperatura do capril alta</h1>
+                        <img class="imageTemp" src="./assets/thermometer.png" alt="">
+                    </div>
+                    <div class="AlertaAtualTemperatura1">
+                        <h1>Temperatura do capril muito alta</h1>
+                        <img class="imageTemp" src="./assets/thermometer.png" alt="">
+                    </div> -->
+
+                </div>
+
+            </div>
         </div>
     </div>
 </body>
@@ -70,7 +94,7 @@
 
     let chart;
 
-    window.onload = function() {
+    window.onload = function () {
         const idUsuario = sessionStorage.getItem('ID_USUARIO');
         if (idUsuario) {
             obterDadosGrafico(idUsuario);
@@ -87,58 +111,63 @@
                     resposta.reverse();
 
                     // Alerta(resposta)
-                   plotarGrafico(resposta);
+                    plotarGrafico(resposta);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
             }
         })
-        .catch(function (error) {
-            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-        });
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
     }
 
     function plotarGrafico(dados) {
-        if (chart) {
-            chart.destroy();
-        }
-
+        var AlertaVisao = document.getElementById('AlertaTempera');
         const labels = dados.map(d => d.dtCaptura);
         const temperaturas = dados.map(d => d.dht11_temperatura);
         const umidades = dados.map(d => d.dht11_umidade);
-        AlertaTemperatura(temperaturas)
-        console.log(umidades)
-        chart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: labels,
-                datasets: [
-                    {
-                        label: 'Temperatura',
-                        data: temperaturas,
-                        borderWidth: 3,
-                        
-                    },
-                    {
-                        label: 'Umidade',
-                        data: umidades,
-                        borderWidth: 3
-                    }
-                ]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+        AlertaTemperatura(temperaturas, AlertaVisao);
+        AlertaUmidade(umidades, AlertaVisao);
+        if (chart) {
+            chart.data.labels = labels;
+            chart.data.datasets[0].data = temperaturas;
+            chart.data.datasets[1].data = umidades;
+            chart.update();
+        } else {
+            console.log(umidades)
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Temperatura',
+                            data: temperaturas,
+                            borderWidth: 3,
+
+                        },
+                        {
+                            label: 'Umidade',
+                            data: umidades,
+                            borderWidth: 3
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
-        });
+            })
+        };
     }
-    setInterval(function() {
+    setInterval(function () {
         obterDadosGrafico()
         console.log("Peguei")
-}, 10000);
+    }, 1000);
 </script>
 
 </html>

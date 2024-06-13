@@ -45,8 +45,8 @@ body {
 
 .containerInteiro .containerDashboard {
     display: flex;
-    height: 450px;
-    width: 900px;
+    height: 50%;
+    width: 53%;
     border-radius: 8px;
     flex-direction: column;
     align-items: center;
@@ -55,12 +55,13 @@ body {
     gap: 1px;
     box-shadow: 1px 1px 4px black;
     margin-top: 20px;
+    transition: 2s;
 }
 
 .containerInteiro .container2 {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -68,8 +69,9 @@ body {
     display: flex;
     top: 1rem;
     width: 249px;
+    width: 32%;
     height: 60px;
-    background-color: #FFFFFF;
+    /* background-color: #FFFFFF; */
     position: absolute;
     border-radius: 8px;
     flex-direction: row;
@@ -229,13 +231,182 @@ a {
     justify-content: center;
     flex-direction: row-reverse;
     align-items: center;
-    height: 15%;
-    width: 20%;
-    z-index: 999;
-    position: absolute;
-    left: 79%;
+    height: auto;
+    width: 26vw;
+    margin: 1%;
+    /* position: absolute; */
+    /* left: 79%; */
     border-radius: 15px;
-    bottom: 3%;
+    /* bottom: 3%; */
     transition: 5s;
     background-color: #F2EAD3;
+    animation: Ruim 1s infinite;
 }
+.AlertaAtualTemperatura2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: auto;
+    width: 26vw;
+    margin: 1%;
+    /* position: absolute; */
+    /* left: 79%; */
+    border-radius: 15px;
+    /* bottom: 3%; */
+    transition: 5s;
+    background-color: #F2EAD3;
+    animation: Ruim 1s infinite;
+}
+.AlertaAtualTemperatura3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: auto;
+    width: 26vw;
+    margin: 1%;
+    /* position: absolute; */
+    /* left: 79%; */
+    border-radius: 15px;
+    /* bottom: 3%; */
+    transition: 5s;
+    background-color: #F2EAD3;
+    animation: Ruim 1s infinite;
+}
+.AlertaAtualTemperatura4 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: auto;
+    width: 26vw;
+    margin: 1%;
+    /* position: absolute; */
+    /* left: 79%; */
+    border-radius: 15px;
+    /* bottom: 3%; */
+    transition: 5s;
+    background-color: #F2EAD3;
+    animation: Ruim 1s infinite;
+}
+.AlertaAtualTemperatura5 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: auto;
+    width: 26vw;
+    margin: 1%;
+    /* position: absolute; */
+    /* left: 79%; */
+    border-radius: 15px;
+    /* bottom: 3%; */
+    transition: 5s;
+    background-color: #F2EAD3;
+    animation: Ruim 1s infinite;
+}
+
+.imageTemp {
+    height: 50px;
+    width: 150;
+}
+.btn-alerta{
+    background-color: rgba(0, 0, 0, 0.404);
+    border: 0px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.AlertaAtualumidade1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: auto;
+    width: 26vw;
+    margin: 1%;
+    /* position: absolute; */
+    /* left: 79%; */
+    border-radius: 15px;
+    /* bottom: 3%; */
+    transition: 5s;
+    background-color: #F2EAD3;
+    animation: Ruim 1s infinite;
+}
+.AlertaAtualumidade2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: auto;
+    width: 26vw;
+    margin: 1%;
+    /* position: absolute; */
+    /* left: 79%; */
+    border-radius: 15px;
+    /* bottom: 3%; */
+    transition: 5s;
+    background-color: #F2EAD3;
+    animation: Ruim 1s infinite;
+}
+.AlertaAtualumidade3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: auto;
+    width: 26vw;
+    margin: 1%;
+    /* position: absolute; */
+    /* left: 79%; */
+    border-radius: 15px;
+    /* bottom: 3%; */
+    transition: 5s;
+    background-color: #F2EAD3;
+    animation: Ruim 1s infinite;
+}
+.AlertaAtualumidade4 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: auto;
+    width: 26vw;
+    margin: 1%;
+    /* position: absolute; */
+    /* left: 79%; */
+    border-radius: 15px;
+    /* bottom: 3%; */
+    transition: 5s;
+    background-color: #F2EAD3;
+    animation: Ruim 1s infinite;
+}
+.AlertaAtualumidade5 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: auto;
+    width: 26vw;
+    margin: 1%;
+    /* position: absolute; */
+    /* left: 79%; */
+    border-radius: 15px;
+    /* bottom: 3%; */
+    transition: 5s;
+    background-color: #F2EAD3;
+    animation: Ruim 1s infinite;
+}
+
+@keyframes Ruim {
+    0% {
+      background-color: red;
+    }
+    50% {
+      background-color: transparent;
+    }
+    100% {
+      background-color: red;
+    }
+  }
