@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <title>GOAT+ | Dashboard</title>
+    <script src="./js/AlertaGoat.js"></script>
+</head>
+
+<body>
+    <div class="containerInteiro">
+        <div class="divLista">
+            <ul class="lista">
+
+                <li>
+                    <img src="./assets/Dashboard/estastica.png" alt="">
+                    <p><a href="./dashboardPri_func.html">Visão Geral</a></p>
+                </li>
+                <li>
+                    <img src="./assets/Dashboard/estastica.png" alt="">
+                    <p><a href="./Dashboard_Funcionario.html">Visão Detalhada</a></p>
+                </li>
+                <li>
+                    <img src="./assets/Logout.png" alt="">
+                    <p><a href="./cadastro-func.html">Exit </a></p>
+                </li>
+
+
+            </ul>
+        </div>
+        <div class="container2">
+            <div class="kpi">
+                <div class="baixo">Temperatura</div>
+                <div class="alto">Umidade</div>
+            </div>
+
+            <!-- <div class="alerta">
+                <div class="alertTemp">
+                    <p>31°C</p>
+                </div>
+                <div class="alertUmi">
+                    <p>30%</p>
+                </div> -->
+
+            <div class="containerDashboard">
+                <div class="tituloCapril">
+                    <h2>Capril</h2>
+                </div>
+                <br>
+                <div class="grafico">
+                    <canvas id="myChart" height="90vh" width="300vw"></canvas>
+                </div>
+                <span>Umidade e temperatura em função do tempo (h)</span>
+            </div>
+            <div style="display: flex; height: 100%; width: 10%; justify-content: center; align-items: center; flex-direction: column;"
+                id="AlertaTempera">
+                <div
+                    style="display: flex; align-items: center; justify-content: end; width: 100%; height: 100%; flex-direction: column;">
+
+                    <!-- <div class="AlertaAtualTemperatura5">
+                        <h1>Temperatura do capril Muito baixa</h1>
+                        <img class="imageTemp" src="./assets/thermometer.png" alt="">
+                    </div>
+                    <div class="AlertaAtualTemperatura4">
+                        <h1>Temperatura do capril baixa</h1>
+                        <img class="imageTemp" src="./assets/thermometer.png" alt="">
+                    </div>
+                    <div class="AlertaAtualTemperatura2">
+                        <h1>Temperatura do capril alta</h1>
+                        <img class="imageTemp" src="./assets/thermometer.png" alt="">
+                    </div>
+                    <div class="AlertaAtualTemperatura1">
+                        <h1>Temperatura do capril muito alta</h1>
+                        <img class="imageTemp" src="./assets/thermometer.png" alt="">
+                    </div> -->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    let chart;
+
+    window.onload = function () {
+        const idUsuario = sessionStorage.getItem('ID_USUARIO');
+        if (idUsuario) {
+            obterDadosGrafico(idUsuario);
+        } else {
+            console.error('ID do usuário não encontrado no sessionStorage');
+        }
+    };
+
+    function obterDadosGrafico() {
+        fetch(`/medidas/dia`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    // Alerta(resposta)
+                    plotarGrafico(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function plotarGrafico(dados) {
+        var AlertaVisao = document.getElementById('AlertaTempera');
+        const labels = dados.map(d => d.dtCaptura);
+        const temperaturas = dados.map(d => d.dht11_temperatura);
+        const umidades = dados.map(d => d.dht11_umidade);
+        AlertaTemperatura(temperaturas, AlertaVisao);
+        AlertaUmidade(umidades, AlertaVisao);
+        if (chart) {
+            chart.data.labels = labels;
+            chart.data.datasets[0].data = temperaturas;
+            chart.data.datasets[1].data = umidades;
+            chart.update();
+        } else {
+            console.log(umidades)
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Temperatura',
+                            data: temperaturas,
+                            borderWidth: 3,
+
+                        },
+                        {
+                            label: 'Umidade',
+                            data: umidades,
+                            borderWidth: 3
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            })
+        };
+    }
+    setInterval(function () {
+        obterDadosGrafico()
+        console.log("Peguei")
+    }, 1000);
+</script>
+
+</html>
